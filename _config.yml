@@ -1,24 +1,24 @@
 # Your name and what you do
-name: Eve Adam
-bio: Software Developer
+name: Germán Aliprandi 
+bio: Comerciante y lo que haga falta
 
-description: Eve Adam's Personal Website
+description: Sitio Personal
 
 # Profile picture
 picture: assets/images/profile.jpg
 
-# your url: http://USERNAME.github.io
-url: https://jibolash.github.io/Eve/
+# your url: https://galiprandi.github.io/me/
+url: https://galiprandi.github.io/me/
 
 # do you want to display social media links? true or false
 social-media: true
 # Add your username for the social media websites listed below
 # If you don't have an account on any of them, comment out the line
-# facebook: myfacebook
-twitter: mytwitter
-linkedin: mylinkedin
-github: mygithub
-email: myemail@gmail.com
+# facebook: GadgetTucuman
+twitter: galiprandi
+linkedin: german-aliprandi-5b67b01ab
+github: galiprandi
+email: galiprandi@gmail.com 
 # google: mygoogle
 # instagram: myinstagram
 # pinterest: mypinterest
@@ -38,35 +38,32 @@ email: myemail@gmail.com
 width: normal
 
 # do you want to display an about section? true or false
-about: true
+about: falsa
 
 # do you want to display a skills section? true or false
 skills: true
 
 # add your skills here
 skills-list:
-    - HTML, Jade
-    - CSS (Stylus, Sass, Less)
-    - Javascript, NodeJS
-    - AngularJS, ReactJS
-    - Java, Android
-    - Python
-    - MySQL - MongoDB    
-    - Git    
+    - Computación 
+    - Fotografía 
+    - Electrónica 
+    - Programación 
+    - Un poco de todo    
 
 # do you want to display a projects section? true or false
 projects: true
 
 # add your projects here
 project-list:
-    Eve:
-        name: Eve
-        description: Ultra Minimal Single-page Jekyll Template for Building Personal Portfolio Websites
-        url: https://github.com/jibolash/Eve
-    World-Cup-History:
-        name: World Cup  History
-        description: npm package for FIFA World cup historical data
-        url: https://github.com/jibolash/world-cup-history
+    Gadget:
+        name: Gadget
+        description: Venta y reparación de equipos fotográficos. 
+        url: https:// mi cámara.ga
+    Mialbum:
+        name: Mialbum
+        description: Album digital para bodas y cumpleaños. 
+        url: mialbum.ga
     Tweeter:
         name: Tweeter
         description: A Twitter inspired web application built with Angular 5
