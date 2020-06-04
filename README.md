@@ -1,12 +1,9 @@
-# Perfil Personal - <a href="https://galiprandi.github.io/me/">Demo</a>
+>## Perfil Personal - <a href="https://galiprandi.github.io/me/">Demo</a>
 
 
 
 Eve is an ultra minimal Jekyll theme for building single page personal portfolio websites
 
-<p align="center">
-    <img src="https://preview.ibb.co/ditr6J/Screen_Shot_2018_05_14_at_6_27_06_PM.png" />
-</p>
 
 ## Deploying to Github Pages
 
