@@ -1,25 +1,24 @@
->## [Simple Personal Profile Site](https://galiprandi.github.io/me/)
+## [Simple Personal Profile Site](https://galiprandi.github.io/me/)
 
 
-## Deploying to Github Pages
+#### Deploying to Github Pages
 
-1. Fork or Clone this repo
-2. Customize `index.html` and `profile.jpg` as desired
-3. Find you Repository name
-4. Enable Github Page **Setings -> GitHub Pages -> in Source select "master branch"**
-5. Visit your website at the github pages url you specified in the second step
+1. Fork or Clone this repo: (In the top-right corner of the page, click Fork)
+2. Customize `index.html` and `profile.jpg` as desired.
+3. Enable Github Page **Setings -> GitHub Pages -> change Source to "master branch"**
+4. Visit your website at the github pages url.
 
-Learn more about Github pages <a href="https://pages.github.com/">here</a>
+[Learn more about Github pages here](https://pages.github.com/)
 
-## Usage
+#### Usage
 
-- Update `_config.yml` with your desired settings
-- Update `_includes/about.html` with information about yourself
+- Update `index.html` with your desired settings.
+- Enjoy.
 
-## Demo
+#### Demo
 
-- [Demo](./)
+- [Demo](https://galiprandi.github.io/me/)
 
-## License
+### License
 
 MIT
