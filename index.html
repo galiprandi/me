@@ -1,4 +1,234 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Germán Aliprandi</title>
+    <meta property="og:title" content="Germán Aliprandi" />
+    <meta property="og:image" content="./profile.jpg" />
+    <meta
+      property="og:image"
+      content="http://ia.media-imdb.com/images/rock.jpg"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap");
+      body {
+        background: white;
+        font-family: serif;
+        font-family: "Raleway", sans-serif;
+        width: 80%;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #262626;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        margin-bottom: 3rem;
+        transition: color 250ms ease-in-out;
+      }
+      a:hover {
+        color: #cc3300;
+      }
+      .picture {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3rem 0;
+      }
+      .picture > img {
+        width: 60%;
+        max-width: 180px;
+        clip-path: circle();
+        text-align: center;
+        margin: 2rem 0;
+      }
+      .name {
+        font-size: 2.3em;
+        margin: 0.5rem 0;
+      }
+      .description {
+        font-weight: 100;
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      .social {
+        display: flex;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 60%;
+        font-size: 1.5rem;
+        height: 2rem;
+      }
+      .information {
+        padding: 2em 0;
+      }
+      .information > h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+        opacity: 0.9;
+        padding-bottom: 0.8rem;
+      }
+      li {
+        margin-bottom: 1.1em;
+      }
+      li .title {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      li > p {
+        margin: 0;
+        line-height: 2rem;
+      }
+      footer {
+        text-align: center;
+        font-size: 16px;
+        opacity: 0.6;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="picture">
+      <img src="./profile.jpg" alt="Picture Profile" />
+      <h1 class="name">Germán Aliprandi</h1>
+      <h2 class="description">
+        un tipo más...
+      </h2>
+    </section>
+    <section class="social">
+      <a
+        href="https://github.com/galiprandi"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon title="Github" name="logo-github"></ion-icon>
+      </a>
+      <a
+        href="https://www.facebook.com/GadgetTucuman"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon title="Facebook" name="logo-facebook"></ion-icon>
+      </a>
+      <a
+        href="https://linkedin.com/in/german-aliprandi-5b67b01ab"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon title="Linkedin" name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="mailto:galiprandi@gmail.com">
+        <ion-icon title="email" name="mail"></ion-icon>
+      </a>
+    </section>
+    <section class="information">
+      <h1 class="title">Acerca de</h1>
+      <p>
+        Santafesino exiliado en Tucumán, actualmente con 40 crudos inviernos en
+        las espaldas, una esposa, dos hijos, varios trabajos e innumerables
+        quilombos en el mate.
+
+        <br /><br />
+
+        Mi principal objetivo a corto plazo es armar, desde cero y con mis
+        propias manos, una bicicleta y disfrutar de lo qué tengo, qué no espoco.
+        <br /><br />
+
+        No hay una sola cosa que me defina completamente, así que voy a enumerar
+        varias que son significativas para mi: la fotografía, el padel, arreglar
+        cosas, programar, vender electrónica, asesorar (eso también me gusta),
+        el café y la ropa informal. En ese orden aproximado.
+        <br /><br />
+        Ateo, Apolítico, Asintomático, Abstracto, Arrogante, Acostumbrado, son
+        algunas de las palabras que me definen con la letra a.
+      </p>
+    </section>
+    <section class="information">
+      <h1 class="title">Habilidades</h1>
+      <ul>
+        <li>
+          Computación
+        </li>
+        <li>
+          Fotografía
+        </li>
+        <li>
+          Electrónica
+        </li>
+        <li>
+          Programación
+        </li>
+        <li>
+          Y lo que haga falta
+        </li>
+      </ul>
+    </section>
+    <section class="information">
+      <h1 class="title">Proyectos</h1>
+      <ul>
+        <a href="http://micamara.ga" target="_blank">
+          <li>
+            <span class="title">
+              Gadget
+            </span>
+            <p>
+              Venta y reparación de equipos fotográficos.
+            </p>
+          </li>
+        </a>
+        <a href="http://mialbum.ga/" target="_blank">
+          <li>
+            <span class="title">
+              miAlbum
+            </span>
+            <p>
+              Albumes digitales para fotógrafos.
+            </p>
+          </li>
+        </a>
+        <a
+          href="https://galiprandi.github.io/ciudades-sostenibles/"
+          target="_blank"
+        >
+          <li>
+            <span class="title">
+              Ciudades Sostenibles
+            </span>
+            <p>
+              Proyecto que busca consolidar la movilidad individual.
+            </p>
+          </li>
+        </a>
+        <a href="https://www.facebook.com/GrupoLibelulaTuc/" target="_blank">
+          <li>
+            <span class="title">
+              Grupo Libélula
+            </span>
+            <p>
+              Espacio autogestionado promoción cultural.
+            </p>
+          </li>
+        </a>
+      </ul>
+    </section>
+    <footer>
+      <p>
+        Germán Aliprandi © 2020
+      </p>
+    </footer>
+
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.0-0/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.1.0-0/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
