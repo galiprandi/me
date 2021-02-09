@@ -1,5 +1,7 @@
 ## Germán Aliprandi
 
-#### Profile
+#### Profile versions
 
-- [View Online](https://galiprandi.github.io/me/)
+- [Online](https://galiprandi.github.io/me/)
+
+- [PDF](https://galiprandi.github.io/me/german_aliprandi.pdf)
