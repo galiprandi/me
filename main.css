@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.hide {
+  display: none;
+}
+
 .light {
   font-weight: 300;
 }
@@ -42,11 +46,10 @@ body {
 }
 
 aside {
-  line-height: 3em;
-  min-width: 300px;
+  line-height: 3.5em;
+  min-width: 280px;
   background-color: teal;
   color: #fff;
-  font-size: 1.1em;
   font-weight: 300;
   padding: 2em 1em;
 }
@@ -94,8 +97,9 @@ main .item .image {
   align-self: center;
 }
 
-main .item img {
+main .item .image img {
   width: 100%;
+  max-width: 220px;
   float: left;
   margin-right: 1em;
 }
@@ -113,4 +117,39 @@ main .github {
 main .github img {
   width: 100px;
   margin-right: 3em;
+}
+
+@media screen {
+  .screen {
+    display: block;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .print {
+    display: block;
+  }
+
+  body {
+    width: 21cm;
+    min-height: 29.7cm;
+    padding: 0;
+    margin: 0 auto;
+    background-color: white;
+  }
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
 }
