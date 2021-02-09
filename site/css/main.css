@@ -46,12 +46,17 @@ body {
 }
 
 aside {
+  width: 34em;
   line-height: 3.5em;
-  min-width: 280px;
   background-color: teal;
   color: #fff;
   font-weight: 300;
   padding: 2em 1em;
+}
+
+aside img.profile {
+  width: 85%;
+  clip-path: circle();
 }
 
 aside .profile,
