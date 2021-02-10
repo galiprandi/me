@@ -13,4 +13,4 @@ jobs:
       - name: Commit resume.pdf
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Apply automatic changes
+          commit_message: New pdf version
