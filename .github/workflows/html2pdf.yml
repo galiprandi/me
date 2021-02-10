@@ -1,7 +1,5 @@
 name: Build Pdf
 
-description: 'Build resume.pdf from index.html'
-
 on: [push, pull_request]
 
 jobs:
@@ -32,9 +30,3 @@ jobs:
       - name: Build PDF
         run: wkhtmltopdf index.html resume.pdf
         
-
-#      - name: Upload artifacts
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: Upload PDF
-#          path: ./resume.pdf
