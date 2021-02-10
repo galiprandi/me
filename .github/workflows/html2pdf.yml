@@ -6,5 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        name: Install wkhtmltopdf
       - run: sudo apt install -y wkhtmltopdf
+        name: Build resume.pdf
       - run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html resume.pdf
+      - name: Commit resume.pdf
+        run: |
+          git config --global user.name 'Germán Aliprandi'
+          git config --global user.email 'galiprandi@gmail.com'
+          git commit -am "Build PDF"
+          git push
