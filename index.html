@@ -17,17 +17,16 @@
     <link rel="stylesheet" href="./site/css/normalize.css" />
     <link rel="stylesheet" href="./site/css/main.css" />
   </head>
-  <body class="page">
+  <body>
     <aside>
-      <div class="profile">
+      <section class="pricture text-center">
         <img
-          src="./images/profile.jpg"
-          class="profile"
+          src="./images/profile_circle.png"
+          class="picture"
           alt="Germán Aliprandi"
         />
-      </div>
-
-      <section class="version light">
+      </section>
+      <section class="versions light text-center">
         <a
           href="https://galiprandi.github.io/me/german_aliprandi.pdf"
           class="hide screen"
@@ -35,43 +34,53 @@
           Download PDF version
         </a>
         <a href="https://galiprandi.github.io/me/" class="hide print">
-          Last version
+          <b> Updated version </b>
           <br />
           galiprandi.github.io/me/
         </a>
       </section>
-      <div class="info">
-        <section class="info">
+      <section class="info">
+        <div class="contact">
           <h1 class="medium">Contact info</h1>
-          <div>
-            <span class="medium">Phone:</span>
-            <a href="tel:+54 381 5900868">+54 381 5900868</a>
-          </div>
-          <div>
-            <span class="medium">Email:</span>
-            <a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
-          </div>
-          <div>
-            <span class="medium">Linkedin:</span>
-            <br />
-            <a
-              href="http://linkedin.com/in/galiprandi"
-              target="_blank"
-              rel="noopener noreferrer"
-              >linkedin.com/in/galiprandi</a
-            >
-          </div>
-          <div>
-            <span class="medium">Telegram:</span>
-            <a
-              href="http://https://t.me/galiprandi"
-              target="_blank"
-              rel="noopener noreferrer"
-              >https://t.me/galiprandi</a
-            >
-          </div>
-        </section>
-        <section class="skills">
+
+          <ul>
+            <li>
+              <b> Phone: </b><a href="tel:+543815900868">+54 381 5900868</a>
+            </li>
+            <li>
+              <b>Email: </b
+              ><a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
+            </li>
+            <li>
+              <b>Linkedin: </b
+              ><a
+                href="http://linkedin.com/in/galiprandi"
+                target="_blank"
+                rel="noopener noreferrer"
+                >linkedin.com/in/galiprandi</a
+              >
+            </li>
+            <li>
+              <b>Github: </b>
+              <a
+                href="https://github.com/galiprandi"
+                target="_blank"
+                rel="noopener noreferrer"
+                >github.com/galiprandi</a
+              >
+            </li>
+            <li>
+              <b>Telegram: </b>
+              <a
+                href="http://https://t.me/galiprandi"
+                target="_blank"
+                rel="noopener noreferrer"
+                >t.me/galiprandi</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="skills">
           <h1 class="medium">Skills</h1>
           <ul>
             <li>Pragmatic</li>
@@ -82,8 +91,8 @@
             <li>AWS, Google Cloud</li>
             <li>Passion for learning</li>
           </ul>
-        </section>
-      </div>
+        </div>
+      </section>
     </aside>
     <main>
       <section class="name">
@@ -92,7 +101,7 @@
           Frontend developer | Electronic technician | Linux fan
         </h4>
       </section>
-      <section class="description">
+      <section class="about">
         <p>
           I'm from Argentina but I am evaluating the possibility of relocating
           to other country.
@@ -109,25 +118,21 @@
         </p>
       </section>
 
-      <section class="developments">
+      <section class="developments light">
         <h2 class="light">Personal developments</h2>
         <hr />
         <article class="item">
           <div class="image">
-            <img
-              src="./images/project-1.png"
-              alt="Gadget website"
-              width="150px"
-            />
+            <img src="./images/project-1.png" alt="Gadget website" />
           </div>
-          <div class="description">
-            <h3>Gadget website</h3>
+          <div class="info">
+            <h3 class="medium">Gadget website</h3>
             <p>
-              Official site and product catalog of Gadget company.
+              Website and products catalog of Gadget company.
               <br />
-              <strong>Tools:</strong> Svelte, Serverless, GCP.
+              <b>Tools:</b> Svelte, Serverless, GCP.
               <br />
-              <strong>Site:</strong>
+              <b>Website:</b>
               <a
                 href="https://micamara.ga/"
                 target="_blank"
@@ -135,7 +140,7 @@
                 >micamara.ga</a
               >
               <br />
-              <strong>Code:</strong>
+              <b>Code:</b>
               <a
                 href="https://github.com/galiprandi/micamara.ga"
                 target="_blank"
@@ -150,14 +155,14 @@
           <div class="image">
             <img src="./images/project-2.png" alt="Memo Game" />
           </div>
-          <div class="description">
-            <h3>Memo Game</h3>
+          <div class="info">
+            <h3 class="medium">Memo Game</h3>
             <p>
-              Memo is a nice adaptation of the classic game to test your memory.
+              A nice adaptation of the classic game to test your memory.
               <br />
-              <strong>Tools:</strong> Javascript, CSS, HTML.
+              <b>Tools:</b> Javascript, CSS, HTML.
               <br />
-              <strong>Site:</strong>
+              <b>Website:</b>
               <a
                 href="https://galiprandi.github.io/memo/"
                 target="_blank"
@@ -165,7 +170,7 @@
                 >galiprandi.github.io/memo</a
               >
               <br />
-              <strong>Code:</strong>
+              <b>Code:</b>
               <a
                 href="https://github.com/galiprandi/memo"
                 target="_blank"
@@ -180,15 +185,15 @@
           <div class="image">
             <img src="./images/project-3.png" alt="css-toolset.css" />
           </div>
-          <div class="description">
-            <h3>css-toolset.css</h3>
+          <div class="info">
+            <h3 class="medium">css-toolset.css</h3>
             <p>
               A small set of CSS tools to generate mobile sites with modern
               styles.
               <br />
-              <strong>Tools:</strong> CSS.
+              <b>Tools:</b> CSS.
               <br />
-              <strong>Site:</strong>
+              <b>Website:</b>
               <a
                 href="https://galiprandi.github.io/css-toolset.css/demo.html
                   "
@@ -197,7 +202,7 @@
                 >galiprandi.github.io/css-toolset.css/demo.html
               </a>
               <br />
-              <strong>Code:</strong>
+              <b>Code:</b>
               <a
                 href="https://github.com/galiprandi/css-toolset.css"
                 target="_blank"
@@ -207,20 +212,20 @@
             </p>
           </div>
         </article>
-        <section class="github">
-          <div class="image">
-            <img src="./images/github_logo.png" alt="Github Profile" />
-          </div>
-          <div class="content">
-            <div class="medium">You can see more projects on my Github</div>
-            <a
-              href="https://github.com/galiprandi"
-              target="_blank"
-              rel="noopener noreferrer"
-              >github.com/galiprandi</a
-            >
-          </div>
-        </section>
+      </section>
+      <section class="github">
+        <div class="image">
+          <img src="./images/github_logo.png" alt="Github Profile" />
+        </div>
+        <div class="content">
+          <div class="medium">You can see more projects on my Github</div>
+          <a
+            href="https://github.com/galiprandi"
+            target="_blank"
+            rel="noopener noreferrer"
+            >github.com/galiprandi</a
+          >
+        </div>
       </section>
     </main>
   </body>

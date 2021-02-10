@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
+/* Utility clases */
 *,
 ::before,
 ::after {
@@ -8,6 +9,10 @@
 
 .hide {
   display: none;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .light {
@@ -31,6 +36,9 @@ a:hover {
   text-decoration: underline;
 }
 
+html {
+}
+
 body {
   background-color: #fff;
   color: #333;
@@ -39,7 +47,6 @@ body {
   font-weight: 400;
   min-height: 100%;
   line-height: 2em;
-  display: grid;
   display: flex;
   margin: auto;
   max-width: 1024px;
@@ -47,26 +54,29 @@ body {
 
 aside {
   width: 34em;
+  min-width: 290px;
   line-height: 3.5em;
   background-color: teal;
   color: #fff;
   font-weight: 300;
-  padding: 2em 1em;
+  padding: 1em;
 }
 
-aside img.profile {
-  width: 85%;
-  clip-path: circle();
+aside h1,
+aside ul {
+  margin: 0;
 }
 
-aside .profile,
-aside .version {
-  text-align: center;
+aside img.picture {
+  max-width: 100%;
 }
 
-aside .content {
-  margin: 3em 1em;
-  text-align: left;
+.versions {
+  line-height: 1.5;
+}
+
+aside .info > div {
+  margin-top: 2em;
 }
 
 aside ul {
@@ -74,43 +84,40 @@ aside ul {
   padding: 0;
 }
 
+main {
+  padding: 0 2em;
+}
+
 main > section {
-  margin: 3em 2em;
+  margin: 2.5em 0 0 0;
 }
 
 main > section > * {
   margin: 0;
 }
 
-main .description > p {
+main .about > p {
   margin-bottom: 1.2em;
 }
 
-main .item {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0 1.2em;
-  margin: 3em 0;
-  line-height: 2em;
+.developments .item {
+  margin: 2.5em 0 0 0;
+  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
 }
 
-main .item > * {
+.developments .item > div {
+  width: 48%;
+}
+
+.developments .item h3,
+.developments .item p {
   margin: 0;
 }
 
-main .item .image {
-  align-self: center;
-}
-
-main .item .image img {
+.developments .item img {
   width: 100%;
-  max-width: 220px;
-  float: left;
-  margin-right: 1em;
-}
-
-main .item .description > * {
-  margin: 0;
 }
 
 main .github {
@@ -130,31 +137,13 @@ main .github img {
   }
 }
 
-@page {
-  size: A4;
-  margin: 0;
-}
-
 @media print {
   .print {
     display: block;
   }
+}
 
-  body {
-    width: 21cm;
-    min-height: 29.7cm;
-    padding: 0;
-    margin: 0 auto;
-    background-color: white;
-  }
-  .page {
-    margin: 0;
-    border: initial;
-    border-radius: initial;
-    width: initial;
-    min-height: initial;
-    box-shadow: initial;
-    background: initial;
-    page-break-after: always;
-  }
+@page {
+  size: A4;
+  margin: 0;
 }
