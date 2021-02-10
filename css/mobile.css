@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    text-align: center;
+  }
+  .developments .item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .developments .item > div {
+    width: auto;
+    text-align: center;
+  }
+
+  aside {
+    width: 100%;
+    /* background-color: cornflowerblue; */
+    background-color: inherit;
+    color: inherit;
+  }
+}
