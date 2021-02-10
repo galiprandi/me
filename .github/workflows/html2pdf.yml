@@ -11,8 +11,6 @@ jobs:
         name: Build resume.pdf
       - run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html resume.pdf
       - name: Commit resume.pdf
-        run: |
-          git config --global user.name 'Germán Aliprandi'
-          git config --global user.email 'galiprandi@gmail.com'
-          git commit -am "Build PDF"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Apply automatic changes
