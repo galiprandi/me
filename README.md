@@ -1,6 +1,6 @@
-## Germán Aliprandi
+## My personal online/pdf resumen
 
-#### Profile versions
+#### Versions:
 
 - [Online](https://galiprandi.github.io/me/)
 
