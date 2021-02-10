@@ -1,0 +1,6 @@
+- name: html to pdf
+  uses: fifsky/html-to-pdf-action@master
+  with:
+    htmlFile: index.html
+    outputFile: resume.pdf
+    pdfOptions: '{"format": "A4", "margin": {"top": "0mm", "left": "0mm", "right": "0mm", "bottom": "0mm"}}'
