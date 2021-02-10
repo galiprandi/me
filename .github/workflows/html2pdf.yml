@@ -1,4 +1,4 @@
-name: Auto Build resume.pdf
+name: Auto Build german_aliprandi.pdf
 
 on: [push, pull_request]
 jobs:
@@ -13,7 +13,7 @@ jobs:
       - run: sudo apt install -y wkhtmltopdf
 
         name: Build resume.pdf
-      - run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html resume.pdf
+      - run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html german_aliprandi.pdf
 
         name: Commit changes
       - uses: stefanzweifel/git-auto-commit-action@v4
