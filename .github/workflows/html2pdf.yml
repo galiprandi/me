@@ -1,8 +1,8 @@
-name: Build Pdf
+name: Auto Build resume.pdf
 
-on: [push]
+on: [push, pull_request]
 jobs:
-  check-bats-version:
+  html-to-pdf:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,11 +11,11 @@ jobs:
 
         name: Install wkhtmltopdf
       - run: sudo apt install -y wkhtmltopdf
-        
+
         name: Build resume.pdf
       - run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html resume.pdf
-        
-        name: Commit resume.pdf
+
+        name: Commit changes
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: New pdf version
