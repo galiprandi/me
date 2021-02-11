@@ -13,10 +13,19 @@
     text-align: center;
   }
 
+  .mobileNav {
+    display: flex;
+  }
+
   aside {
     width: 100%;
-    /* background-color: cornflowerblue; */
-    background-color: inherit;
-    color: inherit;
+  }
+
+  aside img.picture {
+    max-width: 75%;
+  }
+
+  main .github img {
+    margin: 0;
   }
 }

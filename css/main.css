@@ -37,6 +37,10 @@ a:hover {
   text-decoration: underline;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #fff;
   color: #333;
@@ -71,6 +75,22 @@ aside img.picture {
 
 .versions {
   line-height: 1.5;
+}
+
+.mobileNav {
+  position: sticky;
+  top: 0;
+  background-color: teal;
+  color: #fff;
+  padding: 0 1em;
+}
+
+.mobileNav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
 }
 
 aside .info > div {
