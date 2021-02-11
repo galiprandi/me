@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
-/* Utility clases */
+/* Utility classes */
 
 *,
 ::before,
@@ -106,8 +106,17 @@ main {
   padding: 0 2em;
 }
 
-main > section {
-  margin: 2.5em 0 0 0;
+main > section:nth-of-type(1) {
+  margin-top: 1em;
+}
+
+main > section:not(:last-child) {
+  /* margin: 2.5em 0 0 0; */
+  margin-bottom: 2.5em;
+}
+
+main > section:not(:nth-last-child()) {
+  /* margin-bottom: 2em; */
 }
 
 main > section > * {
@@ -118,11 +127,22 @@ main .about > p {
   margin-bottom: 1.2em;
 }
 
+.favorites ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorites ul li:not(:last-child) {
+  padding-right: 1em;
+}
+
 .developments .item {
   margin: 2.5em 0 0 0;
   line-height: 1.5;
   display: flex;
-  justify-content: space-between;
 }
 
 .developments .item > div {
@@ -134,8 +154,15 @@ main .about > p {
   margin: 0;
 }
 
-.developments .item img {
-  width: 100%;
+.developments .image {
+  text-align: center;
+  margin-right: 2em;
+}
+
+.developments .image img {
+  width: auto;
+  max-height: 150px;
+  box-shadow: 3px 3px 5px 0 #666;
 }
 
 main .github {

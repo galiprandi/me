@@ -3,6 +3,12 @@
     flex-direction: column;
     text-align: center;
   }
+
+  .favorites ul {
+    list-style: inherit;
+    display: block;
+  }
+
   .developments .item {
     flex-direction: column;
     align-items: center;
