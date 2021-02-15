@@ -27,7 +27,9 @@ jobs:
 
       # Install wkhtmltopdf
       - name: Install wkhtmltopdf
-        run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
+        run: |
+          sudo apt update -y
+          sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
       # Build PDF file
       - name: Build PDF file
