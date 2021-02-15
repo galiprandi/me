@@ -27,7 +27,7 @@ jobs:
 
       # Install wkhtmltopdf
       - name: Install wkhtmltopdf
-        run: sudo apt install -y wkhtmltopdf
+        run: sudo apt install -y wkhtmltopdf --fix-missing
 
       # Build PDF file
       - name: Build PDF file
