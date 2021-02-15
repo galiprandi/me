@@ -27,9 +27,9 @@ jobs:
 
       # Install wkhtmltopdf
       - name: Install wkhtmltopdf
-        run: sudo apt install -y wkhtmltopdf --fix-missing
+        run: sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
       # Build PDF file
       - name: Build PDF file
-        run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html german_aliprandi_2.pdf
+        run: wkhtmltopdf ./index.html german_aliprandi_2.pdf
         
