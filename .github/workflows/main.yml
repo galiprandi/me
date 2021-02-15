@@ -36,7 +36,7 @@ jobs:
         run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html german_aliprandi_2.pdf
       
       - name: Commit new PDF file
-      - uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: New PDF file generated
           file_pattern: ./*.pdf
