@@ -33,5 +33,5 @@ jobs:
 
       # Build PDF file
       - name: Build PDF file
-        run: wkhtmltopdf ./index.html german_aliprandi_2.pdf
+        run: xvfb-run -- /usr/bin/wkhtmltopdf ./index.html german_aliprandi_2.pdf
         
