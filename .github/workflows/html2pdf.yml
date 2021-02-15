@@ -10,7 +10,7 @@ jobs:
           ref: ${{ github.head_ref }}
           
         name: Updating Ubuntu
-      - run: apt-get update -y
+      - run: sudo apt-get update -y
 
         name: Install wkhtmltopdf
       - run: sudo apt install -y wkhtmltopdf
