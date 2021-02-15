@@ -8,6 +8,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
+          
+        name: Updating Ubuntu
+      - run: apt-get update -y
 
         name: Install wkhtmltopdf
       - run: sudo apt install -y wkhtmltopdf
