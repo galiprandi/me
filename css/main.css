@@ -161,6 +161,10 @@ main .about > p {
   box-shadow: 3px 3px 5px 0 #666;
 }
 
+.developments details summary {
+  cursor: pointer;
+}
+
 main .github {
   display: flex;
   justify-content: center;
