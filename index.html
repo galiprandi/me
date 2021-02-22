@@ -50,7 +50,6 @@
 
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/mobile.css" />
   </head>
   <body>
     <section class="mobileNav hide">
@@ -143,7 +142,6 @@
             <li>Frontend developer</li>
             <li>AWS, Google Cloud</li>
             <li>Passion for learning</li>
-            <li>Team Player</li>
           </ul>
         </div>
       </section>
@@ -157,13 +155,16 @@
       </section>
       <section id="about" class="about">
         <p>
-          I am from Argentina, owner of a small shop of photography equipments, but  now and I am evaluating the possibility of relocating to another country, mainly to Australia.
+          I am from Argentina, owner of a small camera shop, and I am evaluating
+          the possibility of relocating to another country.
         </p>
         <p>
-          Programming has always been my passion and my principal hobby, so I keep up to date with the latest tools and good frontend development practices. I love create code simple and powerful.
+          Programming has always been my passion and my hobby, so I keep up to
+          date with the latest tools and good frontend development practices.
         </p>
         <p>
-          I've been development websites for more than 20 years as a hobby, and now I'm determined to dedicate myself professionally to it, which is what I love make.
+          I've been programming websites since 2000, and now I'm determined to
+          dedicate myself exclusively to developing, which is what I love.
         </p>
       </section>
 
@@ -185,137 +186,170 @@
       <section id="developments" class="developments light">
         <h2 class="light">Personal developments</h2>
         <hr />
-        <article class="item">
-          <div class="image">
-            <img src="./images/project-1.jpg" alt="Gadget website" />
+        <article class="projectCard">
+          <div class="container">
+            <img
+              src="./images/project-1.jpg"
+              alt="Gadget website"
+              title="Gadget website"
+            />
+            <div class="summary">
+              <h3 class="medium">Gadget website</h3>
+              <p>
+                Website and products catalog of Gadget company.
+                <br />
+                <b>Tools:</b> Svelte, Serverless, GCP.
+                <br />
+                <b>Website:</b>
+                <a
+                  href="https://micamara.ga/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >micamara.ga</a
+                >
+                <br />
+                <b>Code:</b>
+                <a
+                  href="https://github.com/galiprandi/micamara.ga"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/galiprandi/micamara.ga</a
+                >
+              </p>
+            </div>
           </div>
-          <div class="info">
-            <h3 class="medium">Gadget website</h3>
-            <p>
-              Website and products catalog of Gadget company.
-              <br />
-              <b>Tools:</b> Svelte, Serverless, GCP.
-              <br />
-              <b>Website:</b>
-              <a
-                href="https://micamara.ga/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >micamara.ga</a
-              >
-              <br />
-              <b>Code:</b>
-              <a
-                href="https://github.com/galiprandi/micamara.ga"
-                target="_blank"
-                rel="noopener noreferrer"
-                >github.com/galiprandi/micamara.ga</a
-              >
+          <details class="moreAbout hide screen">
+            <summary>Read about this...</summary>
+            <p class="light">
+              As a sole developer, my task involved everything from planning to
+              deployment of this simple list of products. Using the CI / CD
+              methodology. Unit tests are still under development. The data is
+              consumed from a JSON API and renderer in the browser using Svelte
+              as a framework. The site is developed under the mobile first
+              concept and adapts to different devices.
             </p>
-          </div>
+          </details>
         </article>
-        <article class="item">
-          <div class="image">
-            <img src="./images/project-2.jpg" alt="Memo Game" />
-          </div>
-          <div class="info">
-            <h3 class="medium">Memo Game</h3>
-            <p>
-              A nice adaptation of the classic game to test your memory.
-              <br />
-              <b>Tools:</b> Javascript, CSS, HTML.
-              <br />
-              <b>Website:</b>
-              <a
-                href="https://galiprandi.github.io/memo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >galiprandi.github.io/memo</a
-              >
-              <br />
-              <b>Code:</b>
-              <a
-                href="https://github.com/galiprandi/memo"
-                target="_blank"
-                rel="noopener noreferrer"
-                >github.com/galiprandi/memo</a
-              >
-            </p>
+
+        <article class="projectCard">
+          <div class="container">
+            <img
+              src="./images/project-2.jpg"
+              alt="Memo Game"
+              title="Memo Game"
+            />
+            <div class="summary">
+              <h3 class="medium">Memo Game</h3>
+              <p>
+                A nice adaptation of the classic game to test your memory.
+                <br />
+                <b>Tools:</b> Javascript, CSS, HTML.
+                <br />
+                <b>Website:</b>
+                <a
+                  href="https://galiprandi.github.io/memo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >galiprandi.github.io/memo</a
+                >
+                <br />
+                <b>Code:</b>
+                <a
+                  href="https://github.com/galiprandi/memo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/galiprandi/memo</a
+                >
+              </p>
+            </div>
           </div>
         </article>
 
-        <article class="item">
-          <div class="image">
-            <img src="./images/project-3.jpg" alt="css-toolset.css" />
-          </div>
-          <div class="info">
-            <h3 class="medium">css-toolset.css</h3>
-            <p>
-              A small set of CSS tools to generate mobile sites with modern
-              styles.
-              <br />
-              <b>Tools:</b> CSS.
-              <br />
-              <b>Website:</b>
-              <a
-                href="https://galiprandi.github.io/css-toolset.css/demo.html
+        <article class="projectCard">
+          <div class="container">
+            <img
+              src="./images/project-3.jpg"
+              alt="css-toolset"
+              title="css-toolset"
+            />
+            <div class="summary">
+              <h3 class="medium">css-toolset.css</h3>
+              <p>
+                A small set of CSS tools to generate mobile sites with modern
+                styles.
+                <br />
+                <b>Tools:</b> CSS.
+                <br />
+                <b>Website:</b>
+                <a
+                  href="https://galiprandi.github.io/css-toolset.css/demo.html
                   "
-                target="_blank"
-                rel="noopener noreferrer"
-                >galiprandi.github.io/css-toolset.css/demo.html
-              </a>
-              <br />
-              <b>Code:</b>
-              <a
-                href="https://github.com/galiprandi/css-toolset.css"
-                target="_blank"
-                rel="noopener noreferrer"
-                >github.com/galiprandi/css-toolset.css</a
-              >
-            </p>
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >galiprandi.github.io/css-toolset.css/demo.html
+                </a>
+                <br />
+                <b>Code:</b>
+                <a
+                  href="https://github.com/galiprandi/css-toolset.css"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/galiprandi/css-toolset.css</a
+                >
+              </p>
+            </div>
           </div>
         </article>
 
         <details class="hide screen">
           <summary><b>More own projects</b></summary>
 
-          <article class="item">
-            <div class="image">
-              <img src="./images/project-4.jpg" alt="mialbum.ga" />
-            </div>
-            <div class="info">
-              <h3 class="medium">mialbum.ga</h3>
-              <p>
-                Online digital photo album service designed exclusively for
-                photographers.
-                <br />
-                <b>Tools:</b> HTML, Javascript, CSS.
-                <br />
-                <b>Website:</b>
-                <a
-                  href="http://mialbum.ga/demo
+          <article class="projectCard">
+            <div class="container">
+              <img
+                src="./images/project-4.jpg"
+                alt="mialbum.ga"
+                title="mialbum.ga"
+              />
+              <div class="summary">
+                <h3 class="medium">mialbum.ga</h3>
+                <p>
+                  Online digital photo album service designed exclusively for
+                  photographers.
+                  <br />
+                  <b>Tools:</b> HTML, Javascript, CSS.
+                  <br />
+                  <b>Website:</b>
+                  <a
+                    href="http://mialbum.ga/demo
                     "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >mialbum.ga/demo
-                </a>
-                <br />
-                <b>Code:</b>
-                <a
-                  href="https://github.com/galiprandi/mialbum"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >github.com/galiprandi/mialbum</a
-                >
-              </p>
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >mialbum.ga/demo
+                  </a>
+                  <br />
+                  <b>Code:</b>
+                  <a
+                    href="https://github.com/galiprandi/mialbum"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/galiprandi/mialbum</a
+                  >
+                </p>
+              </div>
             </div>
           </article>
 
-          <article class="item">
-            <div class="image">
-              <img src="./images/project-5.jpg" alt="JS modules" />
-            </div>
-            <div class="info">
+          <article class="projectCard">
+            <div class="container">
+
+            
+            <img
+              src="./images/project-5.jpg"
+              alt="JS modules"
+              title="JS modules"
+            />
+            <div class="summary">
               <h3 class="medium">JS modules</h3>
               <p>
                 A set of JavaScript modules that provide common utilities.
@@ -331,8 +365,11 @@
                 >
               </p>
             </div>
+            </div>
           </article>
+
         </details>
+      </div>
       </section>
 
       <section class="github">

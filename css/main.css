@@ -108,11 +108,11 @@ main {
 }
 
 main > section:nth-of-type(1) {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 main > section:not(:last-child) {
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
 }
 
 main > section > * {
@@ -120,7 +120,7 @@ main > section > * {
 }
 
 main .about > p {
-  margin-bottom: 1.2em;
+  margin-bottom: 1em;
 }
 
 .favorites ul {
@@ -135,34 +135,29 @@ main .about > p {
   padding-right: 1em;
 }
 
-.developments .item {
-  margin: 2.5em 0 0 0;
-  line-height: 1.5;
+.projectCard {
+  margin-top: 2em;
+}
+
+.projectCard .container {
   display: flex;
+  line-height: 1.5;
 }
 
-.developments .item > div {
-  width: 48%;
+.projectCard img {
+  width: 35%;
+  height: auto;
+  align-self: flex-start;
 }
 
-.developments .item h3,
-.developments .item p {
+.projectCard .summary {
+  width: 65%;
+  align-self: flex-start;
+  padding-left: 2em;
+}
+
+.projectCard .summary > * {
   margin: 0;
-}
-
-.developments .image {
-  text-align: center;
-  margin-right: 2em;
-}
-
-.developments .image img {
-  width: auto;
-  max-height: 150px;
-  box-shadow: 3px 3px 5px 0 #666;
-}
-
-.developments details summary {
-  cursor: pointer;
 }
 
 main .github {
@@ -191,4 +186,50 @@ main .github img {
 @page {
   size: A4;
   margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .favorites ul {
+    list-style: inherit;
+    display: block;
+  }
+
+  .developments .container {
+    display: block;
+  }
+
+  .developments .container img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .developments .container .summary {
+    padding: 0;
+    width: auto;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  aside img.picture {
+    max-width: 75%;
+  }
+
+  main {
+    padding-top: 3em;
+  }
+
+  main .github img {
+    margin: 0;
+  }
 }
