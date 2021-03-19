@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 /* Utility classes */
 
@@ -44,7 +44,7 @@ html {
 body {
   background-color: #fff;
   color: #333;
-  font-family: "Ubuntu", "system-ui";
+  font-family: 'Ubuntu', 'system-ui';
   font-size: 1em;
   font-weight: 400;
   min-height: 100%;
@@ -79,6 +79,7 @@ aside img.picture {
 }
 
 .mobileNav {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: teal;
@@ -158,6 +159,11 @@ main .about > p {
 
 .projectCard .summary > * {
   margin: 0;
+}
+
+.see-more {
+  margin-top: 2em;
+  text-align: center;
 }
 
 main .github {

@@ -8,7 +8,7 @@
     <title>Germán Aliprandi</title>
     <meta
       name="description"
-      content="I've been programming websites since 2000, and now I'm determined to dedicate myself exclusively to developing, which is what I love."
+      content="I am from Argentina, a web developer with more than 10 years of experience in frontend technologies."
     />
 
     <!-- Facebook Meta Tags -->
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Germán Aliprandi" />
     <meta
       property="og:description"
-      content="I've been programming websites since 2000, and now I'm determined to dedicate myself exclusively to developing, which is what I love."
+      content="I am from Argentina, a web developer with more than 10 years of experience in frontend technologies."
     />
     <meta
       property="og:image"
@@ -31,7 +31,7 @@
     <meta name="twitter:title" content="Germán Aliprandi" />
     <meta
       name="twitter:description"
-      content="I've been programming websites since 2000, and now I'm determined to dedicate myself exclusively to developing, which is what I love."
+      content="I am from Argentina, a web developer with more than 10 years of experience in frontend technologies."
     />
     <meta
       name="twitter:image"
@@ -56,6 +56,16 @@
       src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"
     ></script>
     <script>
+      // On Content Loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        // Copy to clipboard on double click
+        const about = document.getElementById('about')
+        about.addEventListener('dblclick', () => {
+          copyToClipboard(about.innerText)
+        })
+      })
+
+      // Google Analytics
       window.dataLayer = window.dataLayer || []
       function gtag() {
         dataLayer.push(arguments)
@@ -63,6 +73,24 @@
       gtag('js', new Date())
 
       gtag('config', 'G-CZ03PKC275')
+
+      /**
+       * * Copy text to clipboard
+       * * Usage: copyToClipboard("Text to Copy");
+       */
+      const copyToClipboard = textToCopy => {
+        try {
+          let el = document.createElement('textarea')
+          el.value = textToCopy
+          document.body.appendChild(el)
+          el.select()
+          document.execCommand('copy')
+          document.body.removeChild(el)
+          console.info(`Text copied: ${textToCopy}`)
+        } catch (error) {
+          console.error(error)
+        }
+      }
     </script>
   </head>
   <body>
@@ -165,23 +193,28 @@
     <main>
       <section class="name">
         <h1 class="medium">Germán Aliprandi</h1>
-        <h4 class="light">
-          Frontend developer | Electronic technician | Linux fan
-        </h4>
+        <h4 class="light">Frontend developer & Linux fan</h4>
       </section>
 
       <section id="about" class="about">
         <p>
-          I am from Argentina, owner of a small camera shop, and I am evaluating
-          the possibility of relocating to another country.
+          I am from Argentina, a web developer with more than 10 years of
+          experience in frontend technologies, and I have solid knowledge of
+          Javascript and CSS as of the main libraries.
+        </p>
+
+        <p>
+          We are currently considering moving to Australia with my wife and two
+          children, and we are determined to work hard to achieve it.
+        </p>
+
+        <p>
+          I like to keep up to date with the latest technologies and apply
+          development practices.
         </p>
         <p>
-          Programming has always been my passion and my hobby, so I keep up to
-          date with the latest tools and good frontend development practices.
-        </p>
-        <p>
-          I've been programming websites since 2000, and now I'm determined to
-          dedicate myself exclusively to developing, which is what I love.
+          And I would like to find a project and team in which I can apply
+          everything I have learned.
         </p>
       </section>
 
@@ -317,7 +350,7 @@
 
         <!-- More own projects -->
         <details class="hide screen">
-          <summary><b>More own projects</b></summary>
+          <summary class="see-more"><b>See more about my work...</b></summary>
 
           <!-- mialbum.ga -->
           <article class="projectCard">
@@ -350,6 +383,36 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     >github.com/galiprandi/mialbum</a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movies App -->
+          <article class="projectCard">
+            <div class="container">
+              <img
+                src="./images/project-movie-app.jpg"
+                alt="Movies App"
+                title="Movies App"
+              />
+              <div class="summary">
+                <h3 class="medium">Movies App</h3>
+                <p>
+                  Movies App if is a little app with unique the object of
+                  analyze the difference between of type of bundles, your sizes
+                  and time compilation of each them, in most popular JS
+                  Frameworks.
+                  <br />
+                  <b>Tools:</b> React, Vue, Svelte and Vanilla JS.
+                  <br />
+                  <b>Github:</b>
+                  <a
+                    href="https://github.com/galiprandi/movies"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github.com/galiprandi/movies</a
                   >
                 </p>
               </div>
