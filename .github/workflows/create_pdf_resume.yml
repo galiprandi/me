@@ -29,5 +29,5 @@ jobs:
       - name: Commit new PDF to repo
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Auto generated PDF file.
+          commit_message: Auto generated file by GitHub Action.
           file_pattern: ./*.pdf
