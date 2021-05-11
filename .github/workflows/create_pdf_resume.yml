@@ -17,6 +17,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Install wkhtmltopdf
         run: |
@@ -31,8 +33,6 @@ jobs:
         run:
           xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html german_aliprandi.pdf
 
-      - name: Commit new PDF to repo
-        uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Auto generated file by GitHub Action.
-          # file_pattern: ./*.pdf es/*.pdf
+          commit_message: Auto generated file by GitHub Actio.
