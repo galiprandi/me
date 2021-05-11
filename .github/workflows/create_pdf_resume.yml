@@ -23,11 +23,13 @@ jobs:
           sudo apt update -y
           sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
-      - name: Covert html to PDF files
+      - name: Covert Spanish version
         run: 
           xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/index.html ./es/german_aliprandi.pdf
-          # xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html german_aliprandi.pdf
           
+      - name: Convert English version
+        run:
+          xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html german_aliprandi.pdf
 
       - name: Commit new PDF to repo
         uses: stefanzweifel/git-auto-commit-action@v4
