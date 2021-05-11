@@ -25,8 +25,8 @@ jobs:
 
       - name: Covert html to PDF file
         run: |
-          xvfb-run -- /usr/bin/wkhtmltopdf ./index.html german_aliprandi.pdf
-          xvfb-run -- /usr/bin/wkhtmltopdf ./es/index.html ./es/german_aliprandi.pdf
+          xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html german_aliprandi.pdf
+          xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/index.html ./es/german_aliprandi.pdf
 
       - name: Commit new PDF to repo
         uses: stefanzweifel/git-auto-commit-action@v4
