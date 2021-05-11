@@ -35,4 +35,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Auto generated file by GitHub Action.
-          file_pattern: ./*.pdf es/*.pdf
+          # file_pattern: ./*.pdf es/*.pdf
