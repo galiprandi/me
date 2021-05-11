@@ -25,14 +25,18 @@ jobs:
           sudo apt update -y
           sudo apt-get install xvfb libfontconfig wkhtmltopdf
 
-      - name: Covert Spanish version
-        run: 
-          xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/index.html ./es/german_aliprandi.pdf
-          
-      - name: Convert English version
-        run:
-          xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html german_aliprandi.pdf
+      - name: Resume Spanish version
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/index.html ./es/german_aliprandi.pdf
+
+      - name: History Spanish version
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/history.html ./es/history.pdf
+
+      - name: Resume English version
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html ./german_aliprandi.pdf
+
+      - name: History English version
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./history.html ./history.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Auto generated file by GitHub Actio.
+          commit_message: Auto generated file by GitHub Action.

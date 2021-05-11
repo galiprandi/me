@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Germán Aliprandi</title>
+  <meta name="description"
+    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+  <meta name="author" content="Germán Aliprandi" />
+  <link rel="shortcut icon" href="./images/profile_circle.png" type="image/x-icon" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Germán Aliprandi" />
+  <meta property="og:description"
+    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+  <meta property="og:url" content="https://galiprandi.github.io/me/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://galiprandi.github.io/me/" />
+  <meta name="twitter:title" content="Germán Aliprandi" />
+  <meta name="twitter:description"
+    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+  <meta name="twitter:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
+
+  <link rel="manifest" href="manifest.webmanifest" />
+
+  <link rel="shortcut icon" href="./images/profile_circle.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"></script>
+  <script>
+    // On Content Loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Copy to clipboard on double click
+      const about = document.getElementById('about')
+      about.addEventListener('dblclick', () => {
+        copyToClipboard(about.innerText)
+      })
+    })
+
+    // Google Analytics
+    window.dataLayer = window.dataLayer || []
+    function gtag() {
+      dataLayer.push(arguments)
+    }
+    gtag('js', new Date())
+
+    gtag('config', 'G-CZ03PKC275')
+
+    /**
+     * * Copy text to clipboard
+     * * Usage: copyToClipboard("Text to Copy");
+     */
+    const copyToClipboard = textToCopy => {
+      try {
+        let el = document.createElement('textarea')
+        el.value = textToCopy
+        document.body.appendChild(el)
+        el.select()
+        document.execCommand('copy')
+        document.body.removeChild(el)
+        console.info(`Text copied: ${textToCopy}`)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <section class="mobileNav hide">
+    <ul>
+      <a href="#info">Contact Info</a>
+      <li>
+        <a href="#skills">Skills</a>
+      </li>
+      <li>
+        <a href="#about">About me</a>
+      </li>
+      <li>
+        <a href="#developments">Devs</a>
+      </li>
+    </ul>
+  </section>
+  <aside>
+    <section class="pricture text-center">
+      <img src="./images/profile_circle.png" class="picture" alt="Germán Aliprandi" />
+    </section>
+
+    <section class="versions light text-center">
+      <a href="https://galiprandi.github.io/me/history.pdf" class="hide screen">
+        Download PDF version
+      </a>
+      <a href="https://galiprandi.github.io/me/history.html" class="hide print">
+        <small><b>Download the updated version at:</b>
+          <br />
+          galiprandi.github.io/me/
+        </small>
+      </a>
+    </section>
+
+    <section id="info" class="info">
+      <div class="contact">
+        <h2 class="medium">Contact info</h2>
+
+        <ul>
+          <li>
+            <b> Phone: </b><a href="tel:+5493815900868">+549 381 5900868</a>
+          </li>
+          <li>
+            <b>Email: </b><a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
+          </li>
+          <li>
+            <b>Linkedin: </b><a href="http://linkedin.com/in/galiprandi" target="_blank"
+              rel="noopener noreferrer">linkedin.com/in/galiprandi</a>
+          </li>
+          <li>
+            <b>Github: </b>
+            <a href="https://github.com/galiprandi" target="_blank" rel="noopener noreferrer">github.com/galiprandi</a>
+          </li>
+          <li>
+            <b>Telegram: </b>
+            <a href="http://https://t.me/galiprandi" target="_blank" rel="noopener noreferrer">t.me/galiprandi</a>
+          </li>
+        </ul>
+      </div>
+      <div id="skills" class="skills">
+        <h2 class="medium">Skills</h2>
+        <ul>
+          <li>Pragmatic</li>
+          <li>English and Spanish</li>
+          <li>Linux and Open Source</li>
+          <li>Electronic Technician</li>
+          <li>Frontend developer</li>
+          <li>AWS, Google Cloud</li>
+          <li>Passion for learning</li>
+          <li>Scrum & Teamwork</li>
+        </ul>
+      </div>
+    </section>
+  </aside>
+  <main>
+    <section class="name">
+      <h1 class="medium">Germán Aliprandi</h1>
+      <h4 class="light">Frontend Developer</h4>
+    </section>
+
+    <section id="about" class="about">
+      <p>
+        I'm from Argentina, I'm web developer with more than 10 years of
+        experience in frontend technologies and with solid knowledge's of
+        Javascript, CSS and some of the modern libraries like React, Svelte
+        and Vue.
+      </p>
+      <p>
+        I like to keep me up to date with the latest technologies and apply
+        the modern and the best development practices.
+      </p>
+      <p>
+        I'm currently in search of a challenging project in witch I can apply
+        what I have learned and learn new things.
+      </p>
+    </section>
+
+    <section id="favorites" class="favorites">
+      <h2 class="light">Employment history</h2>
+      <hr />
+
+      <br />
+      <h4>Gadget Tucumán | 2010 ~ Present | Tucumán, Argentina</h4>
+      <b>Frontend Developer</b>
+      <p>
+        Gadget tucumán is a small company dedicated to the sale of photographic equipment for professionals, which has
+        become a leader in the northern area of Argentina.
+        <br>
+        Here I develop their main website and various company web tools and systems.
+      </p>
+
+      <br />
+      <h4>Remote Mentor | 2020 ~ Present | Remote</h4>
+      <b>Freelance</b>
+      <p>
+        I have always loved teaching, I was a computer science teacher in a high school in 2000/02, since then I have
+        never stopped teaching.
+        <br>
+        As a complement to the "Advanced Javascript Course" that I give in person, I decided to start with Retome
+        Mentoring and Pair Programing remotely with clients in Argentina, Mexico, Spain, Australia and Austria.
+      </p>
+
+      <br />
+      <h4>Luis Brunelli y Cía | 2005 ~ 2009 | Rafaela, Argentina</h4>
+      <b>Area Sales Manager</b>
+      <p>
+        Luis Brunelli is an import company of spare parts for vehicles and computers, with clients throughout Argentina,
+        and with more than 30 employees.
+        <br>
+        There I worked as sales manager for the IT area and also developed an internal reporting tool.
+      </p>
+
+      <br />
+      <h4>Gayol Computación | 1997 ~ 2005 | Rafaela, Argentina</h4>
+      <b>Technical Leader</b>
+      <p>
+        I started working while studying electronics and did most of the company's activities. At the end I worked as a
+        technical leader coordinating the work of 20 people.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>
