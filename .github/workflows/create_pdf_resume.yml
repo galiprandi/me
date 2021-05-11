@@ -29,13 +29,13 @@ jobs:
         run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/index.html ./es/german_aliprandi.pdf
 
       - name: History Spanish version
-        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/history.html ./es/history.pdf
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./es/history.html ./es/german_aliprandi_empleos.pdf
 
       - name: Resume English version
         run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html ./german_aliprandi.pdf
 
       - name: History English version
-        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./history.html ./history.pdf
+        run: xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./history.html ./german_aliprandi_employment.pdf
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
