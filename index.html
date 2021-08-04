@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Germán Aliprandi</title>
   <meta name="description"
-    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
   <meta name="author" content="Germán Aliprandi" />
   <link rel="shortcut icon" href="./images/profile_circle.png" type="image/x-icon" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="Germán Aliprandi" />
   <meta property="og:description"
-    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
   <meta property="og:url" content="https://galiprandi.github.io/me/" />
   <meta property="og:type" content="profile" />
   <meta property="og:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
@@ -23,7 +23,7 @@
   <meta name="twitter:url" content="https://galiprandi.github.io/me/" />
   <meta name="twitter:title" content="Germán Aliprandi" />
   <meta name="twitter:description"
-    content=" I am from Argentina, a web developer with more than 10 years of experience in frontend technologies, and I have solid knowledge's of Javascript, CSS and a lot of libraries.  I like to keep up to date with the latest technologies and apply best development practices.  That is why I am looking for a project and a team in which I can apply everything I have learned. " />
+    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
   <meta name="twitter:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
 
   <link rel="manifest" href="manifest.webmanifest" />
@@ -34,6 +34,8 @@
   <link rel="stylesheet" href="./css/main.css" />
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"></script>
+  <script src="js/main.js" defer></script>
+
   <script>
     // On Content Loaded
     document.addEventListener('DOMContentLoaded', () => {
@@ -74,285 +76,167 @@
 </head>
 
 <body>
-  <section class="mobileNav hide">
+  <section class="mobile-menu hide">
     <ul>
-      <a href="#info">Contact Info</a>
       <li>
-        <a href="#skills">Skills</a>
+        <a href="#top" data-tr="mobile-menu|0">Me</a>
       </li>
       <li>
-        <a href="#about">About me</a>
+        <a href="#developments" data-tr="mobile-menu|1">Devs</a>
       </li>
       <li>
-        <a href="#developments">Devs</a>
+        <a href="#employment" data-tr="mobile-menu|2">Employment</a>
       </li>
     </ul>
   </section>
-  <aside>
-    <section class="pricture text-center">
-      <img src="./images/profile_circle.png" class="picture" alt="Germán Aliprandi" />
-    </section>
+  <div class="container">
 
-    <section class="versions light text-center">
-      <a href="https://galiprandi.github.io/me/german_aliprandi.pdf" class="hide screen"> Download PDF version </a>
-      <a href="https://galiprandi.github.io/me/" class="hide print">
-        <small><b>Download the updated version at:</b>
-          <br />
-          galiprandi.github.io/me/
-        </small>
-      </a>
-    </section>
+    <aside class="aside-menu">
+      <section class="profile">
+        <img src="./images/profile_circle.png" alt="Germán Aliprandi" />
+      </section>
 
-    <section id="info" class="info">
-      <div class="contact">
-        <h2 class="medium">Contact info</h2>
+      <section class="versions">
+        <button onclick="toggleLanguage()" data-tr="miscellany|9" class="outlined">Spanish version</button>
 
+        <a data-tr="miscellany|0" href="https://galiprandi.github.io/me/german_aliprandi.pdf" class="hide screen">
+          Download PDF </a>
+        <a data-tr="miscellany|1" href="https://galiprandi.github.io/me/" class="hide print">
+          View Online
+        </a>
+
+      </section>
+
+      <section id="info" class="info">
+        <div id="contact" class="contact">
+          <h3 data-tr="miscellany|6">Contact info</h3>
+          <ul>
+            <li>
+              <b data-tr="miscellany|3">Phone: </b>
+              <a href="tel:+5493815900868">+549 381 5900868</a>
+            </li>
+            <li>
+              <b>Email: </b>
+              <a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
+            </li>
+            <li>
+              <b>Linkedin: </b>
+              <a href="http://linkedin.com/in/galiprandi" target="_blank"
+                rel="noopener noreferrer">linkedin.com/in/galiprandi</a>
+            </li>
+            <li>
+              <b>Github: </b>
+              <a href="https://github.com/galiprandi" target="_blank"
+                rel="noopener noreferrer">github.com/galiprandi</a>
+            </li>
+            <li>
+              <b>Telegram: </b>
+              <a href="http://https://t.me/galiprandi" target="_blank" rel="noopener noreferrer">t.me/galiprandi</a>
+            </li>
+          </ul>
+        </div>
+
+        <div id="skills" class="skills">
+          <h3 data-tr="skills|0">Skills</h3>
+          <ul>
+            <li data-tr="skills|1">Pragmatic</li>
+            <li data-tr="skills|2">English and Spanish</li>
+            <li data-tr="skills|3">Linux and Open Source</li>
+            <li data-tr="skills|4">Electronic Technician</li>
+            <li data-tr="skills|5">Frontend developer</li>
+            <li data-tr="skills|6">AWS, Google Cloud</li>
+            <li data-tr="skills|7">Passion for learning</li>
+            <li data-tr="skills|8">Scrum & Teamwork</li>
+          </ul>
+        </div>
+      </section>
+    </aside>
+
+    <main>
+      <section id="about" class="about">
+        <h1 class="name">Germán Aliprandi</h1>
+        <h4 class="title" data-tr="about|0">Frontend Developer</h4>
+        <p data-tr="about|1">
+          I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies
+          and frameworks.
+        </p>
+        <p data-tr="about|2">
+          I am always ready to accept new challenges that keep me excited and constantly growing.
+        </p>
+      </section>
+
+      <section id="favorites" class="favorites">
+        <h3 data-tr="favorites|0">My favorite technologies</h3>
         <ul>
-          <li><b> Phone: </b><a href="tel:+5493815900868">+549 381 5900868</a></li>
-          <li><b>Email: </b><a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a></li>
-          <li>
-            <b>Linkedin: </b><a href="http://linkedin.com/in/galiprandi" target="_blank"
-              rel="noopener noreferrer">linkedin.com/in/galiprandi</a>
-          </li>
-          <li>
-            <b>Github: </b>
-            <a href="https://github.com/galiprandi" target="_blank" rel="noopener noreferrer">github.com/galiprandi</a>
-          </li>
-          <li>
-            <b>Telegram: </b>
-            <a href="http://https://t.me/galiprandi" target="_blank" rel="noopener noreferrer">t.me/galiprandi</a>
-          </li>
+          <li data-tr="favorites|1">Linux systems</li>
+          <li data-tr="favorites|2">Javascript Clean Code</li>
+          <li data-tr="favorites|3">Serverless, AWS & GCP</li>
+          <li data-tr="favorites|4">Svelte & React</li>
+          <li data-tr="favorites|5">Bash scripting</li>
+          <li data-tr="favorites|6">PWA & Service Worker</li>
+          <li data-tr="favorites|7">MERN Stack</li>
+          <li data-tr="favorites|8">Modern CSS code</li>
         </ul>
+      </section>
+
+      <section id="developments" class="developments">
+        <h3 data-tr="miscellany|7">Personal developments</h3>
+        <!-- Projects -->
+        <div id="developments-container"></div>
+        <h4>
+
+          <a data-tr="miscellany|4" class="github" href="https://github.com/galiprandi" target="_blank"
+            rel="noopener noreferrer">
+            And more project on my Github
+          </a>
+        </h4>
+      </section>
+
+      <div class="page-break"></div>
+
+      <section id="about-page-2" class="about hide print">
+        <h1 class="name">Germán Aliprandi</h1>
+        <h4 class="title" data-tr="about|0">Frontend Developer</h4>
+      </section>
+
+      <section id="employment" class="employment">
+        <h3 data-tr="miscellany|5">Employment history</h3>
+        <!-- employment history -->
+        <div id="employment-container"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Devs card template -->
+  <template id="dev-card">
+    <article class="dev-card">
+      <div class="container">
+        <img class="dev-card-img" src="img" alt="title" title="title">
+        <section class="summary">
+          <h4 class="dev-card-title"></h4>
+          <p class="dev-card-desc">desc</p>
+          <p><b>Tools:</b> <span class="dev-card-tools"></span></p>
+          <p><b>Website: </b><a class="dev-card-web" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+          <p><b>Code: </b><a class="dev-card-code" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+        </section>
       </div>
-      <div id="skills" class="skills">
-        <h2 class="medium">Skills</h2>
-        <ul>
-          <li>Pragmatic</li>
-          <li>English and Spanish</li>
-          <li>Linux and Open Source</li>
-          <li>Electronic Technician</li>
-          <li>Frontend developer</li>
-          <li>AWS, Google Cloud</li>
-          <li>Passion for learning</li>
-          <li>Scrum & Teamwork</li>
-        </ul>
-      </div>
-    </section>
-  </aside>
-  <main>
-    <section class="name">
-      <h1 class="medium">Germán Aliprandi</h1>
-      <h4 class="light">Frontend Developer</h4>
-    </section>
-
-    <section id="about" class="about">
-      <p>
-        I'm from Argentina, I'm web developer with more than 10 years of experience in frontend technologies and with
-        solid knowledge's of Javascript, CSS and some of the modern libraries like React, Svelte and Vue.
-      </p>
-      <p>I like to keep me up to date with the latest technologies and apply the modern and the best development
-        practices.</p>
-      <p>I'm currently in search of a challenging project in witch I can apply what I have learned and learn new things.
-      </p>
-    </section>
-
-    <section id="favorites" class="favorites">
-      <h2 class="light">My favorite technologies</h2>
-      <hr />
-      <ul>
-        <li>Linux systems</li>
-        <li>Javascript Clean Code</li>
-        <li>Serverless, AWS & GCP</li>
-        <li>Svelte & React</li>
-        <li>Bash scripting</li>
-        <li>PWA & Service Worker</li>
-        <li>MERN Stack</li>
-        <li>Modern CSS code</li>
-      </ul>
-    </section>
-
-    <section id="developments" class="developments light">
-      <h2 class="light">Personal developments</h2>
-      <hr />
-
-      <!-- Gadget website -->
-      <article class="projectCard">
-        <div class="container">
-          <img src="./images/project-1.jpg" alt="Gadget website" title="Gadget website" />
-          <div class="summary">
-            <h3 class="medium">Gadget website</h3>
-            <p>
-              Website and products catalog of Gadget company.
-              <br />
-              <b>Tools:</b> React, Typescript, CI/CD, Sass.
-              <br />
-              <b>Website:</b>
-              <a href="https://micamara.ga/" target="_blank" rel="noopener noreferrer">micamara.ga</a>
-              <br />
-              <b>Code:</b>
-              <a href="https://github.com/galiprandi/micamara.ga" target="_blank"
-                rel="noopener noreferrer">github.com/galiprandi/micamara.ga</a>
-            </p>
-          </div>
-        </div>
-        <details class="moreAbout hide screen">
-          <summary>Read about this...</summary>
-          <p class="light">
-            As the sole full-time developer, my task ranged from planning to product catalog implementation. Using CI /
-            CD methodology, unit tests, REST API consumption using Svelte as framework. The site was developed under the
-            mobile-first concept and adapts to different devices and screens.
-          </p>
-        </details>
-      </article>
-
-      <!-- eventManager -->
-      <article class="projectCard">
-        <div class="container">
-          <img src="./images/project-6.jpg" alt="JS modules" title="JS modules" />
-          <div class="summary">
-            <h3 class="medium">eventManager</h3>
-            <p>
-              eventManager is a small library (less than 1kb) that help to catch and manage DOM event easily.
-              <br />
-              <b>Tools:</b> Javascript.
-              <br />
-              <b>Github:</b>
-              <a href="https://github.com/galiprandi/eventManager" target="_blank"
-                rel="noopener noreferrer">github.com/galiprandi/eventManager</a>
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- css-toolset -->
-      <article class="projectCard">
-        <div class="container">
-          <img src="https://github.com/galiprandi/css-toolset/raw/main/images/code_screen.png" alt="css-toolset"
-            title="css-toolset" />
-          <div class="summary">
-            <h3 class="medium">css-toolset</h3>
-            <p>
-              A small but powerful set of CSS tools to generate mobile sites with modern styles.
-              <br />
-              <b>Tools:</b> CSS.
-              <br />
-              <b>Website:</b>
-              <a href="https://galiprandi.github.io/css-toolset/
-                  " target="_blank" rel="noopener noreferrer">galiprandi.github.io/css-toolset/
-              </a>
-              <br />
-              <b>Code:</b>
-              <a href="https://github.com/galiprandi/css-toolset" target="_blank"
-                rel="noopener noreferrer">github.com/galiprandi/css-toolset</a>
-            </p>
-          </div>
-        </div>
-      </article>
-
-      <!-- More own projects -->
-      <details class="hide screen">
-        <summary class="see-more"><b>See more about my work...</b></summary>
-
-        <!-- mialbum.ga -->
-        <article class="projectCard">
-          <div class="container">
-            <img src="./images/project-4.jpg" alt="mialbum.ga" title="mialbum.ga" />
-            <div class="summary">
-              <h3 class="medium">mialbum.ga</h3>
-              <p>
-                Online digital photo album service designed exclusively for photographers.
-                <br />
-                <b>Tools:</b> HTML, Javascript, CSS.
-                <br />
-                <b>Website:</b>
-                <a href="http://mialbum.ga/demo
-                    " target="_blank" rel="noopener noreferrer">mialbum.ga/demo
-                </a>
-                <br />
-                <b>Code:</b>
-                <a href="https://github.com/galiprandi/mialbum" target="_blank"
-                  rel="noopener noreferrer">github.com/galiprandi/mialbum</a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Movies App -->
-        <article class="projectCard">
-          <div class="container">
-            <img src="./images/project-movie-app.jpg" alt="Movies App" title="Movies App" />
-            <div class="summary">
-              <h3 class="medium">Movies App</h3>
-              <p>
-                Movies App if is a little app with unique the object of analyze the difference between of type of
-                bundles, your sizes and time compilation of each them, in most popular JS Frameworks.
-                <br />
-                <b>Tools:</b> React, Vue, Svelte and Vanilla JS.
-                <br />
-                <b>Github:</b>
-                <a href="https://github.com/galiprandi/movies" target="_blank"
-                  rel="noopener noreferrer">github.com/galiprandi/movies</a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- js-modules -->
-        <article class="projectCard">
-          <div class="container">
-            <img src="./images/project-5.jpg" alt="JS modules" title="JS modules" />
-            <div class="summary">
-              <h3 class="medium">js-modules</h3>
-              <p>
-                My set of JS modules.
-                <br />
-                <b>Tools:</b> Javascript.
-                <br />
-                <b>Github:</b>
-                <a href="https://github.com/galiprandi/js-modules" target="_blank"
-                  rel="noopener noreferrer">github.com/galiprandi/js-modules</a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Memo Game -->
-        <article class="projectCard">
-          <div class="container">
-            <img src="./images/project-2.jpg" alt="Memo Game" title="Memo Game" />
-            <div class="summary">
-              <h3 class="medium">Memo Game</h3>
-              <p>
-                A nice adaptation of the classic game to test your memory.
-                <br />
-                <b>Tools:</b> Javascript, CSS, HTML.
-                <br />
-                <b>Website:</b>
-                <a href="https://galiprandi.github.io/memo/" target="_blank"
-                  rel="noopener noreferrer">galiprandi.github.io/memo</a>
-                <br />
-                <b>Code:</b>
-                <a href="https://github.com/galiprandi/memo" target="_blank"
-                  rel="noopener noreferrer">github.com/galiprandi/memo</a>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <!-- / More own projects -->
+      <details class="more-about hide screen">
+        <summary class="dev-card-see-more" data-tr="miscellany|8"></summary>
+        <p class="dev-card-about"></p>
       </details>
-    </section>
+    </article>
+  </template>
 
-    <section class="github">
-      <div class="image">
-        <img src="./images/github_logo.png" alt="Github Profile" />
-      </div>
-      <div class="content">
-        <div class="medium">You can see more projects on my Github</div>
-        <a href="https://github.com/galiprandi" target="_blank" rel="noopener noreferrer">github.com/galiprandi</a>
-      </div>
-    </section>
-  </main>
+  <!-- Employment history template -->
+  <template id="emp-card">
+    <article class="emp-card">
+      <h3 class='emp-card-head'></h3>
+      <p class="emp-card-title"></p>
+      <p class="emp-card-desc"></p>
+      <a class="emp-card-web" href="" target="_blank" rel="noopener noreferrer"></a>
+    </article>
+  </template>
+
 </body>
 
 </html>

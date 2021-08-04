@@ -1,0 +1,334 @@
+{
+    "about": {
+        "en": [
+            "Frontend Developer",
+            "I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks.",
+            "I am always ready to accept new challenges that keep me excited and constantly growing."
+        ],
+        "es": [
+            "Desarrollador Frontend",
+            "Soy un desarrollador frontend con más de 10 años de experiencia y conocimiento en las tecnologías y frameworks más actuales.",
+            "Siempre estoy dispuesto a aceptar nuevos desafíos que me mantienen emocionado y en constante crecimiento."
+        ]
+    },
+    "skills": {
+        "en": [
+            "Skills",
+            "Pragmatic",
+            "English and Spanish",
+            "Electronics knowledge",
+            "Cloud and Serverless",
+            "Scrum & Teamwork",
+            "Passion for learning"
+        ],
+        "es": [
+            "Habilidades",
+            "Pragmático",
+            "Español e Inglés",
+            "Conocimientos en electrónica",
+            "Tecnologías en la nube",
+            "Scrum y trabajo en equipo",
+            "Pasión por aprender"
+        ]
+    },
+    "favorites": {
+        "en": [
+            "My favorite technologies",
+            "Linux systems",
+            "Javascript Clean Code",
+            "Serverless, AWS & GCP",
+            "React, Vue & Svelte",
+            "PWA and socket",
+            "MERN Stack",
+            "CSS Advanced"
+        ],
+        "es": [
+            "Mis tecnologías favoritas",
+            "Sistemas Linux",
+            "Javascript Avanzado",
+            "Serverless, AWS & GCP",
+            "React, Vue y Svelte",
+            "PWA y socket",
+            "Stack MERN",
+            "CSS Avanzado"
+        ]
+    },
+    "employment": {
+        "en": [
+            {
+                "company": "Egg Education",
+                "period": "2021, Present",
+                "location": "Remote",
+                "title": "Frontend Developer",
+                "desc": "Egg education is an organization that seeks to connect people through cooperation with a technology that transforms groups into real teams.<br>Here I am part of the frontend development team with the challenge of producing an agile application capable of scaling and serving 500,000 users.",
+                "web": "https://eggeducacion.com"
+            },
+            {
+                "company": "Remote Mentor",
+                "period": "2020, Present",
+                "location": "Remote",
+                "title": "Frontend Developer",
+                "desc": "I have always loved teaching, I was a high school computer science teacher in 2000, and since then I have never stopped teaching. As a complement to the 'Advanced Javascript Course' that I give in person, I have started with 'Retome Mentoring' and 'Pair Programing' to clients in Argentina, Mexico, Spain, Australia and Austria.",
+                "web": null
+            },
+            {
+                "company": "Gadget Tucumán",
+                "period": "2010, 11 years",
+                "location": "Tucumán, Argentina",
+                "title": "Frontend Developer",
+                "desc": "Gadget Tucumán is a small company dedicated to the sale of photographic equipment for professionals, which has become a leader in the northern area of Argentina. There I will develop their main website and various company web tools and systems.",
+                "web": "https://micamara.ga"
+            },
+            {
+                "company": "Luis Brunelli y Cía",
+                "period": "2005, 4 years",
+                "location": "Rafaela, Argentina",
+                "title": "Area Sales Manager",
+                "desc": "Luis Brunelli is an import company of spare parts for vehicles and computers, with clients throughout Argentina, and with more than 30 employees. There I worked as sales manager for the IT area and also developed some internal reporting tools.",
+                "web": "https://www.brunelli.com.ar"
+            },
+            {
+                "company": "Gayol Computación",
+                "period": "2005, 7 years",
+                "location": "Rafaela, Argentina",
+                "title": "Technical Leader",
+                "desc": "I started working while studying electronics in high school, and did most of the company's activities. At the end I worked as a technical leader coordinating the work of 20 people.",
+                "web": null
+            }
+        ],
+        "es": [
+            {
+                "company": "Egg Educación",
+                "period": "2021, Present",
+                "location": "Remote",
+                "title": "Desarrollador Frontend",
+                "desc": "Egg education es una organización que busca conectar a las personas a través de la cooperación con una tecnología que transforma grupos en equipos reales. <br> Aquí formo parte del equipo de desarrollo de frontend con el desafío de producir una aplicación ágil capaz de escalar y atender a 500.000 usuarios.",
+                "web": "https://eggeducacion.com"
+            },
+            {
+                "company": "Remote Mentor",
+                "period": "2020, Present",
+                "location": "Remote",
+                "title": "Frontend Developer",
+                "desc": "Siempre me ha gustado enseñar, fui profesor de informática de instituto en el año 2000, y desde entonces nunca he dejado de enseñar. Como complemento al 'Curso Avanzado de Javascript' que doy de forma presencial, he comenzar con 'Retome Mentoring' y 'Pair Programing' a clientes en Argentina, México, España, Australia y Austria.",
+                "web": null
+            },
+            {
+                "company": "Gadget Tucumán",
+                "period": "2010, 11 años",
+                "location": "Tucumán, Argentina",
+                "title": "Desarrollador Frontend",
+                "desc": "Gadget Tucumán es una pequeña empresa dedicada a la venta de equipos fotográficos para profesionales, que se ha convertido en líder en la zona norte de Argentina. Allí desarrollaré su sitio web principal y diversas herramientas y sistemas web de la empresa.",
+                "web": "https://micamara.ga"
+            },
+            {
+                "company": "Luis Brunelli y Cía",
+                "period": "2005, 4 años",
+                "location": "Rafaela, Argentina",
+                "title": "Gerente de ventas del área TI",
+                "desc": "Luis Brunelli es una empresa importadora de repuestos para vehículos y computadoras, con clientes en toda Argentina, y con más de 30 empleados. Allí trabajé como gerente de ventas para el área de TI y también desarrollé algunas herramientas de informes internos.",
+                "web": "https://www.brunelli.com.ar"
+            },
+            {
+                "company": "Gayol Computación",
+                "period": "2005, 7 años",
+                "location": "Rafaela, Argentina",
+                "title": "Jefe de personal",
+                "desc": "Comencé a trabajar mientras estudiaba electrónica en la escuela secundaria y realicé la mayoría de las actividades de la empresa. Al final trabajé como líder técnico coordinando el trabajo de 20 personas.",
+                "web": null
+            }
+        ]
+    },
+    "miscellany": {
+        "en": [
+            "Download PDF",
+            "View Online",
+            "Skills",
+            "Phone:",
+            "And more project on my Github",
+            "Employment history",
+            "Contact info",
+            "Personal developments",
+            "Read about...",
+            "Spanish version",
+            "Other projects...",
+            "Other jobs..."
+        ],
+        "es": [
+            "Descargar PDF",
+            "Ver Online",
+            "Habilidades",
+            "Teléfono: ",
+            "Y más proyectos en mi Github",
+            "Historial de empleo",
+            "Contacto",
+            "Desarrollos Personales",
+            "Más detalles...",
+            "Versión en Inglés",
+            "Otros proyectos...",
+            "Otros empleos..."
+        ]
+    },
+    "mobile-menu": {
+        "en": [
+            "Me",
+            "Devs",
+            "Employment"
+        ],
+        "es": [
+            "Yo",
+            "Devs",
+            "Empleo"
+        ]
+    },
+    "devs": {
+        "en": [
+            {
+                "title": "Gadget",
+                "img": "https://galiprandi.github.io/me/images/project-1.jpg",
+                "desc": "Website and products catalog of Gadget company.",
+                "tools": "React, Typescript, CI/CD, Sass.",
+                "web": "https://micamara.ga",
+                "code": "https://github.com/galiprandi/micamara.ga",
+                "about": "As a full-time lead developer, my task was very varied: development of the main product catalog using Svelte and then React, deployment of CI / CD, unit testing, development of the REST API..."
+            },
+            {
+                "title": "eventManager",
+                "img": "https://galiprandi.github.io/me/images/project-6.jpg",
+                "desc": "eventManager is a small library (less than 1kb) that help to catch and manage DOM event easily.",
+                "tools": "Javascript.",
+                "web": "https://galiprandi.github.io/eventManager",
+                "code": "https://github.com/galiprandi/eventManager",
+                "about": null
+            },
+            {
+                "title": "css-toolset",
+                "img": "https://raw.githubusercontent.com/galiprandi/css-toolset/main/images/code_screen.png",
+                "desc": "A small but powerful set of CSS tools to generate mobile sites with modern styles.",
+                "tools": "CSS",
+                "web": "https://galiprandi.github.io/css-toolset/",
+                "code": "https://github.com/galiprandi/css-toolset",
+                "about": null
+            },
+            {
+                "title": "mialbum.ga",
+                "img": "https://galiprandi.github.io/me/images/project-4.jpg",
+                "desc": "Online digital photo album service designed exclusively for photographers.",
+                "tools": "HTML, Javascript & CSS.",
+                "web": "http://mialbum.ga/demo",
+                "code": "https://github.com/galiprandi/mialbum",
+                "about": null
+            },
+            {
+                "title": "Movies App",
+                "img": "https://galiprandi.github.io/me/images/project-movie-app.jpg",
+                "desc": "Movies App is a simple application that aims to analyze the difference between the type of bundle, its sizes and the compilation time in the most popular JS Framework.",
+                "tools": "React, Vue, Svelte and Vanilla JS.",
+                "web": null,
+                "code": "https://github.com/galiprandi/movies",
+                "about": null
+            },
+            {
+                "title": "js-modules",
+                "img": "https://galiprandi.github.io/me/images/project-5.jpg",
+                "desc": "My set of Javascript modules.",
+                "tools": "Javascript",
+                "web": null,
+                "code": "https://github.com/galiprandi/js-modules",
+                "about": null
+            },
+            {
+                "title": "Memo Game",
+                "img": "https://galiprandi.github.io/me/images/project-2.jpg",
+                "desc": "A nice adaptation of the classic game to test your memory.",
+                "tools": "Javascript, CSS, HTML.",
+                "web": "https://galiprandi.github.io/memo",
+                "code": "https://github.com/galiprandi/memo",
+                "about": null
+            },
+            {
+                "title": "Star Wars App",
+                "img": "https://galiprandi.github.io/star-wars-app/screen-collage.jpg",
+                "desc": "This application was a requirement in a job interview and I have a special affection for it, I hope you enjoy it as I did.",
+                "tools": "React, Typescript, React-Query, Github Actions",
+                "web": "https://galiprandi.github.io/star-wars-app",
+                "code": "https://github.com/galiprandi/star-wars-app",
+                "about": null
+            }
+        ],
+        "es": [
+            {
+                "title": "Gadget",
+                "img": "https://galiprandi.github.io/me/images/project-1.jpg",
+                "desc": "Sitio web y catálogo de productos de la empresa.",
+                "tools": "React, Typescript, CI/CD, Sass.",
+                "web": "https://micamara.ga",
+                "code": "https://github.com/galiprandi/micamara.ga",
+                "about": "Como desarrollador principal a tiempo completo, mi tarea era de lo más variado: desarrollo del catálogo principal de productos utilizando Svelte y luego React, despliegue CI/CD, pruebas unitarias, desarrollo de la API REST..."
+            },
+            {
+                "title": "eventManager",
+                "img": "https://galiprandi.github.io/me/images/project-6.jpg",
+                "desc": "eventManager es una pequeña librería (menos de 1kb) que ayuda a capturar y manejar eventos del DOM.",
+                "tools": "Javascript.",
+                "web": "https://galiprandi.github.io/eventManager",
+                "code": "https://github.com/galiprandi/eventManager",
+                "about": null
+            },
+            {
+                "title": "css-toolset",
+                "img": "https://raw.githubusercontent.com/galiprandi/css-toolset/main/images/code_screen.png",
+                "desc": "Un pequeño pero poderoso conjunto de utilidades CSS para generar sitios móviles con estilos modernos..",
+                "tools": "CSS",
+                "web": "https://galiprandi.github.io/css-toolset/",
+                "code": "https://github.com/galiprandi/css-toolset",
+                "about": null
+            },
+            {
+                "title": "mialbum.ga",
+                "img": "https://galiprandi.github.io/me/images/project-4.jpg",
+                "desc": "Servicio de álbum de fotos digitales y online diseñado exclusivamente para fotógrafos.",
+                "tools": "HTML, Javascript & CSS.",
+                "web": "http://mialbum.ga/demo",
+                "code": "https://github.com/galiprandi/mialbum",
+                "about": null
+            },
+            {
+                "title": "Movies App",
+                "img": "https://galiprandi.github.io/me/images/project-movie-app.jpg",
+                "desc": "Movies App es una sencilla aplicación que tiene de objeto analizar la diferencia entre el tipo de bundle, sus tamaños y el tiempo de compilación en los JS Framework más populares.",
+                "tools": "React, Vue, Svelte and Vanilla JS.",
+                "web": null,
+                "code": "https://github.com/galiprandi/movies",
+                "about": null
+            },
+            {
+                "title": "js-modules",
+                "img": "https://galiprandi.github.io/me/images/project-5.jpg",
+                "desc": "Mi conjunto de módulos Javascript.",
+                "tools": "Javascript",
+                "web": null,
+                "code": "https://github.com/galiprandi/js-modules",
+                "about": null
+            },
+            {
+                "title": "Memo Game",
+                "img": "https://galiprandi.github.io/me/images/project-2.jpg",
+                "desc": "Una bonita adaptación del clásico juego para poner a prueba tu memoria.",
+                "tools": "Javascript, CSS, HTML.",
+                "web": "https://galiprandi.github.io/memo",
+                "code": "https://github.com/galiprandi/memo",
+                "about": null
+            },
+            {
+                "title": "Star Wars App",
+                "img": "https://galiprandi.github.io/star-wars-app/screen-collage.jpg",
+                "desc": "Esta aplicación fue un requerimiento en una entrevista de trabajo y le guardo especial cariño, espero que las disfrutes como yo.",
+                "tools": "React, Typescript, React-Query, Github Actions",
+                "web": "https://galiprandi.github.io/star-wars-app",
+                "code": "https://github.com/galiprandi/star-wars-app",
+                "about": null
+            }
+        ]
+    }
+}
