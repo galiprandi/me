@@ -2,4 +2,4 @@
 file_name=german_aliprandi.pdf
 
 echo Updating $file_name
-wkhtmltopdf index.html $file_name
+xvfb-run -- /usr/bin/wkhtmltopdf --enable-local-file-access ./index.html ./$file_name
