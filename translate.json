@@ -15,41 +15,49 @@
         "en": [
             "Skills",
             "Pragmatic",
-            "English and Spanish",
-            "Electronics knowledge",
+            "Teamwork",
+            "Team leadership",
+            "Agile Methodology",
+            "Teaching",
+            "Project Architecture Design",
             "Cloud and Serverless",
-            "Scrum & Teamwork",
-            "Passion for learning"
+            "Electronics knowledge"
         ],
         "es": [
             "Habilidades",
             "Pragmático",
-            "Español e Inglés",
-            "Conocimientos en electrónica",
-            "Tecnologías en la nube",
-            "Scrum y trabajo en equipo",
-            "Pasión por aprender"
+            "Trabajo en equipo",
+            "Liderazgo de equipos",
+            "Metodologías ágiles",
+            "Enseñanza",
+            "Arquitectura de proyectos",
+            "Computación en la nube",
+            "Conocimientos en electrónica"
         ]
     },
     "favorites": {
         "en": [
-            "My favorite technologies",
-            "Linux systems",
-            "Javascript Clean Code",
-            "Serverless, AWS & GCP",
+            "Knowledge",
+            "Typescript",
+            "React Query",
+            "Automation: Cypress",
+            "Jest & React Testing Library",
+            "WebSockets",
+            "PWA & Custom service-worker",
             "React, Vue & Svelte",
-            "PWA and socket",
-            "MERN Stack",
+            "Gatsby & Next.js",
             "CSS Advanced"
         ],
         "es": [
-            "Mis tecnologías favoritas",
-            "Sistemas Linux",
-            "Javascript Avanzado",
-            "Serverless, AWS & GCP",
-            "React, Vue y Svelte",
-            "PWA y socket",
-            "Stack MERN",
+            "Conocimientos",
+            "Typescript",
+            "React Query",
+            "Automatización: Cypress",
+            "Jest & React Testing Library",
+            "WebSockets",
+            "PWA & service-worker",
+            "React, Vue & Svelte",
+            "Gatsby & Next.js",
             "CSS Avanzado"
         ]
     },
@@ -141,7 +149,7 @@
     },
     "miscellany": {
         "en": [
-            "Download PDF",
+            "Print resume",
             "View Online",
             "Skills",
             "Phone:",
@@ -155,7 +163,7 @@
             "Other jobs..."
         ],
         "es": [
-            "Descargar PDF",
+            "Imprimir",
             "Ver Online",
             "Habilidades",
             "Teléfono: ",

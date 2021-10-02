@@ -90,21 +90,31 @@
     </ul>
   </section>
   <div class="container">
-
     <aside class="aside-menu">
       <section class="profile">
         <img src="./images/profile_circle.png" alt="Germán Aliprandi" />
       </section>
 
       <section class="versions">
-        <button onclick="toggleLanguage()" data-tr="miscellany|9" class="outlined">Spanish version</button>
-
-        <a data-tr="miscellany|0" href="https://galiprandi.github.io/me/german_aliprandi.pdf" class="hide screen">
-          Download PDF </a>
-        <a data-tr="miscellany|1" href="https://galiprandi.github.io/me/" class="hide print">
-          View Online
-        </a>
-
+        <div class="hide screen">
+          <!-- Show on Screen -->
+          <div>
+            <button onclick="toggleLanguage()" data-tr="miscellany|9" class="outlined">
+              Spanish version
+            </button>
+          </div>
+          <div>
+            <a data-tr="miscellany|0" href="javascript:window.print();">
+              Print resume
+            </a>
+          </div>
+        </div>
+        <div class="hide print">
+          <!-- Show on Print version -->
+          <a data-tr="miscellany|1" href="https://galiprandi.github.io/me/">
+            View Online
+          </a>
+        </div>
       </section>
 
       <section id="info" class="info">
@@ -154,14 +164,17 @@
 
     <main>
       <section id="about" class="about">
-        <h1 class="name">Germán Aliprandi</h1>
-        <h4 class="title" data-tr="about|0">Frontend Developer</h4>
+        <header>
+          <h1 class="name">Germán Aliprandi</h1>
+          <h4 class="title" data-tr="about|0">Frontend Developer</h4>
+        </header>
         <p data-tr="about|1">
-          I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies
-          and frameworks.
+          I am a frontend developer with more than 10 years of experience and
+          knowledge in the most current technologies and frameworks.
         </p>
         <p data-tr="about|2">
-          I am always ready to accept new challenges that keep me excited and constantly growing.
+          I am always ready to accept new challenges that keep me excited and
+          constantly growing.
         </p>
       </section>
 
@@ -176,6 +189,7 @@
           <li data-tr="favorites|6">PWA & Service Worker</li>
           <li data-tr="favorites|7">MERN Stack</li>
           <li data-tr="favorites|8">Modern CSS code</li>
+          <li data-tr="favorites|9">Modern CSS code</li>
         </ul>
       </section>
 
@@ -184,7 +198,6 @@
         <!-- Projects -->
         <div id="developments-container"></div>
         <h4>
-
           <a data-tr="miscellany|4" class="github" href="https://github.com/galiprandi" target="_blank"
             rel="noopener noreferrer">
             And more project on my Github
@@ -211,13 +224,17 @@
   <template id="dev-card">
     <article class="dev-card">
       <div class="container">
-        <img class="dev-card-img" src="img" alt="title" title="title">
+        <img class="dev-card-img" src="img" alt="title" title="title" />
         <section class="summary">
           <h4 class="dev-card-title"></h4>
           <p class="dev-card-desc">desc</p>
           <p><b>Tools:</b> <span class="dev-card-tools"></span></p>
-          <p><b>Website: </b><a class="dev-card-web" href="#" target="_blank" rel="noopener noreferrer"></a></p>
-          <p><b>Code: </b><a class="dev-card-code" href="#" target="_blank" rel="noopener noreferrer"></a></p>
+          <p>
+            <b>Website: </b><a class="dev-card-web" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </p>
+          <p>
+            <b>Code: </b><a class="dev-card-code" href="#" target="_blank" rel="noopener noreferrer"></a>
+          </p>
         </section>
       </div>
       <details class="more-about hide screen">
@@ -230,13 +247,12 @@
   <!-- Employment history template -->
   <template id="emp-card">
     <article class="emp-card">
-      <h3 class='emp-card-head'></h3>
+      <h3 class="emp-card-head"></h3>
       <p class="emp-card-title"></p>
       <p class="emp-card-desc"></p>
       <a class="emp-card-web" href="" target="_blank" rel="noopener noreferrer"></a>
     </article>
   </template>
-
 </body>
 
 </html>

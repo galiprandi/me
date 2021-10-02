@@ -1,5 +1,0 @@
-#!/bin/bash
-file_name=german_aliprandi.pdf
-
-echo Updating $file_name
-wkhtmltopdf index.html $file_name

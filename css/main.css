@@ -24,6 +24,9 @@ body {
 }
 
 @media print {
+  body {
+    -webkit-print-color-adjust: exact;
+  }
   .print {
     display: block;
   }
@@ -31,8 +34,12 @@ body {
     clear: both;
     page-break-after: always;
   }
-  .employment {
-    margin-top: 3em;
+
+  .developments {
+    margin-bottom: 0;
+  }
+  section article {
+    font-size: 14px;
   }
 }
 @page {
@@ -67,7 +74,6 @@ section article {
 
 /* ================= mobile menu ======================== */
 .mobile-menu.hide {
-  background: var(--main-color);
   color: white;
   padding: 10px 0;
 }
@@ -81,13 +87,16 @@ section article {
 /* ===================== aside ======================== */
 .aside-menu,
 .aside-menu section {
-  width: 250px;
+  width: 240px;
 }
 .aside-menu {
+  position: fixed;
+  background: var(--main-color) !important;
   padding: 1em;
   color: white;
-  line-height: 2.5em;
+  line-height: 2.4em;
   font-size: 0.9em;
+  min-height: 100vh;
 }
 .profile img {
   max-width: 100%;
@@ -96,7 +105,7 @@ section article {
   text-align: center;
 }
 .aside-menu .info h3 {
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 0;
 }
 .aside-menu .info ul {
@@ -106,18 +115,20 @@ section article {
 body > .container {
   max-width: 1024px;
   margin: auto;
-  background: var(--main-color);
   display: flex;
 }
 
 /* ==================== main ======================== */
 .container main {
+  margin-left: 260px;
   background: white;
   padding: 0 2em;
 }
 
 .container main > section {
   margin-bottom: 2em;
+}
+.container main > section > div {
 }
 
 .container main section h3 {
@@ -149,11 +160,12 @@ body > .container {
 
 /* ==================== dev-cars ======================== */
 .dev-card .container {
-  -moz-columns: 2;
-  columns: 2;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 0 2em;
 }
 .dev-card .container img {
-  max-width: 90%;
+  width: 100%;
 }
 .dev-card .summary > * {
   margin: 0;
