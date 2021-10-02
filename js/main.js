@@ -39,7 +39,7 @@ window.toggleLanguage = () => {
 
 // Load translations from file
 const loadTranslations = async () => {
-  const response = await fetch('../translate.json')
+  const response = await fetch('translate.json')
   if (!response.ok) return null
   return await response.json()
 }
