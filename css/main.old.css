@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* Utility classes */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Ubuntu', 'system-ui';
+  font-weight: lighter;
+  display: flex;
+  margin: auto;
+  max-width: 1024px;
+}
+
+aside {
+  width: 34em;
+  min-width: 290px;
+  line-height: 3.5em;
+  background-color: teal;
+  color: #fff;
+  font-weight: 300;
+  padding: 1em;
+}
+
+aside h1,
+aside h2,
+aside ul {
+  margin: 0;
+}
+
+aside img.picture {
+  max-width: 100%;
+}
+
+.versions {
+  line-height: 1.5;
+}
+
+.versions button {
+  all: unset;
+  cursor: pointer;
+  padding: 0 1em 1em 1em;
+}
+
+.mobileNav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: teal;
+  color: #fff;
+  padding: 0 1em;
+}
+
+.mobileNav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+}
+
+aside .info > div {
+  margin-top: 2em;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+main {
+  padding: 0 2em;
+}
+
+main .about {
+  line-height: 1.5em;
+}
+
+main > section:nth-of-type(1) {
+  margin-top: 2em;
+}
+
+main > section:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+main > section > * {
+  margin: 0;
+}
+
+main .about > p {
+  margin-bottom: 1em;
+}
+
+.favorites ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorites ul li:not(:last-child) {
+  padding-right: 1em;
+}
+
+.projectCard {
+  margin-top: 2em;
+}
+
+.projectCard .container {
+  display: flex;
+  line-height: 1.5;
+}
+
+.projectCard img {
+  width: 35%;
+  height: auto;
+  align-self: flex-start;
+}
+
+.projectCard .summary {
+  width: 65%;
+  align-self: flex-start;
+  padding-left: 2em;
+}
+
+.projectCard .summary > * {
+  margin: 0;
+}
+
+.see-more {
+  margin-top: 2em;
+  text-align: center;
+}
+
+main .github {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main .github img {
+  width: 100px;
+  margin-right: 3em;
+}
+
+.employment h3 {
+  margin-bottom: 0;
+}
+.employment p {
+  margin: 0;
+}
+
+@media screen {
+  .screen {
+    display: block;
+  }
+}
+
+@media print {
+  .print {
+    display: block;
+  }
+  .page-break {
+    clear: both;
+    page-break-after: always;
+  }
+  aside {
+    height: auto;
+  }
+  .employment {
+    margin-top: 3em;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .favorites ul {
+    list-style: inherit;
+    display: block;
+  }
+
+  .developments .container {
+    display: block;
+  }
+
+  .developments .container img {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  .developments .container .summary {
+    padding: 0;
+    width: auto;
+  }
+
+  .mobileNav {
+    display: flex;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  aside img.picture {
+    max-width: 75%;
+  }
+
+  main {
+    padding-top: 3em;
+  }
+
+  main .github img {
+    margin: 0;
+  }
+}
