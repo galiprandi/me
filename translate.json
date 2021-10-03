@@ -110,7 +110,7 @@
                 "period": "2021, Present",
                 "location": "Remote",
                 "title": "Desarrollador Frontend",
-                "desc": "Egg education es una organización que busca conectar a las personas a través de la cooperación con una tecnología que transforma grupos en equipos reales. <br> Aquí formo parte del equipo de desarrollo de frontend con el desafío de producir una aplicación ágil capaz de escalar y atender a 500.000 usuarios.",
+                "desc": "Egg education es una organización que busca conectar a las personas a través de la cooperación con una tecnología que transforma grupos en equipos reales. Aquí formo parte del equipo de desarrollo de frontend con el desafío de producir una aplicación ágil capaz de escalar y atender a 500.000 usuarios.",
                 "web": "https://eggeducacion.com"
             },
             {
@@ -160,7 +160,8 @@
             "Read about...",
             "Spanish version",
             "Other projects...",
-            "Other jobs..."
+            "Other jobs...",
+            "🇪🇸"
         ],
         "es": [
             "Imprimir",
@@ -174,7 +175,8 @@
             "Más detalles...",
             "Versión en Inglés",
             "Otros proyectos...",
-            "Otros empleos..."
+            "Otros empleos...",
+            "🇺🇸"
         ]
     },
     "mobile-menu": {

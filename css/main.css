@@ -80,8 +80,9 @@ section article {
 .mobile-menu ul {
   margin: 0;
   list-style: none;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
 }
 
 /* ===================== aside ======================== */
@@ -184,4 +185,38 @@ body > .container {
   padding: 0;
   border: 0;
   font-weight: normal;
+}
+
+/* ==================== mobile ======================== */
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    margin-bottom: 1em;
+  }
+  .mobile-menu.hide {
+    display: block;
+    background-color: var(--main-color);
+    position: sticky;
+    top: 0;
+  }
+  aside {
+    display: none;
+  }
+  .container main {
+    margin: 1em;
+    padding: 0;
+  }
+  .container main .name {
+    margin-top: 0;
+  }
+  .dev-card .container {
+    grid-template-columns: 1fr;
+    grid-gap: 1em 0;
+    padding: 0 1em;
+  }
+
+  .favorites ul {
+    -moz-columns: 3;
+    columns: 2;
+  }
 }
