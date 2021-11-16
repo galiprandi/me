@@ -2,12 +2,12 @@
     "about": {
         "en": [
             "Frontend Developer",
-            "I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks.",
+            "I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks, and in recent years I have specialized a lot in React.",
             "I am always ready to accept new challenges that keep me excited and constantly growing."
         ],
         "es": [
             "Desarrollador Frontend",
-            "Soy un desarrollador frontend con más de 10 años de experiencia y conocimiento en las tecnologías y frameworks más actuales.",
+            "Soy un desarrollador frontend con más de 10 años de experiencia y conocimiento en las tecnologías y frameworks más actuales, y en los últimos años me he especializado mucho en React.",
             "Siempre estoy dispuesto a aceptar nuevos desafíos que me mantienen emocionado y en constante crecimiento."
         ]
     },
@@ -15,24 +15,20 @@
         "en": [
             "Skills",
             "Pragmatic",
-            "Teamwork",
             "Team leadership",
             "Agile Methodology",
             "Teaching",
             "Project Architecture Design",
-            "Cloud and Serverless",
-            "Electronics knowledge"
+            "Cloud and Serverless"
         ],
         "es": [
             "Habilidades",
             "Pragmático",
-            "Trabajo en equipo",
             "Liderazgo de equipos",
             "Metodologías ágiles",
             "Enseñanza",
             "Arquitectura de proyectos",
-            "Computación en la nube",
-            "Conocimientos en electrónica"
+            "Computación en la nube"
         ]
     },
     "favorites": {
