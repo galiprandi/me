@@ -81,7 +81,7 @@ section article {
   margin: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(5, auto);
   place-items: center;
 }
 
