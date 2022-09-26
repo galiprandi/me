@@ -17,7 +17,7 @@ const changeLanguage = lang => {
   // Render devs
   populateWithList(
     i18n.devs[window.ln] || [],
-    3,
+    2,
     'developments-container',
     createDevelopmentCard,
     i18n.miscellany[window.ln][10] || 'Other projects...'

@@ -1,268 +1,333 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Germán Aliprandi</title>
+    <meta
+      name="description"
+      content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks."
+    />
+    <meta name="author" content="Germán Aliprandi" />
+    <link
+      rel="shortcut icon"
+      href="./images/profile_circle.png"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Germán Aliprandi</title>
-  <meta name="description"
-    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
-  <meta name="author" content="Germán Aliprandi" />
-  <link rel="shortcut icon" href="./images/profile_circle.png" type="image/x-icon" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Germán Aliprandi" />
+    <meta
+      property="og:description"
+      content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks."
+    />
+    <meta property="og:url" content="https://galiprandi.github.io/me/" />
+    <meta property="og:type" content="profile" />
+    <meta
+      property="og:image"
+      content="https://galiprandi.github.io/me/images/profile.jpg"
+    />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="Germán Aliprandi" />
-  <meta property="og:description"
-    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
-  <meta property="og:url" content="https://galiprandi.github.io/me/" />
-  <meta property="og:type" content="profile" />
-  <meta property="og:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://galiprandi.github.io/me/" />
+    <meta name="twitter:title" content="Germán Aliprandi" />
+    <meta
+      name="twitter:description"
+      content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks."
+    />
+    <meta
+      name="twitter:image"
+      content="https://galiprandi.github.io/me/images/profile.jpg"
+    />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://galiprandi.github.io/me/" />
-  <meta name="twitter:title" content="Germán Aliprandi" />
-  <meta name="twitter:description"
-    content="I am a frontend developer with more than 10 years of experience and knowledge in the most current technologies and frameworks." />
-  <meta name="twitter:image" content="https://galiprandi.github.io/me/images/profile.jpg" />
+    <link rel="manifest" href="manifest.webmanifest" />
 
-  <link rel="manifest" href="manifest.webmanifest" />
+    <link
+      rel="shortcut icon"
+      href="./images/profile_circle.png"
+      type="image/x-icon"
+    />
 
-  <link rel="shortcut icon" href="./images/profile_circle.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"
+    ></script>
+    <script src="js/main.js" defer></script>
 
-  <link rel="stylesheet" href="./css/normalize.css" />
-  <link rel="stylesheet" href="./css/main.css" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"></script>
-  <script src="js/main.js" defer></script>
-
-  <script>
-    // On Content Loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      // Copy to clipboard on double click
-      const about = document.getElementById('about')
-      about.addEventListener('dblclick', () => {
-        copyToClipboard(about.innerText)
+    <script>
+      // On Content Loaded
+      document.addEventListener('DOMContentLoaded', () => {
+        // Copy to clipboard on double click
+        const about = document.getElementById('about')
+        about.addEventListener('dblclick', () => {
+          copyToClipboard(about.innerText)
+        })
       })
-    })
 
-    // Google Analytics
-    window.dataLayer = window.dataLayer || []
-    function gtag() {
-      dataLayer.push(arguments)
-    }
-    gtag('js', new Date())
-
-    gtag('config', 'G-CZ03PKC275')
-
-    /**
-     * * Copy text to clipboard
-     * * Usage: copyToClipboard("Text to Copy");
-     */
-    const copyToClipboard = textToCopy => {
-      try {
-        let el = document.createElement('textarea')
-        el.value = textToCopy
-        document.body.appendChild(el)
-        el.select()
-        document.execCommand('copy')
-        document.body.removeChild(el)
-        console.info(`Text copied: ${textToCopy}`)
-      } catch (error) {
-        console.error(error)
+      // Google Analytics
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
       }
-    }
-  </script>
-</head>
+      gtag('js', new Date())
 
-<body>
-  <section class="mobile-menu hide">
-    <ul>
-      <li>
-        <a href="#top" data-tr="mobile-menu|0">Me</a>
-      </li>
-      <li>
-        <a href="#developments" data-tr="mobile-menu|1">Devs</a>
-      </li>
-      <li>
-        <a href="#employment" data-tr="mobile-menu|2">Employment</a>
-      </li>
-      <li>
-        <button onclick="window.print();" class="outlined">
-          💾
-        </button>
-      </li>
-      <li>
-        <button onclick="toggleLanguage()" data-tr="miscellany|12" class="outlined">
-          🇪🇸
-        </button>
-      </li>
-    </ul>
-  </section>
-  <div class="container">
-    <aside class="aside-menu">
-      <section class="profile">
-        <img src="./images/profile_circle.png" alt="Germán Aliprandi" />
-      </section>
+      gtag('config', 'G-CZ03PKC275')
 
-      <section class="versions">
-        <div class="hide screen">
-          <!-- Show on Screen -->
-          <div>
-            <button onclick="toggleLanguage()" data-tr="miscellany|9" class="outlined">
-              Spanish version
-            </button>
+      /**
+       * * Copy text to clipboard
+       * * Usage: copyToClipboard("Text to Copy");
+       */
+      const copyToClipboard = textToCopy => {
+        try {
+          let el = document.createElement('textarea')
+          el.value = textToCopy
+          document.body.appendChild(el)
+          el.select()
+          document.execCommand('copy')
+          document.body.removeChild(el)
+          console.info(`Text copied: ${textToCopy}`)
+        } catch (error) {
+          console.error(error)
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <section class="mobile-menu hide">
+      <ul>
+        <li>
+          <a href="#top" data-tr="mobile-menu|0">Me</a>
+        </li>
+        <li>
+          <a href="#developments" data-tr="mobile-menu|1">Devs</a>
+        </li>
+        <li>
+          <a href="#employment" data-tr="mobile-menu|2">Employment</a>
+        </li>
+        <li>
+          <button onclick="window.print();" class="outlined">💾</button>
+        </li>
+        <li>
+          <button
+            onclick="toggleLanguage()"
+            data-tr="miscellany|12"
+            class="outlined"
+          >
+            🇪🇸
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <div class="container">
+      <aside class="aside-menu">
+        <section class="profile">
+          <img src="./images/profile_circle.png" alt="Germán Aliprandi" />
+        </section>
+
+        <section class="versions">
+          <div class="hide screen">
+            <!-- Show on Screen -->
+            <div>
+              <button
+                onclick="toggleLanguage()"
+                data-tr="miscellany|9"
+                class="outlined"
+              >
+                Spanish version
+              </button>
+            </div>
+            <div>
+              <a data-tr="miscellany|0" href="javascript:window.print();">
+                Print resume
+              </a>
+            </div>
           </div>
-          <div>
-            <a data-tr="miscellany|0" href="javascript:window.print();">
-              Print resume
+          <div class="hide print">
+            <!-- Show on Print version -->
+            <a data-tr="miscellany|1" href="https://galiprandi.github.io/me/">
+              View Online
             </a>
           </div>
-        </div>
-        <div class="hide print">
-          <!-- Show on Print version -->
-          <a data-tr="miscellany|1" href="https://galiprandi.github.io/me/">
-            View Online
-          </a>
-        </div>
-      </section>
+        </section>
 
-      <section id="info" class="info">
-        <div id="contact" class="contact">
-          <h3 data-tr="miscellany|6">Contact info</h3>
-          <ul>
-            <li>
-              <b data-tr="miscellany|3">Phone: </b>
-              <a href="tel:+5493815900868">+549 381 5900868</a>
-            </li>
-            <li>
-              <b>Email: </b>
-              <a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
-            </li>
-            <li>
-              <b>Linkedin: </b>
-              <a href="http://linkedin.com/in/galiprandi" target="_blank"
-                rel="noopener noreferrer">linkedin.com/in/galiprandi</a>
-            </li>
-            <li>
-              <b>Github: </b>
-              <a href="https://github.com/galiprandi" target="_blank"
-                rel="noopener noreferrer">github.com/galiprandi</a>
-            </li>
-            <li>
-              <b>Telegram: </b>
-              <a href="http://https://t.me/galiprandi" target="_blank" rel="noopener noreferrer">t.me/galiprandi</a>
-            </li>
-          </ul>
-        </div>
+        <section id="info" class="info">
+          <div id="contact" class="contact">
+            <h3 data-tr="miscellany|6">Contact info</h3>
+            <ul>
+              <li>
+                <b data-tr="miscellany|3">Phone: </b>
+                <a href="tel:+5493815900868">+549 381 5900868</a>
+              </li>
+              <li>
+                <b>Email: </b>
+                <a href="mailto:galiprandi@gmail.com">galiprandi@gmail.com</a>
+              </li>
+              <li>
+                <b>Linkedin: </b>
+                <a
+                  href="http://linkedin.com/in/galiprandi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >linkedin.com/in/galiprandi</a
+                >
+              </li>
+              <li>
+                <b>Github: </b>
+                <a
+                  href="https://github.com/galiprandi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >github.com/galiprandi</a
+                >
+              </li>
+              <li>
+                <b>Telegram: </b>
+                <a
+                  href="http://https://t.me/galiprandi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >t.me/galiprandi</a
+                >
+              </li>
+            </ul>
+          </div>
 
-        <div id="skills" class="skills">
-          <h3 data-tr="skills|0">Skills</h3>
-          <ul>
-            <li data-tr="skills|1">Pragmatic</li>
-            <li data-tr="skills|2">English and Spanish</li>
-            <li data-tr="skills|3">Linux and Open Source</li>
-            <li data-tr="skills|4">Electronic Technician</li>
-            <li data-tr="skills|5">Frontend developer</li>
-            <li data-tr="skills|6">AWS, Google Cloud</li>
-            <li data-tr="skills|7">Passion for learning</li>
-            <li data-tr="skills|8">Scrum & Teamwork</li>
-          </ul>
-        </div>
-      </section>
-    </aside>
+          <div id="skills" class="skills">
+            <h3 data-tr="skills|0">Skills</h3>
+            <ul>
+              <li data-tr="skills|1">Pragmatic</li>
+              <li data-tr="skills|2">English and Spanish</li>
+              <li data-tr="skills|3">Linux and Open Source</li>
+              <li data-tr="skills|4">Electronic Technician</li>
+              <li data-tr="skills|5">Frontend developer</li>
+              <li data-tr="skills|6">AWS, Google Cloud</li>
+              <li data-tr="skills|7">Passion for learning</li>
+              <li data-tr="skills|8">Scrum & Teamwork</li>
+            </ul>
+          </div>
+        </section>
+      </aside>
 
-    <main>
-      <section id="about" class="about">
-        <header>
-          <h1 class="name">Germán Aliprandi</h1>
-          <h4 class="title" data-tr="about|0">Frontend Developer</h4>
-        </header>
-        <p data-tr="about|1">
-          I am a frontend developer with more than 10 years of experience and
-          knowledge in the most current technologies and frameworks.
-        </p>
-        <p data-tr="about|2">
-          I am always ready to accept new challenges that keep me excited and
-          constantly growing.
-        </p>
-      </section>
-
-      <section id="favorites" class="favorites">
-        <h3 data-tr="favorites|0">My favorite technologies</h3>
-        <ul>
-          <li data-tr="favorites|1">Linux systems</li>
-          <li data-tr="favorites|2">Javascript Clean Code</li>
-          <li data-tr="favorites|3">Serverless, AWS & GCP</li>
-          <li data-tr="favorites|4">Svelte & React</li>
-          <li data-tr="favorites|5">Bash scripting</li>
-          <li data-tr="favorites|6">PWA & Service Worker</li>
-          <li data-tr="favorites|7">MERN Stack</li>
-          <li data-tr="favorites|8">Modern CSS code</li>
-          <li data-tr="favorites|9">Modern CSS code</li>
-        </ul>
-      </section>
-
-      <section id="developments" class="developments">
-        <h3 data-tr="miscellany|7">Personal developments</h3>
-        <!-- Projects -->
-        <div id="developments-container"></div>
-        <h4>
-          <a data-tr="miscellany|4" class="github" href="https://github.com/galiprandi" target="_blank"
-            rel="noopener noreferrer">
-            And more project on my Github
-          </a>
-        </h4>
-      </section>
-
-      <div class="page-break"></div>
-
-      <section id="about-page-2" class="about hide print">
-        <h1 class="name">Germán Aliprandi</h1>
-        <h4 class="title" data-tr="about|0">Frontend Developer</h4>
-      </section>
-
-      <section id="employment" class="employment">
-        <h3 data-tr="miscellany|5">Employment history</h3>
-        <!-- employment history -->
-        <div id="employment-container"></div>
-      </section>
-    </main>
-  </div>
-
-  <!-- Devs card template -->
-  <template id="dev-card">
-    <article class="dev-card">
-      <div class="container">
-        <img class="dev-card-img" src="img" alt="title" title="title" />
-        <section class="summary">
-          <h4 class="dev-card-title"></h4>
-          <p class="dev-card-desc">desc</p>
-          <p><b>Tools:</b> <span class="dev-card-tools"></span></p>
-          <p>
-            <b>Website: </b><a class="dev-card-web" href="#" target="_blank" rel="noopener noreferrer"></a>
+      <main>
+        <section id="about" class="about">
+          <header>
+            <h1 class="name">Germán Aliprandi</h1>
+            <h4 class="title" data-tr="about|0">Engineering Manager</h4>
+          </header>
+          <p data-tr="about|1">
+            I'm an Engineering Manager with an enough of experience leading
+            teams. In the past, I led technical support teams, IT teams, and
+            sales teams, and now I enjoy managing and speed up developer teams.
           </p>
-          <p>
-            <b>Code: </b><a class="dev-card-code" href="#" target="_blank" rel="noopener noreferrer"></a>
+          <p data-tr="about|2">
+            I enjoy finding solutions to day-to-day inconveniences and working
+            as a team. Always focusing on optimization, good practices and
+            prioritizing scalability and good team cohesion.
           </p>
         </section>
-      </div>
-      <details class="more-about hide screen">
-        <summary class="dev-card-see-more" data-tr="miscellany|8"></summary>
-        <p class="dev-card-about"></p>
-      </details>
-    </article>
-  </template>
 
-  <!-- Employment history template -->
-  <template id="emp-card">
-    <article class="emp-card">
-      <h3 class="emp-card-head"></h3>
-      <p class="emp-card-title"></p>
-      <p class="emp-card-desc"></p>
-      <a class="emp-card-web" href="" target="_blank" rel="noopener noreferrer"></a>
-    </article>
-  </template>
-</body>
+        <section id="favorites" class="favorites">
+          <h3 data-tr="favorites|0">My favorite technologies</h3>
+          <ul>
+            <li data-tr="favorites|1">Linux systems</li>
+            <li data-tr="favorites|2">Javascript Clean Code</li>
+            <li data-tr="favorites|3">Serverless, AWS & GCP</li>
+            <li data-tr="favorites|4">Svelte & React</li>
+            <li data-tr="favorites|5">Bash scripting</li>
+            <li data-tr="favorites|6">PWA & Service Worker</li>
+            <li data-tr="favorites|7">MERN Stack</li>
+            <li data-tr="favorites|8">Modern CSS code</li>
+            <li data-tr="favorites|9">Modern CSS code</li>
+          </ul>
+        </section>
 
+        <section id="developments" class="developments">
+          <h3 data-tr="miscellany|7">Personal developments</h3>
+          <!-- Projects -->
+          <div id="developments-container"></div>
+          <h4>
+            <a
+              data-tr="miscellany|4"
+              class="github"
+              href="https://github.com/galiprandi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              And more project on my Github
+            </a>
+          </h4>
+        </section>
+
+        <div class="page-break"></div>
+
+        <section id="about-page-2" class="about hide print">
+          <h1 class="name">Germán Aliprandi</h1>
+          <h4 class="title" data-tr="about|0">Frontend Developer</h4>
+        </section>
+
+        <section id="employment" class="employment">
+          <h3 data-tr="miscellany|5">Employment history</h3>
+          <!-- employment history -->
+          <div id="employment-container"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Devs card template -->
+    <template id="dev-card">
+      <article class="dev-card">
+        <div class="container">
+          <img class="dev-card-img" src="img" alt="title" title="title" />
+          <section class="summary">
+            <h4 class="dev-card-title"></h4>
+            <p class="dev-card-desc">desc</p>
+            <p><b>Tools:</b> <span class="dev-card-tools"></span></p>
+            <p>
+              <b>Website: </b
+              ><a
+                class="dev-card-web"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+            </p>
+            <p>
+              <b>Code: </b
+              ><a
+                class="dev-card-code"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+            </p>
+          </section>
+        </div>
+        <details class="more-about hide screen">
+          <summary class="dev-card-see-more" data-tr="miscellany|8"></summary>
+          <p class="dev-card-about"></p>
+        </details>
+      </article>
+    </template>
+
+    <!-- Employment history template -->
+    <template id="emp-card">
+      <article class="emp-card">
+        <h3 class="emp-card-head"></h3>
+        <p class="emp-card-title"></p>
+        <p class="emp-card-desc"></p>
+        <a
+          class="emp-card-web"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+        ></a>
+      </article>
+    </template>
+  </body>
 </html>

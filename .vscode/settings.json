@@ -1,12 +1,14 @@
 {
-    "cSpell.words": [
-        "Brunelli",
-        "Gayol",
-        "gtag",
-        "libfontconfig",
-        "stefanzweifel",
-        "wkhtmltopdf",
-        "xvfb"
-    ],
-    "editor.formatOnSave": true
+  "cSpell.words": [
+    "Brunelli",
+    "escalabilidad",
+    "Gayol",
+    "gtag",
+    "libfontconfig",
+    "Rafaela",
+    "stefanzweifel",
+    "wkhtmltopdf",
+    "xvfb"
+  ],
+  "editor.formatOnSave": true
 }
