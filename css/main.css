@@ -93,14 +93,19 @@ section article {
 .aside-menu {
   position: fixed;
   background: var(--main-color) !important;
-  padding: 1em;
+  padding: 2em;
   color: white;
   line-height: 2.4em;
   font-size: 0.9em;
   min-height: 100vh;
 }
+.profile {
+  text-align: center;
+}
 .profile img {
-  max-width: 100%;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 75%;
 }
 .aside-menu .versions {
   text-align: center;
