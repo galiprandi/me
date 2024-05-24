@@ -178,11 +178,28 @@
     ]
   },
   "mobile-menu": {
-    "en": ["Me", "Devs", "Employment"],
-    "es": ["Yo", "Devs", "Empleo"]
+    "en": [
+      "Me",
+      "Devs",
+      "Employment"
+    ],
+    "es": [
+      "Yo",
+      "Devs",
+      "Empleo"
+    ]
   },
   "devs": {
     "en": [
+      {
+        "title": "react-tools",
+        "img": "https://galiprandi.github.io/me/images/project-react-tools.svg",
+        "desc": "A set of simple and intuitive utilities for developing React applications. This package includes key tools that can streamline your development process.",
+        "tools": "React, Typescript.",
+        "web": "https://www.npmjs.com/package/@galiprandi/react-tools",
+        "code": "https://github.com/galiprandi/react-tools",
+        "about": null
+      },
       {
         "title": "eventManager",
         "img": "https://galiprandi.github.io/me/images/project-6.jpg",
@@ -199,24 +216,6 @@
         "tools": "CSS",
         "web": "https://galiprandi.github.io/css-toolset/",
         "code": "https://github.com/galiprandi/css-toolset",
-        "about": null
-      },
-      {
-        "title": "mialbum.ga",
-        "img": "https://galiprandi.github.io/me/images/project-4.jpg",
-        "desc": "Online digital photo album service designed exclusively for photographers.",
-        "tools": "HTML, Javascript & CSS.",
-        "web": "http://mialbum.ga/demo",
-        "code": "https://github.com/galiprandi/mialbum",
-        "about": null
-      },
-      {
-        "title": "Movies App",
-        "img": "https://galiprandi.github.io/me/images/project-movie-app.jpg",
-        "desc": "Movies App is a simple application that aims to analyze the difference between the type of bundle, its sizes and the compilation time in the most popular JS Framework.",
-        "tools": "React, Vue, Svelte and Vanilla JS.",
-        "web": null,
-        "code": "https://github.com/galiprandi/movies",
         "about": null
       },
       {
@@ -245,18 +244,18 @@
         "web": "https://galiprandi.github.io/star-wars-app",
         "code": "https://github.com/galiprandi/star-wars-app",
         "about": null
-      },
-      {
-        "title": "Gadget",
-        "img": "https://galiprandi.github.io/me/images/project-1.jpg",
-        "desc": "Website and products catalog of Gadget company.",
-        "tools": "React, Typescript, CI/CD, Sass.",
-        "web": "https://micamara.ga",
-        "code": "https://github.com/galiprandi/micamara.ga",
-        "about": "As a full-time lead developer, my task was very varied: development of the main product catalog using Svelte and then React, deployment of CI / CD, unit testing, development of the REST API..."
       }
     ],
     "es": [
+      {
+        "title": "react-tools",
+        "img": "https://galiprandi.github.io/me/images/project-react-tools.svg",
+        "desc": "Un conjunto de utilidades simples e intuitivas para desarrollar aplicaciones React. Este paquete incluye herramientas clave que pueden optimizar su proceso de desarrollo.",
+        "tools": "React, TypeScript.",
+        "web": "https://www.npmjs.com/package/@galiprandi/react-tools",
+        "code": "https://github.com/galiprandi/react-tools",
+        "about": null
+      },
       {
         "title": "eventManager",
         "img": "https://galiprandi.github.io/me/images/project-6.jpg",
@@ -273,24 +272,6 @@
         "tools": "CSS",
         "web": "https://galiprandi.github.io/css-toolset/",
         "code": "https://github.com/galiprandi/css-toolset",
-        "about": null
-      },
-      {
-        "title": "mialbum.ga",
-        "img": "https://galiprandi.github.io/me/images/project-4.jpg",
-        "desc": "Servicio de álbum de fotos digitales y online diseñado exclusivamente para fotógrafos.",
-        "tools": "HTML, Javascript & CSS.",
-        "web": "http://mialbum.ga/demo",
-        "code": "https://github.com/galiprandi/mialbum",
-        "about": null
-      },
-      {
-        "title": "Movies App",
-        "img": "https://galiprandi.github.io/me/images/project-movie-app.jpg",
-        "desc": "Movies App es una sencilla aplicación que tiene de objeto analizar la diferencia entre el tipo de bundle, sus tamaños y el tiempo de compilación en los JS Framework más populares.",
-        "tools": "React, Vue, Svelte and Vanilla JS.",
-        "web": null,
-        "code": "https://github.com/galiprandi/movies",
         "about": null
       },
       {
@@ -319,15 +300,6 @@
         "web": "https://galiprandi.github.io/star-wars-app",
         "code": "https://github.com/galiprandi/star-wars-app",
         "about": null
-      },
-      {
-        "title": "Gadget",
-        "img": "https://galiprandi.github.io/me/images/project-1.jpg",
-        "desc": "Sitio web y catálogo de productos de la empresa.",
-        "tools": "React, Typescript, CI/CD, Sass.",
-        "web": "https://micamara.ga",
-        "code": "https://github.com/galiprandi/micamara.ga",
-        "about": "Como desarrollador principal a tiempo completo, mi tarea era de lo más variado: desarrollo del catálogo principal de productos utilizando Svelte y luego React, despliegue CI/CD, pruebas unitarias, desarrollo de la API REST..."
       }
     ]
   }
