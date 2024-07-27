@@ -1,0 +1,54 @@
+---
+import IconPhone from '../Icons/IconPhone.astro'
+import IconEmail from '../Icons/IconEmail.astro'
+import IconPlace from '../Icons/IconPlace.astro'
+import IconLinkedin from '../Icons/IconLinkedin.astro'
+import IconGithub from '../Icons/IconGithub.astro'
+---
+
+<section class="contact">
+  <h3 class="upper">Contact</h3>
+  <div>
+    <IconPhone />
+    <a href="tel:+5493816187329" class="light">+54 9 381 618-7329</a>
+  </div>
+
+  <div>
+    <IconEmail />
+    <a href="mailto:galiprandi@gmail.com" class="light">galiprandi@gmail.com</a>
+  </div>
+
+  <div>
+    <IconLinkedin />
+    <a
+      href="https://www.linkedin.com/in/galiprandi"
+      target="_blank"
+      class="light">/in/galiprandi</a
+    >
+  </div>
+
+  <div>
+    <IconGithub />
+    <a href="https://github.com/galiprandi" target="_blank" class="light"
+      >/galiprandi</a
+    >
+  </div>
+
+  <div>
+    <IconPlace />
+    <a
+      href="https://www.google.com/maps/place/San+Miguel+de+Tucum%C3%A1n,+Tucum%C3%A1n/"
+      target="_blank"
+      class="light">Tucumán, Argentina</a
+    >
+  </div>
+</section>
+
+<style>
+  .contact > div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 1em 0;
+  }
+</style>

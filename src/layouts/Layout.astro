@@ -1,0 +1,116 @@
+---
+import Aside from '../components/Aside/Aside.astro'
+import Header from '../components/Header.astro'
+
+import '@fontsource-variable/montserrat'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Germán Aliprandi - Resume" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <div class="columns">
+      <Aside />
+      <slot />
+    </div>
+  </body>
+</html>
+<style is:global>
+  :root {
+    color-scheme: light dark;
+    --color-texts-ligth: light-dark(#616161, #a8a8a8);
+    --color-bg: light-dark(white, rgb(32, 32, 32));
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: var(--color-bg);
+    color: light-dark(black, white);
+    background-size: 224px;
+  }
+
+  body {
+    font-family: 'Montserrat Variable', sans-serif;
+    margin: auto;
+    max-width: 1000px;
+    /* padding-bottom: 4em; */
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: inherit;
+    }
+  }
+
+  ul {
+    list-style: circle;
+    padding: 0 0 0 1.1em;
+    font-size: 0.9em;
+
+    li:not(:last-child) {
+      margin-bottom: 0.7em;
+    }
+  }
+
+  .upper {
+    text-transform: uppercase;
+  }
+
+  .columns {
+    display: flex;
+    gap: 2em;
+  }
+
+  .light {
+    color: var(--color-texts-ligth);
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 0.5cm 1.5cm;
+    }
+
+    html,
+    body {
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      font-size: 11pt;
+    }
+
+    .no-print {
+      display: none;
+    }
+  }
+</style>

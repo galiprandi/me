@@ -1,0 +1,62 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+---
+
+<section class="experience">
+  <h3 class="upper">Experience</h3>
+  <ExperienceItem
+    position="Engineering Manager"
+    companyName="Egg Live"
+    companyUrl="https://egg.live"
+    date="June 2022 to Present"
+  >
+    I lead the development and implementation of scalable software solutions,
+    supervise multidisciplinary teams and foster collaboration between them.
+    <br />
+    I develop strategies for system stability and scalability, implementing DevOps
+    practices and aligning technical objectives with business goals.
+    <br />
+    My key accomplishments include standardizing Gitflow, promoting InnerSource culture
+    and overseeing high-impact projects.
+  </ExperienceItem>
+
+  <ExperienceItem
+    position="Software Engineer"
+    companyName="Egg Live"
+    companyUrl="https://egg.live"
+    date="June 2021 to June 2022"
+  >
+    Redesigned the application architecture to reduce load times by more than
+    50% and decrease server requests by 70%.
+    <br />
+    I led the development of a new BackOffice and implemented cutting-edge full-stack
+    technologies such as TypeScript, Next.js, Node.js, Fastify, Cypress MySQL and
+    Redis.....
+  </ExperienceItem>
+
+  <ExperienceItem
+    position="Frontend Engineer"
+    companyName="Gadget"
+    companyUrl="https://g.co/kgs/U67SYgf"
+    date="Apr 2010 to June 2021"
+  />
+
+  <ExperienceItem
+    position="IT Sales Manager"
+    companyName="Luis Brunelli y Cía S.R.L."
+    companyUrl="https://www.brunelli.com.ar/empresa/"
+    date="Jul 2005 to Dec 2009"
+  />
+</section>
+
+<style>
+  .experience {
+    margin-top: 2.5em;
+  }
+
+  @media print {
+    .experience {
+      margin-top: 1em;
+    }
+  }
+</style>

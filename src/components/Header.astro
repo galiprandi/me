@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+import profile from '../assets/profile_circle.png'
+---
+
+<header>
+  <div class="title">
+    <h1 class="upper">Germán A. Aliprandi</h1>
+    <h3 class="upper light">Engineering Manager</h3>
+  </div>
+  <div class="image">
+    <Image src={profile} alt="Germán Aliprandi" height={100} width={100} />
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+  }
+  h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+  }
+  h3 {
+    font-weight: 400;
+    margin: 0;
+  }
+</style>
