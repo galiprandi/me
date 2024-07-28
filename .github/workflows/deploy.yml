@@ -27,7 +27,7 @@ jobs:
           package-manager: pnpm@latest
 
       - name: 📝 HTML to PDF
-        uses: frnode/html-to-pdf-action@v1.1.0
+        uses: fifsky/html-to-pdf-action@master
         with:
           htmlFile: ./dist/index.html
           outputFile: ./dist/resume.pdf
