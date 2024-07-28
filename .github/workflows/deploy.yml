@@ -29,8 +29,8 @@ jobs:
       - name: 🖨 HTML to PDF
         uses: fifsky/html-to-pdf-action@master
         with:
-          htmlFile: ./public/index.html
-          outputFile: ./public/resume.pdf
+          htmlFile: ./dist/index.html
+          outputFile: ./dist/resume.pdf
 
   deploy:
     needs: build
