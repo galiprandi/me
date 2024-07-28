@@ -38,7 +38,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
     
-    steps:
       - name: Convert to PDF
         uses: "imbhargav5/puppeteer-pdf-action@master"
         with:
