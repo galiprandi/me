@@ -1,7 +1,5 @@
 ![Germán A. Aliprandi](./public/profile_hero.png)
 
-# Germán A. Aliprandi Resume
-
 This repository contains the resume of Germán Aliprandi. You can view the live version [here](https://galiprandi.github.io/me/).
 
 ## About
