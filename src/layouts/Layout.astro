@@ -47,7 +47,7 @@ const { title } = Astro.props
     font-family: 'Montserrat Variable', sans-serif;
     margin: auto;
     max-width: 1000px;
-    padding-bottom: 4em;
+    padding: 0em 3em 4em 3em;
   }
 
   code {
@@ -104,6 +104,10 @@ const { title } = Astro.props
     @page {
       size: A4;
       margin: 0.5cm 1.5cm;
+    }
+
+    body {
+      padding: 0;
     }
 
     .small-in-print {
