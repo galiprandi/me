@@ -24,14 +24,13 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         with:
-          package-manager: pnpm@latest 
+          package-manager: pnpm@latest
 
-        - name: HTML to PDF (chrome)
-          uses: frnode/html-to-pdf-action@v1.1.0
-          with:
-          htmlFile: ./dist/index.html
-          outputFile: ./dist/resume.pdf
-            
+      - name: 📝 HTML to PDF
+        uses: frnode/html-to-pdf-action@v1.1.0
+        with:
+        htmlFile: ./dist/index.html
+        outputFile: ./dist/resume.pdf
 
   deploy:
     needs: build
