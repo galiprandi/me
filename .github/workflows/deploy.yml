@@ -26,11 +26,11 @@ jobs:
         with:
           package-manager: pnpm@latest
 
-      - name: 📝 HTML to PDF
+      - name: 🖨 HTML to PDF
         uses: fifsky/html-to-pdf-action@master
         with:
-          htmlFile: ./dist/index.html
-          outputFile: ./dist/resume.pdf
+          htmlFile: ./public/index.html
+          outputFile: ./public/resume.pdf
 
   deploy:
     needs: build
