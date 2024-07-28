@@ -29,8 +29,8 @@ jobs:
       - name: 📝 HTML to PDF
         uses: frnode/html-to-pdf-action@v1.1.0
         with:
-        htmlFile: ./dist/index.html
-        outputFile: ./dist/resume.pdf
+          htmlFile: ./dist/index.html
+          outputFile: ./dist/resume.pdf
 
   deploy:
     needs: build
