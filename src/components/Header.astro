@@ -30,7 +30,18 @@ import profile from '../assets/profile_circle.png'
   .image {
     padding-right: 1em;
   }
-  @media print {
+
+  /* Screens less than 900px */
+  @media only screen and (max-width: 900px) {
+    header {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* Print */
+  @media only print {
     header {
       padding: 1em 0;
     }

@@ -38,13 +38,36 @@ const { position, companyName, date, companyUrl, className } = Astro.props
       font-weight: 600;
       margin-bottom: 0.2em;
     }
+
     .company {
       font-weight: 500;
       font-size: 95%;
       margin: 0.5em 0;
     }
+
     .desc {
       font-size: 0.95em;
+    }
+
+    /* Screens less than 900px */
+    @media only screen and (max-width: 900px) {
+      .item {
+        margin: 2em 0;
+        padding: 0;
+        border-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .position {
+        font-size: 1.1em;
+      }
+
+      .company {
+        font-size: 90%;
+      }
     }
   </style>
 </div>
