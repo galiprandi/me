@@ -9,7 +9,7 @@ import profile from '../assets/profile_circle.png'
     <h3 class="upper light">Engineering Manager</h3>
   </div>
   <div class="image">
-    <Image src={profile} alt="Germán Aliprandi" height={100} width={100} />
+    <Image src={profile} alt="Germán Aliprandi" width={123} height={123} />
   </div>
 </header>
 
@@ -44,6 +44,13 @@ import profile from '../assets/profile_circle.png'
   @media only print {
     header {
       padding: 1em 0;
+    }
+
+    .image {
+      img {
+        height: 100px;
+        width: auto;
+      }
     }
   }
 </style>
