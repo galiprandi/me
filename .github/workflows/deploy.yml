@@ -28,6 +28,9 @@ jobs:
           htmlFile: ./dist/index.html
           outputFile: ./dist/resume.pdf
 
+      - name: 📂 List the files in the dist directory
+        run: ls -l ./dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
