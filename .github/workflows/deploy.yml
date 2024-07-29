@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,6 +21,12 @@ jobs:
         uses: withastro/action@v2
         with:
           package-manager: pnpm@latest
+
+      - name: 🖨 HTML to PDF
+        uses: fifsky/html-to-pdf-action@master
+        with:
+          htmlFile: ./dist/index.html
+          outputFile: ./dist/resume.pdf
 
   deploy:
     needs: build
