@@ -23,11 +23,10 @@ jobs:
           package-manager: pnpm@latest
 
       - name: 🖨 HTML to PDF
-        uses: misaelnieto/web_to_pdf_action@master
+        uses: LukaszLapaj/html-to-pdf-action@master
         with:
-          webPageURL: ./dist/index.html
+          htmlFile: ./dist/index.html
           outputFile: ./dist/resume.pdf
-          usePuppeteer: true
 
   deploy:
     needs: build
