@@ -12,3 +12,18 @@ import Education from '../components/Education.astro'
     <Education />
   </main>
 </Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
+
+  /* Print styles */
+  @media only print {
+    main {
+      gap: 0;
+    }
+  }
+</style>
