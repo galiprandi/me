@@ -5,58 +5,48 @@ import Header from '../components/Header.astro'
 import '@fontsource-variable/montserrat'
 
 interface Props {
-  title: string
+  author?: string
+  role?: string
+  url?: string
+  description?: string
+  keywords?: string
 }
 
-const { title } = Astro.props
+const {
+  author = 'Germán A. Aliprandi',
+  role = 'Engineering Manager',
+  url = 'https://galiprandi.github.io/me',
+  description = `Resume of Germán A. Aliprandi, Engineering Manager and Software Developer with over 20 years of experience.`,
+  keywords = 'Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume',
+} = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{title}</title>
-    <meta
-      name="description"
-      content="Resume of Germán A. Aliprandi, Engineering Manager and Software Developer with over 20 years of experience."
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="keywords"
-      content="Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume"
-    />
-    <meta name="author" content="Germán A. Aliprandi" />
 
-    <meta name="generator" content={Astro.generator} />
-
-    <link rel="canonical" href="https://www.yoursite.com" />
+    <title>{author}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content={author} />
+    <link rel="canonical" href={url} />
 
     <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Germán A. Aliprandi - Engineering Manager Resume"
-    />
-    <meta
-      property="og:description"
-      content="Explore the professional journey and technical skills of Germán A. Aliprandi, an experienced Engineering Manager."
-    />
+    <meta property="og:title" content={author} />
+    <meta property="og:description" content={description} />
     <meta
       property="og:image"
       content="/me/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp"
     />
-    <meta property="og:url" content="https://www.yoursite.com" />
+    <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:title" content={author} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Germán A. Aliprandi - Engineering Manager Resume"
-    />
-    <meta
-      name="twitter:description"
-      content="Explore the professional journey and technical skills of Germán A. Aliprandi, an experienced Engineering Manager."
-    />
     <meta
       name="twitter:image"
       content="/me/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp"
