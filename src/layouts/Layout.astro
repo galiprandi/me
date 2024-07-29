@@ -15,11 +15,55 @@ const { title } = Astro.props
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Germán A. Aliprandi - Resume" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/me/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta
+      name="description"
+      content="Resume of Germán A. Aliprandi, Engineering Manager and Software Developer with over 20 years of experience."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume"
+    />
+    <meta name="author" content="Germán A. Aliprandi" />
+
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href="https://www.yoursite.com" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Germán A. Aliprandi - Engineering Manager Resume"
+    />
+    <meta
+      property="og:description"
+      content="Explore the professional journey and technical skills of Germán A. Aliprandi, an experienced Engineering Manager."
+    />
+    <meta
+      property="og:image"
+      content="/me/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp"
+    />
+    <meta property="og:url" content="https://www.yoursite.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Germán A. Aliprandi - Engineering Manager Resume"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore the professional journey and technical skills of Germán A. Aliprandi, an experienced Engineering Manager."
+    />
+    <meta
+      name="twitter:image"
+      content="/me/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/me/favicon.svg" />
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CZ03PKC275"
     ></script>
