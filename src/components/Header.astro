@@ -1,15 +1,17 @@
 ---
 import { Image } from 'astro:assets'
 import profile from '../assets/profile_circle.png'
+
+const { author, role } = Astro.props
 ---
 
 <header>
   <div class="title">
-    <h1 class="upper">Germán A. Aliprandi</h1>
-    <h2 class="upper light">Engineering Manager</h2>
+    <h1 class="upper">{author}</h1>
+    <h2 class="upper light">{role}</h2>
   </div>
   <div class="image">
-    <Image src={profile} alt="Germán Aliprandi" width={123} height={123} />
+    <Image src={profile} alt={author} width={123} height={123} />
   </div>
 </header>
 
