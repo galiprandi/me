@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/MultiPageLayout.astro'
+import Profile from '../components/Profile.fe.astro'
+import Experience from '../components/Experience/Experience.fe.astro'
+import Education from '../components/Education.astro'
+import Contact from '../components/Aside/Contact.astro'
+import Skills from '../components/Aside/Skills.fe.astro'
+import TechStack from '../components/Aside/TechStack.fe.astro'
+---
+
+<Layout>
+  <main>
+    <Profile />
+    <section class="columns">
+      <Contact />
+      <Skills />
+      <TechStack />
+    </section>
+    <Experience />
+    <Education />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
+
+  /* Print styles */
+  @media only print {
+    main {
+      gap: 0;
+    }
+    .columns {
+      font-size: small;
+    }
+  }
+</style>
