@@ -7,6 +7,7 @@ import TechStack from '../components/Aside/TechStack.astro'
 import Header from '../components/Header.astro'
 
 import '@fontsource-variable/montserrat'
+import Podcast from '../components/Podcast.astro'
 
 interface Props {
   author?: string
@@ -73,6 +74,7 @@ const {
   <body>
     <Header author={author} role={role} />
     <slot />
+    <Podcast />
   </body>
 </html>
 <style is:global>

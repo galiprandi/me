@@ -3,6 +3,7 @@ import Aside from '../components/Aside/Aside.astro'
 import Header from '../components/Header.astro'
 
 import '@fontsource-variable/montserrat'
+import Podcast from '../components/Podcast.astro'
 
 interface Props {
   author?: string
@@ -72,6 +73,7 @@ const {
       <Aside />
       <slot />
     </div>
+    <Podcast />
   </body>
 </html>
 <style is:global>
