@@ -15,6 +15,12 @@ const { author, role } = Astro.props
   </div>
 </header>
 
+<script>
+  const imageElement = document.querySelector('.image') as HTMLImageElement
+  const picture = new URLSearchParams(window.location.search).get('picture')
+  if (imageElement && picture === 'false') imageElement.style.display = 'none'
+</script>
+
 <style>
   header {
     display: flex;
