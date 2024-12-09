@@ -1,9 +1,11 @@
 ---
+import IconPause from './Icons/IconPause.astro'
 import IconPodcast from './Icons/IconPodcast.astro'
 ---
 
 <span class="container no-print" title="Hear about me">
-  <IconPodcast />
+  <IconPodcast class="play-icon" />
+  <IconPause class="pause-icon" />
   <audio controls style="display: none" id="podcast-audio">
     <source src="/me/podcast.mp3" type="audio/mpeg" />
   </audio>
@@ -42,22 +44,26 @@ import IconPodcast from './Icons/IconPodcast.astro'
       opacity: 1;
       transition: all 0.3s;
 
-      &:hover,
-      &.playing {
+      &:hover {
         opacity: 0.8;
-        animation: playing 1.2s infinite;
       }
-    }
 
-    @keyframes playing {
-      0% {
-        transform: scale(1);
+      &.playing {
+        .play-icon {
+          display: none;
+        }
+        & .pause-icon {
+          display: block;
+        }
       }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
+
+      &:not(.playing) {
+        & > .play-icon {
+          display: block;
+        }
+        & > .pause-icon {
+          display: none;
+        }
       }
     }
   </style>
