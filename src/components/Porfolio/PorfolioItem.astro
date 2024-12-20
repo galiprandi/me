@@ -1,0 +1,92 @@
+---
+import IconGithub from "../Icons/IconGithub.astro";
+import IconWebsite from "../Icons/IconWebsite.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  techs: string[];
+  link?: string;
+  linkName?: string;
+  repo: string;
+  className?: string;
+}
+
+const { title, description, techs, link, linkName, repo, className } = Astro.props;
+---
+
+<article class={`portfolio-item ${className ?? ''}`}>
+  <h3 class="title light">{title}</h3>
+  <p class="description small-in-print">{description}</p>
+  <ul class="techs">
+    {techs.map((tech) => <li class="tech-item">{tech}</li>)}
+  </ul>
+  <div class="links no-print">
+    <a href={repo} target="_blank" rel="noopener noreferrer">
+      <IconGithub /> View on GitHub
+    </a>
+    {
+      link && linkName && (
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <IconWebsite /> {linkName}
+        </a>
+      )
+    }
+  </div>
+</article>
+
+<style>
+  .portfolio-item {
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    color: var(--color-texts-ligth)
+  }
+
+  .portfolio-item + .portfolio-item {
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-weight: 600;
+    margin-bottom: 0.2em;
+  }
+
+  .description {
+    margin: .5rem 0;
+  }
+
+  .techs {
+    display: flex;
+    margin: 1rem 0;
+    padding: 0;
+    gap: 1rem;
+    font-size: smaller;
+  }
+
+  .tech-item {
+    margin: 0;
+    padding: 0.3rem 1rem;
+    background-color: #ebebeb;
+    border-radius: 1rem;
+    display: grid;
+    place-items: center;
+  }
+
+  .links {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: .9rem;
+  }
+
+  @media only print {
+    .links {
+      display: none;
+    }
+  }
+</style>

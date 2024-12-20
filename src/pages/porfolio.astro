@@ -1,0 +1,27 @@
+---
+import PorfolioLayout from "../layouts/PorfolioLayout.astro";
+import Profile from "../components/Profile.astro";
+import PorfolioList from "../components/Porfolio/PorfolioList.astro";
+---
+
+<PorfolioLayout>
+  <main>
+    <Profile />
+    <PorfolioList />
+  </main>
+</PorfolioLayout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+  }
+
+  /* Print styles */
+  @media only print {
+    main {
+      gap: 0;
+    }
+  }
+</style>

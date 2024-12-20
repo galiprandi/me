@@ -1,0 +1,69 @@
+---
+import PorfolioItem from "./PorfolioItem.astro";
+---
+
+<section class="portfolio">
+    <h3 class="upper">Portfolio</h3>
+    <div class="portfolio-grid">
+        <PorfolioItem
+            title="Code Snapshots"
+            description="A podcast series delivering concise 15-minute episodes focused on modern development practices and cutting-edge technologies. Available on major platforms, it aims to inspire and inform developers with actionable insights."
+            techs={["YouTube", "Podcast Tools", "Audacity", "Tech", "Management", "Tools"]}
+            linkName="Watch on YouTube"
+            link="https://www.youtube.com/channel/UCCodeSnapshots"
+            repo="https://github.com/galiprandi/code-snapshots"
+        />
+
+        <PorfolioItem
+            title="React Tools"
+            description="An open-source utility library designed to simplify React development by offering reusable components and hooks. It enhances developer productivity with TypeScript integration and built-in testing utilities."
+            techs={["React", "TypeScript", "NPM", "Vitest", "CI/CD", "GitFlow", "GitHub Actions"]}
+            linkName="View on NPM"
+            link="https://www.npmjs.com/package/@galiprandi/react-tools"
+            repo="https://github.com/galiprandi/react-tools"
+        />
+
+        <PorfolioItem
+            title="Tabata Timer"
+            description="A Progressive Web App (PWA) tailored for interval-based Tabata workouts. It features an intuitive UI, offline capabilities, and responsive design to provide a seamless user experience."
+            techs={["React", "TypeScript", "PWA", "Vite"]}
+            linkName="Try it out"
+            link="https://galiprandi.github.io/tabata"
+            repo="https://github.com/galiprandi/tabata-timer"
+            className="no-print"
+        />
+
+        <PorfolioItem
+            title="CSS Toolset"
+            description="A versatile collection of CSS utilities and tools designed for modern web development. It includes responsive design helpers and GitHub Actions for streamlined deployments."
+            techs={["CSS", "GitHub Actions", "PostCSS"]}
+            repo="https://github.com/galiprandi/css-toolset"
+        />
+
+        <PorfolioItem
+            title="Sustainable Cities"
+            description="Sustainable Cities is a project that seeks to consolidate individual mobility, focusing on the bicycle, as the axis of a new socio-cultural order that promotes the sustainability of cities and re-adapts their spaces for the benefit of their inhabitants."
+            techs={["React", "TailwindCSS", "GitHub Pages"]}
+            linkName="Read about it"
+            link="https://galiprandi.github.io/ciudades-sostenibles/"
+            repo="https://github.com/galiprandi/sustainable-cities"
+            className="no-print"
+        />
+
+        <PorfolioItem
+            title="Event Manager"
+            description="A dynamic web application for organizing and managing events. It includes real-time updates, collaborative features, and a user-friendly interface for efficient event management."
+            techs={["React", "Node.js", "Express", "MongoDB"]}
+            repo="https://github.com/galiprandi/event-manager"
+        />
+
+        <PorfolioItem
+            title="Meta Tag Generator"
+            description="A straightforward tool for creating SEO-optimized meta tags. It offers live previews, practical recommendations, and a clean UI for easy usage."
+            techs={["HTML", "CSS", "JavaScript", "Webpack"]}
+            linkName="Try it out"
+            link="https://galiprandi.github.io/meta-tag-generator"
+            repo="https://github.com/galiprandi/meta-tag-generator"
+        />
+    </div>
+</section>
