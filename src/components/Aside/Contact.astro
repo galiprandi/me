@@ -1,18 +1,13 @@
 ---
-import IconEmail from '../Icons/IconEmail.astro'
-import IconLinkedin from '../Icons/IconLinkedin.astro'
-import IconGithub from '../Icons/IconGithub.astro'
-import IconResume from '../Icons/IconResume.astro'
+import IconEmail from "../Icons/IconEmail.astro";
+import IconLinkedin from "../Icons/IconLinkedin.astro";
+import IconGithub from "../Icons/IconGithub.astro";
+import IconResume from "../Icons/IconResume.astro";
+import IconPorfolio from "../Icons/IconPorfolio.astro";
 ---
 
 <section class="contact">
   <h3 class="upper">Contact</h3>
-  <div>
-    <IconResume />
-    <a href="https://galiprandi.github.io/me" class="light"
-      >galiprandi.github.io/me</a
-    >
-  </div>
 
   <div>
     <IconEmail />
@@ -34,13 +29,28 @@ import IconResume from '../Icons/IconResume.astro'
       >/galiprandi</a
     >
   </div>
+
+  <div>
+    <IconResume />
+    <a href="https://galiprandi.github.io/me" class="light"
+      >galiprandi.github.io/me</a
+    >
+  </div>
+
+  <div>
+    <IconPorfolio />
+    <a
+      href="https://galiprandi.github.io/me/porfolio"
+      class="light small-in-print">/me/porfolio</a
+    >
+  </div>
 </section>
 
 <style>
   .contact > div {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.5em;
     margin: 1em 0;
   }
 
