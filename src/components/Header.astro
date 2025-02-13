@@ -1,8 +1,8 @@
 ---
-import { Image } from 'astro:assets'
-import profile from '../assets/profile_circle.png'
+import { Image } from "astro:assets";
+import profile from "../assets/profile_circle.png";
 
-const { author, role } = Astro.props
+const { author, role } = Astro.props;
 ---
 
 <header>
@@ -16,9 +16,12 @@ const { author, role } = Astro.props
 </header>
 
 <script>
-  const imageElement = document.querySelector('.image') as HTMLImageElement
-  const picture = new URLSearchParams(window.location.search).get('picture')
-  if (imageElement && picture === 'false') imageElement.style.display = 'none'
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageElement = document.querySelector(".image") as HTMLImageElement;
+    const pic = new URLSearchParams(window.location.search).get("pic");
+
+    if (imageElement && pic !== null) imageElement.style.display = "block";
+  });
 </script>
 
 <style>
@@ -40,6 +43,7 @@ const { author, role } = Astro.props
   }
 
   .image {
+    display: none;
     padding-right: 1em;
   }
 
