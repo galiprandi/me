@@ -1,10 +1,10 @@
 ---
 // Usage: <ExperienceItem position="Engineering Manager" companyName="Egg Live" companyUrl="..." date="June 2022 to Present" desc="..." />
 
-const { position, companyName, date, companyUrl, className } = Astro.props
+const { position, companyName, date, companyUrl, className } = Astro.props;
 ---
 
-<div class={`item ${className ?? ''}`}>
+<div class={`item ${className ?? ""}`}>
   <h3 class="position light">{position}</h3>
   <p class="company light">
     <a href={companyUrl} target="_blank" rel="noopener noreferrer"
@@ -18,17 +18,17 @@ const { position, companyName, date, companyUrl, className } = Astro.props
   <style>
     .item {
       position: relative;
-      padding-left: 2em;
-      border-left: 2px solid var(--color-texts-ligth);
+      padding-left: 1.5em;
+      border-left: 0.13em solid var(--color-texts-ligth);
       color: var(--color-texts-ligth);
-      margin-left: 0.5em;
+      margin-left: 0.4em;
 
       &::before {
-        content: 'o';
+        content: "o";
         height: 1.5em;
         background-color: var(--color-bg);
         position: absolute;
-        left: -0.37em;
+        left: -0.34em;
         top: -0.15em;
         font-size: 1.5em;
       }
@@ -67,6 +67,19 @@ const { position, companyName, date, companyUrl, className } = Astro.props
 
       .company {
         font-size: 90%;
+      }
+    }
+
+    /* Print styles */
+    @media only print {
+      .item {
+        padding-left: 0;
+        border-left: 0;
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
       }
     }
   </style>
