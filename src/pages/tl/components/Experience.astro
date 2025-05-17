@@ -1,0 +1,77 @@
+---
+import ExperienceItem from "../../../components/Experience/ExperienceItem.astro";
+---
+
+<section class="experience">
+  <h3 class="upper">Experience</h3>
+  <ExperienceItem
+    position="Software Engineer - Tech Lead"
+    companyName="Egg Live"
+    companyUrl="https://egg.live"
+    date="June 2022 to Present"
+  >
+    <p class="light small-in-print">
+      As Tech Lead, I led a team of 5 devs in strategic projects: I designed the
+      Pay Gateway API (integrating Stike, d-Local, Mercado Pago), optimized the
+      CI/CD pipelines in AWS Amplify, developed the landing page egg.live with
+      Next.js, implemented the Egg Design System, and integrated tools such as
+      Sentry, Intercom, Hubspot, and New Relic.
+    </p>
+    <p class="light small-in-print">
+      I designed and deployed an AI Agent API with Fastify and OpenAI,
+      supporting tool calls and MCPs, in addition to developing an API that
+      connects to MongoDB, SQL, and Redis, managing the entire user flow. I
+      implemented a Development Guide and a Bash script adopted by 100% of the
+      technical team, proposed InnerSource, and participated in hiring,
+      offboarding, and the Performance & Career Review program.
+    </p>
+  </ExperienceItem>
+
+  <div class="break-page"></div>
+
+  <ExperienceItem
+    position="Software Engineer"
+    companyName="Egg Live"
+    companyUrl="https://egg.live"
+    date="June 2021 to June 2022 (1 yr)"
+  >
+    <p class="light small-in-print">
+      Redesigned the core apps' frontend architecture using TanStack Query +
+      WebSockets to hydrate cache in real time, apply optimistic updates, and
+      reduce API calls by 10x, significantly improving UX and lowering
+      Kubernetes pod usage.
+    </p>
+    <p class="light small-in-print">
+      Co-designed a 6-month bootcamp with HR for 5 junior devs, participating in
+      candidate interviews and selection. During the program, we built the
+      company’s BackOffice from scratch; upon completion, all devs joined the
+      team in key roles. Also increased Jest unit test coverage and implemented
+      e2e testing with Cypress, boosting overall software quality.
+    </p>
+    <p class="light small-in-print">
+      Built a login/registration system from scratch using AWS Lambda + SQS,
+      scaling seamlessly to +40k daily sign-ups without bottlenecks.
+    </p>
+  </ExperienceItem>
+
+  <ExperienceItem
+    position="Frontend Engineer"
+    companyName="Gadget"
+    companyUrl="https://g.co/kgs/U67SYgf"
+    date="Apr 2010 to June 2021 (9 yrs 9 mos)"
+  >
+    <p class="light small-in-print">
+      Led the end-to-end development and deployment of the company's SaaS
+      platforms for 9+ years, ensuring 98.7% uptime and long-term product
+      stability.
+    </p>
+  </ExperienceItem>
+
+  <ExperienceItem
+    position="IT Sales Manager"
+    companyName="Luis Brunelli y Cía S.R.L."
+    companyUrl="https://www.brunelli.com.ar/empresa/"
+    date="Jul 2005 to Dec 2009 (4 yrs 6 mos)"
+    className="no-print"
+  />
+</section>

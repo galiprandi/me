@@ -1,6 +1,11 @@
 ---
-// Usage: <ExperienceItem position="Engineering Manager" companyName="Egg Live" companyUrl="..." date="June 2022 to Present" desc="..." />
-
+interface Props {
+  position: string;
+  companyName: string;
+  date: string;
+  companyUrl: string;
+  className?: string;
+}
 const { position, companyName, date, companyUrl, className } = Astro.props;
 ---
 

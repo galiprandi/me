@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  className?: string;
+  content?: string[];
+}
+const { title, className, content } = Astro.props;
+---
+
+<section class={`section ${className ?? ""}`}>
+  <h3 class="upper">{title}</h3>
+  {content?.map((item) => <p class="light small-in-print">{item}</p>)}
+</section>
