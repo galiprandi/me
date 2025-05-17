@@ -13,6 +13,7 @@ interface Props {
   description?: string;
   keywords?: string;
   multiPage?: boolean;
+  title?: string;
 }
 
 const {
@@ -22,6 +23,7 @@ const {
   description = `Resume of Germán A. Aliprandi, Engineering Manager and Software Developer with over 20 years of experience.`,
   keywords = "Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume",
   multiPage = false,
+  title,
 } = Astro.props;
 ---
 
@@ -31,7 +33,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{author}</title>
+    <title>{title ?? author}</title>
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
     <meta name="author" content={author} />

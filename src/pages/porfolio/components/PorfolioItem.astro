@@ -19,7 +19,7 @@ const { title, description, techs, link, linkName, repo, className } =
 <article class={`portfolio-item ${className ?? ""}`}>
   <h3 class="title light">{title}</h3>
   <p class="description small-in-print">{description}</p>
-  <ul class="techs">
+  <ul class="techs no-print">
     {techs?.map((tech) => <li class="tech-item">{tech}</li>)}
   </ul>
   <div class="links no-print">
@@ -58,6 +58,7 @@ const { title, description, techs, link, linkName, repo, className } =
 
   .techs {
     display: flex;
+    flex-wrap: wrap;
     margin: 1rem 0;
     padding: 0;
     gap: 1rem;
@@ -88,6 +89,11 @@ const { title, description, techs, link, linkName, repo, className } =
   @media only print {
     .links {
       display: none;
+    }
+
+    .tech-item {
+      border: 1px solid var(--color-texts-ligth);
+      background-color: snow;
     }
   }
 </style>
