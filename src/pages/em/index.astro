@@ -1,0 +1,33 @@
+---
+import Education from "../../components/Education.astro";
+import Layout from "../../layouts/Layout.astro";
+import Experience from "./components/Experience.astro";
+import Profile from "./components/Profile.astro";
+---
+
+<Layout role="Hands-On Engineering Manager">
+  <main>
+    <Profile />
+    <Experience />
+    <Education />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3em;
+  }
+
+  /* Print styles */
+  @media only print {
+    main {
+      gap: 0;
+
+      h3 {
+        margin-top: 0.5em;
+      }
+    }
+  }
+</style>

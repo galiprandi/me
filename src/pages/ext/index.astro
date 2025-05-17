@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Profile from "./components/Profile.astro";
+import Experience from "./components/Experience.astro";
+import Education from "../../components/Education.astro";
+---
+
+<Layout multiPage={true}>
+  <main>
+    <Profile />
+    <Experience />
+    <Education />
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr;
+  }
+
+  /* Print styles */
+  @media only print {
+    main {
+      gap: 0;
+    }
+    .columns {
+      font-size: small;
+    }
+  }
+</style>

@@ -1,5 +1,5 @@
 ---
-import ExperienceItem from './ExperienceItem.astro'
+import ExperienceItem from "../../../components/ExperienceItem.astro";
 ---
 
 <section class="experience">
@@ -76,13 +76,12 @@ import ExperienceItem from './ExperienceItem.astro'
     </p>
   </ExperienceItem>
 
-  <div class="page-break"></div>
-
   <ExperienceItem
     position="Software Engineer"
     companyName="Egg Live"
     companyUrl="https://egg.live"
     date="June 2021 to June 2022 (1 yr)"
+    className="break-page"
   >
     I was key in redesigning the architecture of the Course and User Management
     application, implementing TanStack Query, an asynchronous server-side state
@@ -115,7 +114,7 @@ import ExperienceItem from './ExperienceItem.astro'
   </ExperienceItem>
 
   <ExperienceItem
-    positn="Fntend Engineer"
+    position="Frontend Engineer"
     companyName="Gadget"
     companyUrl="https://g.co/kgs/U67SYgf"
     date="Apr 2010 to June 2021 (9 yrs 9 mos)"
@@ -145,6 +144,7 @@ import ExperienceItem from './ExperienceItem.astro'
     companyName="Luis Brunelli y Cía S.R.L."
     companyUrl="https://www.brunelli.com.ar/empresa/"
     date="Jul 2005 to Dec 2009 (4 yrs 6 mos)"
+    className="break-page"
   >
     In this role, I created an IT sales unit from the ground up, increasing
     monthly revenue from $0 to $4.2 million over 5 years, while achieving an
@@ -164,9 +164,3 @@ import ExperienceItem from './ExperienceItem.astro'
     </p>
   </ExperienceItem>
 </section>
-
-<style>
-  .page-break {
-    page-break-after: always;
-  }
-</style>

@@ -1,15 +1,15 @@
 ---
-import PorfolioLayout from "../layouts/PorfolioLayout.astro";
-import Profile from "../components/Profile.astro";
-import PorfolioList from "../components/Porfolio/PorfolioList.astro";
+import Layout from "../../layouts/Layout.astro";
+import Profile from "../em/components/Profile.astro";
+import PorfolioList from "./components/PorfolioList.astro";
 ---
 
-<PorfolioLayout>
+<Layout>
   <main>
     <Profile />
     <PorfolioList />
   </main>
-</PorfolioLayout>
+</Layout>
 
 <style>
   main {

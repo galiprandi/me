@@ -1,24 +1,25 @@
 ---
-import Header from '../components/Header.astro'
+import "@fontsource-variable/montserrat";
+import "../styles/global.css";
 
-import '@fontsource-variable/montserrat'
-import Podcast from '../components/Podcast.astro'
+import Header from "../components/Header.astro";
+import Podcast from "../components/Podcast.astro";
 
 interface Props {
-  author?: string
-  role?: string
-  url?: string
-  description?: string
-  keywords?: string
+  author?: string;
+  role?: string;
+  url?: string;
+  description?: string;
+  keywords?: string;
 }
 
 const {
-  author = 'Germán A. Aliprandi',
-  role = 'Hands-On Engineering Manager',
-  url = 'https://galiprandi.github.io/me',
+  author = "Germán A. Aliprandi",
+  role = "Hands-On Engineering Manager",
+  url = "https://galiprandi.github.io/me",
   description = `Resume of Germán A. Aliprandi, Engineering Manager and Software Developer with over 20 years of experience.`,
-  keywords = 'Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume',
-} = Astro.props
+  keywords = "Germán A. Aliprandi, Engineering Manager, Software Developer, Tech Lead, Resume",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -72,7 +73,7 @@ const {
     <Podcast />
   </body>
 </html>
-<style is:global>
+<!-- <style is:global>
   :root {
     color-scheme: light dark;
     --color-texts-ligth: light-dark(#616161, #abb0c2);
@@ -87,7 +88,7 @@ const {
   }
 
   body {
-    font-family: 'Montserrat Variable', sans-serif;
+    font-family: "Montserrat Variable", sans-serif;
     margin: auto;
     max-width: 1000px;
     padding: 0em 3em 4em 3em;
@@ -198,4 +199,4 @@ const {
       display: none;
     }
   }
-</style>
+</style> -->

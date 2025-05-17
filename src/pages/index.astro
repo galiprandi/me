@@ -1,33 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Profile from "../components/Profile.astro";
-import Experience from "../components/Experience/Experience.astro";
-import Education from "../components/Education/Education.astro";
+import TLPage from "./tl/index.astro";
 ---
 
-<Layout>
-  <main>
-    <Profile />
-    <Experience />
-    <Education />
-  </main>
-</Layout>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 2.3em;
-  }
-
-  /* Print styles */
-  @media only print {
-    main {
-      gap: 0;
-
-      h3 {
-        margin-top: 0.5em;
-      }
-    }
-  }
-</style>
+<TLPage />
