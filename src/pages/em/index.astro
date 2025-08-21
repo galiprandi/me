@@ -2,12 +2,18 @@
 import Education from "../../components/Education.astro";
 import Layout from "../../layouts/Layout.astro";
 import Experience from "./components/Experience.astro";
-import Profile from "./components/Profile.astro";
+import Section from "../../components/Section.astro";
 ---
 
 <Layout role="Hands-On Engineering Manager">
   <main>
-    <Profile />
+    <Section
+      title="Profile"
+      className="profile"
+      content={[
+        "Engineering Leader with 25+ years of experience building high-performing teams and driving business growth with AI-driven solutions. Proven in delivering impactful results, such as reducing operational costs by 75% through AI automation, while fostering a strong engineering culture.",
+      ]}
+    />
     <Experience />
     <Education />
   </main>
