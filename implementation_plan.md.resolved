@@ -1,0 +1,151 @@
+# CV Redesign: Software Engineer | SDLC & AI Strategy Architect
+
+Redesign the `/em` CV page to a professional 2-page printable resume with dark sidebar, new content structure, routing change from `/tl` to `/em`, and all text in perfect English.
+
+> [!IMPORTANT]
+> The new CV must print as exactly 2 clean A4 pages via `Cmd+P`. This is the #1 priority.
+
+## Content Translation & Specification (Perfect English)
+
+All content will be translated directly using crisp, action-oriented professional English terminology.
+
+### HEADER (Both Pages)
+- **Name:** Germán Aliprandi
+- **Subtitle:** Software Engineer | SDLC & AI Strategy Architect
+- **Links:** Email | LinkedIn | GitHub | [galiprandi.github.io](https://galiprandi.github.io)
+
+### ASIDE (Page 1)
+**Core Expertise**
+- AI Workflow Design (Agent-First)
+- LLM Orchestration & MCP
+- Event-Driven Architecture
+- SDLC Modernization (DORA)
+- Technical Staffing & Culture
+
+**Tech Stack**
+- **Languages:** TypeScript, Node.js, Bash.
+- **AI/Infra:** LLMs, MCP, RabbitMQ, AWS.
+- **Frontend:** React, TanStack, WebSockets.
+
+**Languages**
+- Spanish (Native)
+- English (Professional B2+)
+
+### MAIN BODY (Page 1)
+
+**Profile**
+Software Engineer with over 20 years of experience, specializing in transforming the software development lifecycle through innovative architectures. Creator of **Axioma**, a framework designed to lead the next decade of AI-assisted development. My current focus lies in the industrialization of engineering processes and agent orchestration for high-scale organizations.
+
+**Strategic Flagship: AXIOMA** *(Displayed in highlighted box)*
+A clean architecture framework designed for the AI era. It decouples business logic from infrastructure, enabling AI agents to interpret and execute actions within complex systems seamlessly. This serves as the conceptual foundation for my engineering transformation strategy.
+
+**Professional Experience**
+
+**Cencosud S.A.** (December 2025 – Present)
+- Designed and deployed an agentic workflow architecture that outperformed solutions proposed by Google, AWS, and Microsoft in technical evaluations.
+- Led the strategic modernization of the Software Development Life Cycle (SDLC) using DORA metrics and AI integration to accelerate delivery cycles.
+- Established scalable engineering culture and developer experience guidelines for high-performing enterprise teams.
+
+**Rooftop** (July 2025 – December 2025)
+- Conducted rigorous technical validations of engineering candidates, assessing both full-stack expertise and AI-first development mindsets.
+- Streamlined the technical staffing process through standardized evaluation matrices, significantly improving hiring quality and placement speed.
+
+---
+
+### ASIDE (Page 2)
+
+**Key Contributions**
+- **fastify-lm:** Multi-model LLM connectivity.
+- **mcp-vs-fnc:** Research on AI protocols.
+- **prompt-engineering:** Orchestration patterns.
+- **zero-ui:** Invisible interface concepts.
+
+**Education**
+- Technical Bachelor in Electronics (EET N° 654)
+
+**Certificates**
+- Engineering Management
+- React.js Specialist
+- Python Architecture
+
+### MAIN BODY (Page 2)
+
+**Professional Experience (Cont.)**
+
+**Egg Live** (June 2021 – December 2026)
+- Engineered a custom AI API using Fastify and OpenAI, tightly integrated with MongoDB, SQL, and Redis to power intelligent B2B integrations.
+- Defined and executed the Performance & Career Review (P&CR) program, mentoring engineers into leadership roles while sustaining a high-retention culture.
+- Re-architected the frontend application using TanStack Query and WebSockets, delivering real-time capabilities and reducing API payload by 10x.
+- Led technical initiatives and bootcamps, successfully training and integrating junior developers into the core engineering team.
+
+**Gadget** (April 2010 – June 2021)
+- Architected and maintained the core frontend infrastructure for a high-traffic SaaS platform with 98.7% uptime over a decade.
+- Spearheaded the technical transformation from legacy jQuery applications to a modern React-based ecosystem, accelerating feature time-to-market.
+- Scaled the performance and reliability of user interfaces to seamlessly support over 500,000 active clients.
+
+**LBC Tech** (January 2004 – March 2010)
+- Founded and scaled the IT division from inception to a multi-million dollar revenue unit with consistent year-over-year growth.
+- Drove national expansion strategies, extending service coverage from a single region to 15 provinces across the country.
+- Aligned technical vision with operational execution, optimizing inventory cycles and establishing the division as a top-tier national supplier.
+
+**Open Source & Ecosystem Impact**
+- **development-guide:** Engineering standards and culture guide for high-performance teams.
+- **@interpolator/xlsx:** Dynamic document automation engine for business processes.
+- **@galiprandi/array-tools:** High-performance library for massive data manipulation.
+
+### FOOTER (Both Pages)
+"Built for the next decade of AI-driven engineering."
+
+---
+
+## Proposed Changes
+
+> Prioridad: la versión imprimible es el deliverable principal; la vista en pantalla debe optimizarse para print fidelity (preview a escala) y no al revés.
+
+#### Routing
+
+#### [MODIFY] [index.astro](file:///Users/cenco/Github/galiprandi/me/src/pages/index.astro)
+- Change import from [./tl/index.astro](file:///Users/cenco/Github/galiprandi/me/src/pages/tl/index.astro) to [./em/index.astro](file:///Users/cenco/Github/galiprandi/me/src/pages/em/index.astro)
+- Render `<EMPage />` instead of `<TLPage />`
+
+#### [ADD] Redirect `/tl` → `/em`
+- Add a redirect rule so legacy links to `/tl` land on the new CV (`/em`). If Astro supports static redirects, configure it there; otherwise add a lightweight middleware/route handler.
+
+#### Layout (New 2-Page CV Layout)
+
+Instead of modifying [Layout.astro](file:///Users/cenco/Github/galiprandi/me/src/layouts/Layout.astro) (which is shared with `/tl`, `/ext`, `/porfolio`), the `/em` page will get a **self-contained layout** to avoid breaking other routes.
+
+#### [MODIFY] [index.astro](file:///Users/cenco/Github/galiprandi/me/src/pages/em/index.astro)
+Complete rewrite. **This becomes the master 2-page CV page** with its own inline layout.
+
+**Key design decisions:**
+- Each page is a `<div class="cv-page">` with `height: 297mm` (A4) for precise print control.
+- Dark sidebar (`#1e293b` slate-800) with white text.
+- Header repeats on both pages (compact version).
+- Footer tagline repeats on both pages.
+- Axioma section in a subtle highlighted box (`background: #f8fafc`, border-left accent).
+- Experience items simplified: **bold title + light date** pattern, bullet points only.
+- Screen preview should mirror print proportions: center two stacked pages on wide screens with subtle shadow; avoid styles that diverge between screen and print except for `@media print` overrides.
+
+### Styling
+
+#### [MODIFY] [global.css](file:///Users/cenco/Github/galiprandi/me/src/styles/global.css)
+- Add CSS custom properties for the dark sidebar palette.
+- Add `.cv-page` class with `height: 297mm`, `box-sizing: border-box`.
+- Add print-specific `@page` rules ensuring clean 2-page split.
+- Definir márgenes orgánicos para impresión: `@page { size: A4; margin: 12mm 14mm; }` y en `.cv-page` usar paddings fluidos (p. ej. `padding: 18mm 16mm 16mm`) para mantener proporciones sin recortes.
+- Controlar cortes de página: `.cv-page { break-after: page; }`, y `break-inside: avoid` en bloques clave (experiencia, sidebar sections, axioma) para evitar splits incómodos.
+- Tipografía y densidad: fuente sans consistente con el sitio, `line-height: 1.35–1.4`, tamaños calibrados (ej. body 10.5–11pt, headings 12–16pt) y listas con `margin-block: 0.25em 0.4em` para encajar en 2 páginas.
+- Ajustes de bullets: limitar longitud de ítems y espaciar con `gap` corto; usar `max-width` en columna principal si hace falta para evitar desbordes en print.
+- Add `.cv-sidebar` and `.axioma-box` styles.
+
+## Verification Plan
+1. **Browser Validation**: Run `pnpm dev` and verify rendering at `http://localhost:4321/me/`.
+2. **Print Validation**: Trigger `Cmd+P` on the page and verify exactly 2 A4 pages are generated via browser print preview.
+3. **Redirection Check**: Abrir `/tl` y confirmar que redirige a `/em`.
+4. **SEO/OG Check**: Validar en `view-source:` que `<title>`, `<meta name="description">` y OG/Twitter apunten a la versión `/em` y describan el CV.
+
+## SEO/Metadata
+- Actualizar `<title>` y `<meta name="description">` de `/em` para posicionarlo como CV canónico.
+- Actualizar meta OG/Twitter (title, description) y `og:url` a `/em`.
+- Incluir `rel="canonical"` apuntando a `/em`.
