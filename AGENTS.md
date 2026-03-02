@@ -13,3 +13,10 @@ Estas reglas deben considerarse al implementar el CV imprimible:
 
 4) **Validación multi-navegador de impresión**
    - Probar la salida de impresión en Chrome y Edge (motores distintos) para asegurar consistencia de paginado y cortes.
+
+5) **Operación del servidor de desarrollo**
+   - El servidor dev puede estar ya ejecutándose; no iniciarlo manualmente. Si se detiene, solicitar al usuario que lo reinicie.
+   - luego de cada cambio, debes buscar evidencia grafica navegando a la ruta necesaria para verificar el resultado.
+
+6) **Evidencia gráfica tras cambios**
+   - Tras cada ajuste relevante, capturar evidencia visual (screenshot o print preview) de la ruta afectada para validar render e impresión.
