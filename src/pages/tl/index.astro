@@ -1,21 +1,22 @@
 ---
-import type { Fragment } from "astro/jsx-runtime";
-import Education from "../../components/Education.astro";
-import Experience from "./components/Experience.astro";
-import Section from "../../components/Section.astro";
-import Layout from "../../layouts/Layout.astro";
+export const prerender = true;
+const target = "/em/";
+
+export function GET() {
+  return new Response(null, {
+    status: 301,
+    headers: { Location: target },
+  });
+}
 ---
 
-<Layout role="Software Engineer & Tech Lead">
-  <main>
-    <Section
-      title="Profile"
-      className="profile"
-      content={[
-        "Staff-level Software Engineer and Tech Lead with 25+ years of experience architecting scalable, AI-powered systems. I lead high-impact projects while remaining hands-on with TypeScript, Node.js, and Fastify, delivering key optimizations like a 10x reduction in API calls.",
-      ]}
-    />
-    <Experience />
-    <Education />
-  </main>
-</Layout>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0;url=${target}`} />
+    <title>Redirecting to /em</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href={target}>/em</a>…</p>
+  </body>
+</html>

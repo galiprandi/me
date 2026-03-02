@@ -1,39 +1,263 @@
 ---
-import Education from "../../components/Education.astro";
 import Layout from "../../layouts/Layout.astro";
-import Experience from "./components/Experience.astro";
-import Section from "../../components/Section.astro";
 ---
 
-<Layout role="Hands-On Engineering Manager">
+<Layout
+  role="Software Engineer | SDLC & AI Strategy Architect"
+  description="CV for Germán Aliprandi focused on AI workflow design, SDLC modernization, and agentic architecture leadership."
+  url="https://galiprandi.github.io/me/em"
+  title="Germán Aliprandi"
+  multiPage={true}
+>
   <main>
-    <Section
-      title="Profile"
-      className="profile"
-      content={[
-        "Engineering Leader with 25+ years of experience building high-performing teams and driving business growth with AI-driven solutions. Proven in delivering impactful results, such as reducing operational costs by 75% through AI automation, while fostering a strong engineering culture.",
-      ]}
-    />
-    <Experience />
-    <Education />
+    <section class="section profile">
+      <h3 class="upper">Summary (Profile)</h3>
+      <p class="light small-in-print">
+        Software Engineer with over 20 years of technical expertise,
+        specializing in transforming the Software Development Lifecycle (SDLC)
+        through innovative architectures and large-scale AI adoption. Creator of <strong
+          >Axioma</strong
+        >, a clean-architecture framework designed to lead the next decade of
+        AI-assisted development by decoupling business logic for seamless
+        agentic orchestration. Currently focused on industrializing engineering
+        processes and designing "Agent-First" workflows for high-scale
+        organizations.
+      </p>
+    </section>
+
+    <section class="section profile">
+      <h3 class="upper">Strategic Flagship: Axioma</h3>
+      <p class="light small-in-print">
+        An infrastructure-agnostic framework designed for the AI era. It
+        eliminates friction between LLMs and complex systems via a
+        contract-based structure, allowing AI agents to understand and execute
+        business logic autonomously. Currently serving as the architectural
+        engine for Cencosud’s SDLC transformation, enabling contract-based AI
+        orchestration.
+      </p>
+    </section>
+
+    <section class="section profile">
+      <h3 class="upper">Professional Experience</h3>
+      <ul>
+        <li class="light small-in-print">
+          <strong
+            >Cencosud S.A. — Software Engineer (Dec 2025 – Present):</strong
+          > Leading a radical shift in the software construction model for +800 developers
+          and 120,000 employees, redefining the technology strategy through AI.
+          <ul>
+            <li>
+              <strong>SDLC Re-engineering (Global Strategy):</strong> Original Agent-First
+              workflow, <strong
+                >selected over alternatives from Google, AWS, and Microsoft</strong
+              > due to its end-to-end SDLC coverage (User Story → PR); projected <strong
+                >2x–3x faster TTM</strong
+              > and reduced ambiguity.
+            </li>
+            <li>
+              <strong>Agent Infrastructure (MCP):</strong> Standardized agent access
+              to tools/data using MCP for coherent, scalable automation.
+            </li>
+            <li>
+              <strong>Release Operational Efficiency:</strong> Rebuilt Android/iOS
+              release flow with orchestrated bash scripts; cut manual work from <strong
+                >50</strong
+              > minutes to <strong>5</strong> automated, eliminating human error.
+            </li>
+            <li>
+              <strong>Quality Engineering & Data Insights:</strong> Living documentation
+              auto-maintained; real-time progress for executive decision-making.
+            </li>
+          </ul>
+        </li>
+        <li class="light small-in-print">
+          <strong
+            >Rooftop — Senior Technical Interviewer / Staff Consultant (Jul 2025
+            – Dec 2025):</strong
+          > Specialized technical validation and talent calibration for global partners.
+          <ul>
+            <li>
+              <strong>Senior Talent Assessment:</strong> Executed 50+ deep-dive technical
+              assessments for Senior Node.js, React, and AI roles, ensuring elite-level
+              talent acquisition for global partners.
+            </li>
+            <li>
+              <strong>Technical Benchmarking:</strong> Standardized evaluation metrics
+              for system architecture and problem-solving, directly impacting the
+              quality of high-performance engineering squads.
+            </li>
+            <li>
+              <strong>Staffing Consultancy:</strong> Advised on aligning technical
+              profiles with business needs to support modern, scalable architectures.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <div class="force-break"></div>
+
+    <section class="section profile">
+      <h3 class="upper">Professional Experience (Continued)</h3>
+      <ul>
+        <li class="light small-in-print">
+          <strong
+            >Egg Live — Engineering Manager / Software Engineer (Jun 2021 –
+            Present):</strong
+          > Evolved from frontend architecture definition to technical leadership;
+          scaled platform to 50x concurrent users.
+          <ul>
+            <li>
+              <strong>B2B Ecosystem Integration:</strong> Event-driven architecture
+              (CloudEvents + RabbitMQ) to connect LMS clients (Mercado Libre, Telefónica,
+              Globant).
+            </li>
+            <li>
+              <strong>AI Agent Orchestration:</strong> General-purpose API on <strong
+                >fastify-lm</strong
+              > for rapid agent creation (LLM selection, prompts, tools).
+            </li>
+            <li>
+              <strong>Culture & Talent Management:</strong> P&amp;CR program; mentored
+              30+ developers during hypergrowth.
+            </li>
+            <li>
+              <strong>Frontend Architecture:</strong> Core redesign (TanStack Query
+              + WebSockets): 10x fewer API calls, real-time state for 5k+ concurrent
+              users.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section profile">
+      <ul>
+        <li class="light small-in-print">
+          <strong>Gadget — Software Engineer (Apr 2010 – Jun 2021):</strong> Led modernization
+          from legacy to scalable SaaS.
+          <ul>
+            <li>
+              <strong>Architectural Modernization:</strong> Built core architectures
+              with React, Node.js, AWS; migrated legacy workflows to cloud/CDN stacks.
+            </li>
+            <li>
+              <strong>Industry Transformation:</strong> Delivered interactive digital
+              galleries, replacing physical media.
+            </li>
+            <li>
+              <strong>Scalability:</strong> Maintained 98.7% uptime; optimized performance
+              for niche, high-value platforms.
+            </li>
+          </ul>
+        </li>
+        <li class="light small-in-print">
+          <strong
+            >LBC Tech (ex Luis Brunelli y Cía) — Founding Lead &amp; Business
+            Strategist (Jan 2004 – Mar 2010):</strong
+          > Built the technology division from zero and drove national expansion.
+          <ul>
+            <li>
+              <strong>IT Department Foundation:</strong> Strategy, staffing, and operations;
+              built a 13-person team.
+            </li>
+            <li>
+              <strong>Expansion &amp; Supply Chain:</strong> US provider network and
+              national logistics; presence across the country.
+            </li>
+            <li>
+              <strong>Transformation Vision:</strong> Converted diversification into
+              a large tech/hardware operation with new revenue streams.
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section profile">
+      <h3 class="upper">Open Source & Ecosystem Impact</h3>
+      <ul>
+        <li class="light small-in-print">
+          <strong>fastify-lm:</strong> Standardizing LLM integration for the Fastify
+          ecosystem.
+        </li>
+        <li class="light small-in-print">
+          <strong>mcp-vs-fnc:</strong> Comparative research on AI communication protocols
+          to guide agent interoperability.
+        </li>
+        <li class="light small-in-print">
+          <strong>development-guide:</strong> Engineering culture and standards for
+          high-performance teams.
+        </li>
+        <li class="light small-in-print">
+          <strong>@interpolator/xlsx:</strong> Dynamic document automation engine
+          for business processes.
+        </li>
+        <li class="light small-in-print">
+          <strong>@galiprandi/array-tools:</strong> High-performance JavaScript utilities
+          for SQL-like operations on arrays.
+        </li>
+        <li class="light small-in-print">
+          <strong>@galiprandi/react-tools:</strong> Lightweight React utilities and
+          components for UI productivity.
+        </li>
+        <li class="light small-in-print">
+          <strong>zero-ui:</strong> Concept exploration of invisible interfaces.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section profile">
+      <h3 class="upper">Footer</h3>
+      <p class="light small-in-print manifesto">
+        "Built for the next decade of AI-driven engineering."
+      </p>
+    </section>
   </main>
 </Layout>
 
 <style>
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 2.3em;
+  body {
+    line-height: 1.5;
   }
 
-  /* Print styles */
-  @media only print {
-    main {
-      gap: 0;
+  .force-break {
+    break-before: page;
+  }
 
-      h3 {
-        margin-top: 0.5em;
-      }
+  @media screen {
+    .section p,
+    .section li {
+      line-height: 1.55;
     }
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 12mm 14mm;
+    }
+
+    .force-break {
+      break-before: page;
+    }
+
+    body {
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+
+    .section {
+      margin-bottom: 0.8em;
+    }
+
+    ul {
+      margin-top: 0.3em;
+      gap: 0.4em;
+    }
+  }
+
+  .manifesto {
+    text-align: center;
+    letter-spacing: 0.02em;
   }
 </style>
