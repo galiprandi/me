@@ -1,0 +1,40 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import PostList from "../../components/Blog/PostList.astro";
+
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter((p: CollectionEntry<"blog">) => p.data.lang === "es" && !p.data.draft)
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+---
+
+<BlogLayout
+  title="Blog"
+  description="Artículos sobre ingeniería de software, inteligencia artificial y arquitectura de sistemas."
+  lang="es"
+>
+  <h1>Artículos</h1>
+  {
+    posts.length === 0 ? (
+      <p class="empty">Aún no hay artículos publicados.</p>
+    ) : (
+      <PostList posts={posts} lang="es" />
+    )
+  }
+</BlogLayout>
+
+<style>
+  h1 {
+    font-size: 1.8rem;
+    margin: 0 0 1.2em 0;
+    font-weight: 600;
+  }
+  .empty {
+    color: var(--color-texts-light);
+    font-style: italic;
+  }
+</style>

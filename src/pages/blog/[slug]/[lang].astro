@@ -1,0 +1,230 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import LangSwitch from "../../../components/Blog/LangSwitch.astro";
+import RelatedPosts from "../../../components/Blog/RelatedPosts.astro";
+import MissingLangBanner from "../../../components/Blog/MissingLangBanner.astro";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+  const allSlugs = [...new Set(posts.map((p) => p.data.postSlug))];
+
+  const paths: {
+    params: { slug: string; lang: string };
+    props: {
+      post: CollectionEntry<"blog">;
+      allPosts: CollectionEntry<"blog">[];
+      isFallback: boolean;
+      otherLang: string | null;
+    };
+  }[] = [];
+
+  for (const slug of allSlugs) {
+    const bySlug = posts.filter(
+      (p: CollectionEntry<"blog">) => p.data.postSlug === slug,
+    );
+    for (const post of bySlug) {
+      const other = bySlug.find(
+        (p: CollectionEntry<"blog">) => p.data.lang !== post.data.lang,
+      );
+      paths.push({
+        params: { slug: slug as string, lang: post.data.lang as string },
+        props: {
+          post,
+          allPosts: posts,
+          isFallback: false,
+          otherLang: other?.data.lang ?? null,
+        },
+      });
+    }
+
+    const langs = ["es", "en"];
+    for (const lang of langs) {
+      if (!bySlug.some((p: CollectionEntry<"blog">) => p.data.lang === lang)) {
+        const fallback = bySlug[0];
+        if (fallback) {
+          const other = bySlug.find(
+            (p: CollectionEntry<"blog">) => p.data.lang !== fallback.data.lang,
+          );
+          paths.push({
+            params: { slug: slug as string, lang: lang as string },
+            props: {
+              post: fallback,
+              allPosts: posts,
+              isFallback: true,
+              otherLang: other?.data.lang ?? null,
+            },
+          });
+        }
+      }
+    }
+  }
+
+  return paths;
+}
+
+const { post, allPosts, isFallback, otherLang } = Astro.props;
+const { lang, slug } = Astro.params;
+const { Content } = await render(post);
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+const locale = post.data.lang === "en" ? "en-US" : "es-ES";
+const formattedDate = post.data.pubDate.toLocaleDateString(locale, dateOptions);
+const formattedUpdated = post.data.updatedDate
+  ? post.data.updatedDate.toLocaleDateString(locale, dateOptions)
+  : null;
+---
+
+<BlogLayout
+  title={post.data.title}
+  description={post.data.description}
+  lang={lang}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+  ogImage={post.data.heroImage}
+>
+  {
+    isFallback && (
+      <MissingLangBanner
+        requestedLang={lang}
+        availableLang={post.data.lang}
+        slug={slug}
+      />
+    )
+  }
+
+  {
+    !isFallback && (
+      <LangSwitch slug={slug} currentLang={lang} otherLang={otherLang} />
+    )
+  }
+
+  <article>
+    <time class="post-date">{formattedDate}</time>
+    <h1>{post.data.title}</h1>
+    {formattedUpdated && <p class="updated">Updated: {formattedUpdated}</p>}
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+
+  <div class="post-tags-footer">
+    {
+      post.data.tags.map((tag: string) => (
+        <a class="tag" href={`/me/blog/tag/${tag}`}>
+          {tag}
+        </a>
+      ))
+    }
+  </div>
+
+  <RelatedPosts current={post} allPosts={allPosts} lang={lang} />
+</BlogLayout>
+
+<style>
+  article {
+    margin-bottom: 2em;
+  }
+
+  .post-date {
+    display: block;
+    font-size: 0.85em;
+    color: var(--color-texts-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5em;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 0 0 0.5em 0;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .updated {
+    font-size: 0.85em;
+    color: var(--color-texts-light);
+    margin: 0 0 1.5em 0;
+  }
+
+  .content {
+    font-size: 1.05em;
+  }
+
+  .content :global(h2) {
+    font-size: 1.4rem;
+    margin: 1.8em 0 0.6em;
+    font-weight: 600;
+  }
+
+  .content :global(h3) {
+    font-size: 1.15rem;
+    margin: 1.5em 0 0.5em;
+    font-weight: 600;
+  }
+
+  .content :global(p) {
+    margin: 0 0 1.2em 0;
+  }
+
+  .content :global(pre) {
+    background: light-dark(#f5f5f5, #1e1e1e);
+    padding: 1em;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9em;
+  }
+
+  .content :global(code) {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+    font-size: 0.9em;
+  }
+
+  .content :global(p code) {
+    background: light-dark(#f0f0f0, #2a2a2a);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+  }
+
+  .content :global(ul) {
+    margin: 0 0 1.2em 0;
+    padding-left: 1.5em;
+  }
+
+  .content :global(li) {
+    margin-bottom: 0.4em;
+  }
+
+  .post-tags-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 2em 0;
+  }
+
+  .tag {
+    font-size: 0.85em;
+    padding: 0.2em 0.7em;
+    border-radius: 999px;
+    background: var(--color-bg-pill);
+    text-decoration: none;
+    color: var(--color-texts-light);
+  }
+  .tag:hover {
+    color: currentColor;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "./PostCard.astro";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+  lang: string;
+}
+
+const { posts, lang } = Astro.props;
+---
+
+<ul class="post-list">
+  {posts.map((post) => (
+    <li>
+      <PostCard post={post} lang={lang} />
+    </li>
+  ))}
+</ul>
+
+<style>
+  .post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .post-list li {
+    padding-bottom: 1.5em;
+    border-bottom: 1px solid light-dark(#eee, #333);
+  }
+
+  .post-list li:last-child {
+    border-bottom: none;
+  }
+</style>

@@ -1,0 +1,43 @@
+---
+interface Props {
+  requestedLang: string;
+  availableLang: string;
+  slug: string;
+}
+
+const { requestedLang, availableLang, slug } = Astro.props;
+
+const base = "/me";
+const messages = {
+  es: `Este artículo solo está disponible en ${availableLang.toUpperCase()}.`,
+  en: `This article is only available in ${availableLang.toUpperCase()}.`,
+};
+const linkText = {
+  es: `Ver versión en ${availableLang.toUpperCase()}`,
+  en: `View ${availableLang.toUpperCase()} version`,
+};
+---
+
+<div class="banner">
+  <p>
+    {messages[requestedLang as keyof typeof messages] || messages.en}
+    <a href={`${base}/blog/${slug}/${availableLang}`}>
+      {linkText[requestedLang as keyof typeof linkText] || linkText.en}
+    </a>
+  </p>
+</div>
+
+<style>
+  .banner {
+    background: light-dark(#fff8e1, #3d3a2e);
+    border-left: 3px solid #ffa000;
+    padding: 0.8em 1.2em;
+    margin-bottom: 1.5em;
+    font-size: 0.9em;
+  }
+
+  .banner a {
+    text-decoration: underline;
+    margin-left: 0.3em;
+  }
+</style>

@@ -1,0 +1,66 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import PostList from "../../../components/Blog/PostList.astro";
+
+export async function getStaticPaths() {
+  const posts: CollectionEntry<"blog">[] = await getCollection("blog");
+  const tags = [
+    ...new Set(posts.flatMap((p: CollectionEntry<"blog">) => p.data.tags)),
+  ];
+  return tags.map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter(
+    (p: CollectionEntry<"blog">) =>
+      p.data.tags.includes(tag as string) && !p.data.draft,
+  )
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+const hasEs = posts.some((p: CollectionEntry<"blog">) => p.data.lang === "es");
+const hasEn = posts.some((p: CollectionEntry<"blog">) => p.data.lang === "en");
+const lang = hasEs ? "es" : hasEn ? "en" : "es";
+const title = lang === "en" ? `Tag: ${tag}` : `Etiqueta: ${tag}`;
+const description =
+  lang === "en"
+    ? `Articles tagged with "${tag}"`
+    : `Artículos etiquetados con "${tag}"`;
+---
+
+<BlogLayout title={title} description={description} lang={lang}>
+  <h1>{title}</h1>
+  <p class="count">
+    {posts.length}
+    {lang === "en" ? "articles" : "artículos"}
+  </p>
+  {
+    posts.length === 0 ? (
+      <p class="empty">No articles found.</p>
+    ) : (
+      <PostList posts={posts} lang={lang} />
+    )
+  }
+</BlogLayout>
+
+<style>
+  h1 {
+    font-size: 1.6rem;
+    margin: 0 0 0.3em 0;
+    font-weight: 600;
+  }
+  .count {
+    color: var(--color-texts-light);
+    margin: 0 0 1.5em 0;
+    font-size: 0.9em;
+  }
+  .empty {
+    color: var(--color-texts-light);
+    font-style: italic;
+  }
+</style>

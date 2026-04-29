@@ -1,0 +1,92 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  lang: string;
+}
+
+const { post, lang } = Astro.props;
+const { title, description, pubDate, tags } = post.data;
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
+
+const locale = lang === "en" ? "en-US" : "es-ES";
+const formattedDate = pubDate.toLocaleDateString(locale, dateOptions);
+const base = "/me";
+---
+
+<article class="post-card">
+  <time class="post-date">{formattedDate}</time>
+  <h2 class="post-title">
+    <a href={`${base}/blog/${post.data.postSlug}/${lang}`}>{title}</a>
+  </h2>
+  <p class="post-description">{description}</p>
+  <div class="post-tags">
+    {
+      tags.map((tag: string) => (
+        <a class="tag" href={`${base}/blog/tag/${tag}`}>
+          {tag}
+        </a>
+      ))
+    }
+  </div>
+</article>
+
+<style>
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+  }
+
+  .post-date {
+    font-size: 0.8em;
+    color: var(--color-texts-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .post-title a {
+    text-decoration: none;
+    border-bottom: none;
+  }
+  .post-title a:hover {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .post-description {
+    margin: 0;
+    color: var(--color-texts-light);
+    font-size: 0.95em;
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top: 0.3em;
+  }
+
+  .tag {
+    font-size: 0.8em;
+    padding: 0.15em 0.6em;
+    border-radius: 999px;
+    background: var(--color-bg-pill);
+    text-decoration: none;
+    color: var(--color-texts-light);
+  }
+  .tag:hover {
+    color: currentColor;
+  }
+</style>

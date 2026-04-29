@@ -1,0 +1,94 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  current: CollectionEntry<"blog">;
+  allPosts: CollectionEntry<"blog">[];
+  lang: string;
+}
+
+const { current, allPosts, lang } = Astro.props;
+
+function overlap(a: string[], b: string[]) {
+  const s = new Set(a);
+  return b.filter((x) => s.has(x)).length;
+}
+
+const related = allPosts
+  .filter((p) => p.id !== current.id)
+  .map((p) => ({
+    post: p,
+    score: overlap(current.data.tags, p.data.tags),
+  }))
+  .filter((x) => x.score > 0)
+  .sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return b.post.data.pubDate.valueOf() - a.post.data.pubDate.valueOf();
+  })
+  .slice(0, 3)
+  .map((x) => x.post);
+
+const base = "/me";
+---
+
+{
+  related.length > 0 && (
+    <aside class="related-posts">
+      <h3>{lang === "en" ? "Related posts" : "Artículos relacionados"}</h3>
+      <ul>
+        {related.map((post) => (
+          <li>
+            <a href={`${base}/blog/${post.data.postSlug}/${post.data.lang}`}>
+              {post.data.title}
+            </a>
+            <span class="related-lang">({post.data.lang.toUpperCase()})</span>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  )
+}
+
+<style>
+  .related-posts {
+    margin-top: 3em;
+    padding-top: 2em;
+    border-top: 1px solid light-dark(#eee, #333);
+  }
+
+  .related-posts h3 {
+    font-size: 1.1rem;
+    margin: 0 0 0.8em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-texts-light);
+  }
+
+  .related-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+  }
+
+  .related-posts li {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+  }
+
+  .related-posts a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .related-posts a:hover {
+    border-bottom-color: currentColor;
+  }
+
+  .related-lang {
+    font-size: 0.75em;
+    color: var(--color-texts-light);
+  }
+</style>

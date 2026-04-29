@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <script is:inline>
+      const lang = navigator.language || navigator.userLanguage || "es";
+      const target = lang.startsWith("en") ? "en" : "es";
+      const base = "/me";
+      window.location.replace(`${base}/blog/${target}`);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/me/blog/es">/blog/es</a> or <a href="/me/blog/en">/blog/en</a>...</p>
+  </body>
+</html>

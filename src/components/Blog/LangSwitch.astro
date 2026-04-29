@@ -1,0 +1,42 @@
+---
+interface Props {
+  slug: string;
+  currentLang: string;
+  otherLang: string | null;
+}
+
+const { slug, currentLang, otherLang } = Astro.props;
+const base = "/me";
+---
+
+<div class="lang-switch">
+  {otherLang ? (
+    <a href={`${base}/blog/${slug}/${otherLang}`}>
+      {otherLang === "en" ? "Read in English" : "Leer en Español"}
+    </a>
+  ) : (
+    <span class="disabled">
+      {currentLang === "en" ? "No Spanish translation yet" : "Sin traducción al inglés aún"}
+    </span>
+  )}
+</div>
+
+<style>
+  .lang-switch {
+    text-align: right;
+    font-size: 0.85em;
+    margin-bottom: 1em;
+  }
+
+  .lang-switch a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .lang-switch a:hover {
+    border-bottom-color: currentColor;
+  }
+
+  .disabled {
+    color: var(--color-texts-light);
+  }
+</style>
