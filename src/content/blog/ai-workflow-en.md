@@ -1,13 +1,11 @@
 ---
-title: "Agent-First Workflow: From User Story to PR in 5 Minutes"
+title: "Workflow AI"
 description: "A practical guide to implementing end-to-end AI agents in the software lifecycle, with 2–3x acceleration potential for teams adopting the full flow."
 pubDate: 2026-04-29
 tags: ["AI", "Agent-First", "SDLC", "MCP", "Workflow"]
 lang: en
 postSlug: ai-workflow
 ---
-
-> This document is in constant evolution alongside the field of artificial intelligence applied to software development. I recommend starring it to receive updates.
 
 ## Executive Summary
 

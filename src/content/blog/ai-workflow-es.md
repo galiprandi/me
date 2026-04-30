@@ -1,13 +1,11 @@
 ---
-title: "Agent-First Workflow: De la User Story al PR en 5 Minutos"
+title: "Workflow AI"
 description: "Una guía práctica para implementar agentes de IA de extremo a extremo en el ciclo de vida del software, con potencial de aceleración 2–3x en equipos que adopten el flujo completo."
 pubDate: 2026-04-29
 tags: ["AI", "Agent-First", "SDLC", "MCP", "Workflow"]
 lang: es
 postSlug: ai-workflow
 ---
-
-> Este documento está en constante evolución junto con el campo de la inteligencia artificial aplicada al desarrollo de software. Te recomiendo marcarlo con una estrella para recibir actualizaciones.
 
 ## Resumen Ejecutivo
 
@@ -47,7 +45,7 @@ Esta propuesta implementa agentes de inteligencia artificial de extremo a extrem
 El proceso se divide en etapas secuenciales, cada una optimizada para un rol específico:
 
 ```
-User Story → Refinamiento → Desarrollo → Revisión de PR → Fusionar a main
+User Story → Refinamiento → Desarrollo → Revisión de PR
 ```
 
 ### 1. User Story (US)
