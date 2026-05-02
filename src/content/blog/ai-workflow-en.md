@@ -1,180 +1,59 @@
 ---
 title: "Workflow AI"
 description: "A practical guide to implementing end-to-end AI agents in the software lifecycle, with 2–3x acceleration potential for teams adopting the full flow."
-pubDate: 2026-04-29
+pubDate: 2025-11-03
+updatedDate: 2026-05-02
 tags: ["AI", "Agent-First", "SDLC", "MCP", "Workflow"]
 lang: en
 postSlug: ai-workflow
 ---
 
-## Executive Summary
+Imagine that every time you start a task, an assistant has already read all the context, understood the design, detected what's missing, and prepared a detailed plan so you only have to decide if it's right. That, in essence, is what **Workflow AI** proposes: a workflow where AI agents accompany every stage of software development, not as a replacement for the team, but as a copilot that reduces friction and standardizes quality.
 
-This workflow integrates end-to-end AI agents to boost software delivery velocity. Based on studies such as GitHub Research (2022) which showed up to 55% improvement in task completion speed with AI assistants, the complete approach (User Story → Refinement → AF Development → PR Review) has 2–3x acceleration potential.
+## The problem no one wants to admit
 
-The fundamental pillars:
+Most development teams lose hours — sometimes days — on tasks that don't add direct value. Writing user stories that no one understands later, translating Figma designs into code with discrepancies only discovered in production, estimating tasks with vague criteria, reviewing pull requests blindly because context is missing. It all adds up.
 
-- **Quality with minimum gates:** lint, tests, coverage and human review, with standard evidence in PRs.
-- **Design→code fidelity:** hyper-detailed User Stories with tokens, components and copies; development and review without depending on external design tools.
-- **Reduced onboarding and variability:** the agent standardizes deliverables; the team maintains control and final decision.
+Workflow AI is not magic. It's simply a way to structure work so AI agents can genuinely help, because the workflow is designed so each stage delivers exactly what the next needs. Nothing more, nothing less.
 
-## Glossary
+## The four stages of the workflow
 
-- **Agent:** An artificial intelligence program capable of editing code and using Model Context Protocol (MCP) servers. Examples include Windsurf, Cursor, Codex or Qwen Code.
-- **Agent-First (AF):** Workflow approach where processes, documents and deliverables are designed first for interaction with AI agents. High level of detail, precise structure, consistent format and clear language.
-- **BDD (Behavior-Driven Development):** Agile methodology fostering collaboration between developers, QA and non-technical participants. Creates clear, concise and testable acceptance criteria.
-- **DORA:** DevOps performance metrics: Deployment Frequency, Lead Time for Changes, Time to Restore Service and Change Failure Rate.
-- **Human-First (HF):** Approach designed first for human comprehension. Clarity, conciseness and natural language.
-- **MCP (Model Context Protocol):** Protocol allowing AI agents to connect with external tools such as Jira, Figma, GitHub, etc.
-- **Story Points:** Relative agile metric to estimate complexity, effort and uncertainty. Fibonacci scale (1, 2, 3, 5, 8, 13...).
-- **User Story (US):** User story describing a functional need from the end user's perspective.
+The journey is linear and each step feeds the next with refined context:
 
-## Overview
+**User Story → Refinement → Development → PR Review**
 
-This proposal implements end-to-end artificial intelligence agents within the development workflow. The main objective is to double or triple delivery velocity when the complete flow is integrated, with evidence from studies indicating significant efficiency improvements.
+The key is that the agent doesn't start from scratch at each stage. It inherits everything accumulated before, so it always works with complete information, not assumptions.
 
-**Strategic benefits:**
+### 1. The user story that writes itself
 
-- **Development acceleration:** Potential to double or triple delivery velocity with the complete e2e flow.
-- **High-quality automated documentation:** Automatic generation of detailed and integrated documentation.
-- **Fidelity between design and final product:** Minimize discrepancies between design and actual implementation through hyper-detailed US.
-- **Efficient training and onboarding:** Train engineers to operate with AI agents, reducing ramp-up time.
-- **Certifiable and testable code:** Ensure quality through automatic testing standards.
+Everything starts with an idea. The Product Owner tells the agent what the user needs, in natural language, without worrying about format. The agent structures this into a user story with clear acceptance criteria and, most importantly, a technical deliverables section that includes copies, colors, components, layout, and accessibility. All self-contained, without depending on the designer being available or anyone opening Figma.
 
-## Workflow
+If information is missing, the agent detects it and asks. It never invents answers.
 
-The process is divided into sequential stages, each optimized for a specific role:
+### 2. The refinement where the team only decides
 
-```
-User Story → Refinement → Development → PR Review → Merge to main
-```
+With the complete story, the agent proposes a high-level plan: a numbered list of key tasks. The team discusses, adjusts, and approves the direction. Only then does the agent break down each task into detailed subtasks, with testable acceptance criteria, proposed tests, and necessary coverage.
 
-### 1. User Story (US)
+The team focuses on deliberating on strategy, not writing tickets. It's the discussion that adds value, not the documentation.
 
-The Product Owner uses an agent to create high-quality, detailed US aligned with design.
+### 3. The development that comes with a map
 
-- **Inputs:** access to design/brief, functional/non-functional requirements.
-- **Outputs:** US with Acceptance Criteria (HF) and hyper-detailed Deliverables (AF).
+When a developer picks up a subtask, the agent has already read the description, criteria, tests, and expected coverage. So the first step isn't guessing, but validating: the agent proposes an implementation plan with files to modify and technical justification. The developer approves or corrects it, and then the agent executes.
 
-#### Flow
+During implementation, each change is accompanied by tests executed at the moment. No surprises at the end. When everything is ready, the pull request is created with a descriptive message, reference to the story, and an assigned reviewer.
 
-1. **PO Initiation:** provides brief or detailed document.
-2. **Zero-Hit Analysis:** The agent reads initial text. If there is a reference ID, fetches complete context before asking questions. If requirements are clear, skips general questions.
-3. **Requirement Classification:** New Feature, Bug Fix, Refactor, or Technical Debt.
-4. **Gap Resolution:** The agent identifies gaps but **DOES NOT INVENT** answers. Proposes *Smart Defaults* based on project evidence.
-5. **Copy Translation:** Texts translated to English in the Deliverables section for validation.
-6. **Draft Creation:** Feature template (HF/BDD) or Bug Fix (technical), with self-contained Deliverables (AF) section.
-7. **Constant Iteration:** Iterable versions to the PO with identification of new gaps.
-8. **Creation in Management System:** Once approved, the US is formally created.
+### 4. The review that doesn't depend on memory
 
-#### Example Deliverables (AF) — Self-contained
+The reviewer doesn't need to remember what was agreed in the planning a week ago. Their agent downloads the branch, executes the tests and contrasts the changes introduced in the PR with the User Story in Jira, looking for evidence in the code that all acceptance criteria are met. It also reviews quality and security, and presents a clear summary with evidence. The reviewer decides: approve or reject with concrete comments on what failed, why, and how to fix it.
 
-```yaml
-copies:
-  es:
-    title: "Iniciar sesión"
-    email_label: "Correo electrónico"
-    email_error: "Email inválido"
-  en:
-    title: "Sign in"
-    email_label: "Email"
-    email_error: "Invalid email"
+The final decision is always human. The agent only ensures that decision is informed.
 
-tokens:
-  color:
-    primary: "#0A84FF"
-    error: "#D32F2F"
-  radius:
-    sm: "8px"
+## The glue that holds it together
 
-components:
-  - name: "Button/Primary"
-    variants: { size: "Large" }
-    states: ["default", "hover", "disabled", "loading"]
+For this to work in real teams with real tools, the workflow relies on a protocol called MCP that allows agents to connect with Jira, GitHub, Figma, and any other tool the team uses. Each agent identifies with a role before acting, receives official project instructions, and executes dedicated tasks, like creating subtasks with standardized format or reading complete issues.
 
-layout:
-  grid: "12 columns, gutter 16px"
-  sections:
-    - id: "form"
-      gap: "24px"
+## Start without fear
 
-accessibility:
-  roles: ["form", "button"]
-  contrast: ">= 4.5:1"
-```
+You don't need to revolutionize the entire team overnight. The complete flow delivers maximum impact, but each stage individually already adds value. You can start with a single team, measure before and after, and expand what works. The process is designed so that, if one day an agent isn't available, the team continues working exactly the same, just a bit slower.
 
-### 2. Refinement
-
-The development team, guided by an agent, analyzes the US and creates a detailed and estimated plan.
-
-#### Phase 1: Concise Plan (HF)
-
-The agent generates a numbered list of high-level tasks with brief descriptions and an initial Story Points estimate. The team debates and refines this plan until consensus.
-
-#### Phase 2: Detailed Plan (AF)
-
-Once the general approach is approved, the agent generates numbered subtasks with:
-
-- Detailed and executable description
-- Clear and testable Acceptance Criteria
-- Story Points estimate (Fibonacci)
-- Specific US coverage
-- Proposed tests (unit, integration, e2e) with assertions
-
-### 3. Development
-
-The Developer and their agent implement the subtask iteratively.
-
-#### Flow
-
-1. **Subtask reception** assigned.
-2. **Reading and comprehension (AF):** description, ACs, coverage, proposed tests.
-3. **Implementation plan:** logical steps, files to modify, technical justification.
-4. **Plan approval** by the developer.
-5. **Implementation (AF):** code, tests, intermediate commits on US branch.
-6. **Test execution:** results report.
-7. **Code review** by the developer.
-8. **Iteration** with the next subtask.
-9. **Final verification** of complete US coverage.
-10. **Final commit / PR:** descriptive message referencing the US, assigning reviewer.
-
-### 4. PR Review
-
-The Reviewer, assisted by their agent, rigorously examines the code.
-
-#### Flow
-
-1. **PR assignment** in the version control system.
-2. **Branch download** by the agent.
-3. **Compliance verification** with US Acceptance Criteria.
-4. **Test execution:** unit, integration and e2e. Complete report.
-5. **Quality and security analysis:** bugs, vulnerabilities, improvements, standards.
-6. **Evidence generation:** results, logs, findings, AC confirmation.
-7. **Presentation to reviewer** with clear summary.
-8. **Decision:** Approve (merge) or Reject (detailed comments with what, why and how to fix).
-
-## The Role of MCP in the Flow
-
-For this model to be viable in a standardized, scalable and secure way, MCP acts as the connection protocol between agents and external tools.
-
-**Why it is crucial:**
-
-- **Role-Based Access Control:** The agent formally activates its role (`user-story`, `refinement`, `development`, `pr-review`) before acting.
-- **Forced Standardization:** Official System Prompts injected into the agent, ensuring consistency between teams.
-- **Dedicated Tools:** Custom integrations for reading issues, creating subtasks with BDD format, etc.
-
-## Final Recommendations
-
-1. **Gradual Implementation (Canary):** Start in a single squad with an expert guide. Once validated, expand one by one applying lessons learned.
-
-2. **Language:** The process should be carried out in the team's native language, except for code and comments in the repository.
-
-3. **Flexibility:** The complete e2e flow offers maximum effectiveness, but significant benefits are obtained by applying it at strategic points.
-
-4. **Cultural Change:** Train not only in the technical use of the agent, but in the Agent-First mindset: how to design User Stories, give effective feedback and review deliverables. The human maintains the final word.
-
-5. **Impact Measurement:** Use comparative metrics before/after implementation:
-   - Delivery velocity: story points completed per sprint.
-   - Quality: bugs reported in production per story.
-   - Flow efficiency: burndown/burnup comparison.
-
-6. **Operation with or without Agent:** The flow is optimized for Agent-First, but tasks can be performed traditionally if the developer does not have an agent available. The process must be resilient.
+The real transformation isn't technological. It's changing how you think about work: designing stories considering that an agent will read them, reviewing code knowing an agent will execute the tests, estimating tasks with confidence that context won't be lost between stages. The team maintains control. The agent ensures that control is based on complete information.

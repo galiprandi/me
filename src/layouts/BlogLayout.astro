@@ -99,6 +99,18 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
       <a href={`${base}/em`}>Acerca de mí / About me</a>
     </nav>
     <main>
+      {
+        updatedDate && (
+          <small class="light">
+            Última actualización:{" "}
+            {updatedDate.toLocaleDateString("es-ES", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </small>
+        )
+      }
       <slot />
     </main>
   </body>
