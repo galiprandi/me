@@ -1,8 +1,8 @@
 ---
 title: "Workflow AI"
 description: "Una guía práctica para implementar agentes de IA de extremo a extremo en el ciclo de vida del software, con potencial de aceleración 2–3x en equipos que adopten el flujo completo."
-pubDate: 2025-11-03
-updatedDate: 2026-05-02
+pubDate: 2025-11-03T00:00:00-03:00
+updatedDate: 2026-05-02T00:00:00-03:00
 tags: ["AI", "Agent-First", "SDLC", "MCP", "Workflow"]
 lang: es
 postSlug: ai-workflow
