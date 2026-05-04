@@ -90,13 +90,19 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
     <script is:inline src={`${base}/googleTag.js`}></script>
   </head>
   <body class="blog">
-    <Header author="Germán A. Aliprandi" role="Engineering Blog" />
+    <Header author="Germán A. Aliprandi" role="Personal Blog" />
     <nav class="blog-nav">
-      <a href={`${base}/blog/es`}>Español</a>
-      <span>/</span>
-      <a href={`${base}/blog/en`}>English</a>
-      <span>|</span>
-      <a href={`${base}/em`}>Acerca de mí / About me</a>
+      <a href={`${base}/em`}>
+        {lang === "es" ? "Acerca de mí" : "About me"}
+      </a>
+      <span class="spacer"></span>
+      {
+        lang === "es" ? (
+          <a href={`${base}/blog/en`}>Read in English</a>
+        ) : (
+          <a href={`${base}/blog/es`}>Leer en Español</a>
+        )
+      }
     </nav>
     <main>
       {
@@ -127,11 +133,16 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
     display: flex;
     gap: 0.5em;
     align-items: center;
+    justify-content: space-between;
     padding: 1em 0;
     border-bottom: 1px solid light-dark(#ddd, #444);
     margin-bottom: 2em;
     font-size: 0.9em;
     color: var(--color-texts-light);
+  }
+
+  .blog-nav .spacer {
+    flex: 1;
   }
 
   .blog-nav a {
