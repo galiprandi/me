@@ -9,18 +9,6 @@ const { slug, currentLang, otherLang } = Astro.props;
 const base = "/me";
 ---
 
-<div class="lang-switch">
-  {otherLang ? (
-    <a href={`${base}/blog/${slug}/${otherLang}`}>
-      {otherLang === "en" ? "Read in English" : "Leer en Español"}
-    </a>
-  ) : (
-    <span class="disabled">
-      {currentLang === "en" ? "No Spanish translation yet" : "Sin traducción al inglés aún"}
-    </span>
-  )}
-</div>
-
 <style>
   .lang-switch {
     text-align: right;
