@@ -99,22 +99,22 @@ p,
 
   body {
     padding: 0;
-    line-height: 1.5;
+    line-height: 1.1;
   }
 
   .small-in-print {
-    font-size: 9.5pt;
+    font-size: 8.5pt;
   }
 
   .columns {
-    gap: 1em;
+    gap: 0.5em;
   }
 
   html,
   body {
     height: 100%;
     background: #fff;
-    font-size: 10.5pt;
+    font-size: 9.5pt;
     padding-bottom: 0;
 
     &.one-page {
@@ -124,5 +124,9 @@ p,
 
   .no-print {
     display: none !important;
+  }
+
+  ul li:not(:last-child) {
+    margin-bottom: 0.1em;
   }
 }
