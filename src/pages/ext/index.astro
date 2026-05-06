@@ -1,37 +1,21 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Profile from "./components/Profile.astro";
-import Experience from "./components/Experience.astro";
-import Education from "../../components/Education.astro";
+const target = "/me/";
+
+export function GET() {
+  return new Response(null, {
+    status: 301,
+    headers: { Location: target },
+  });
+}
 ---
 
-<Layout multiPage={true}>
-  <main>
-    <Profile />
-    <Experience />
-    <Education />
-  </main>
-</Layout>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-  }
-
-  .columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
-  }
-
-  /* Print styles */
-  @media only print {
-    main {
-      gap: 0;
-    }
-    .columns {
-      font-size: small;
-    }
-  }
-</style>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0;url=/me/" />
+    <title>Redirecting to /</title>
+  </head>
+  <body>
+    <p>Redirecting to <a href="/me/">/</a>…</p>
+  </body>
+</html>

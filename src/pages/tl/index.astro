@@ -1,6 +1,5 @@
 ---
-export const prerender = true;
-const target = "/em/";
+const target = "/me/";
 
 export function GET() {
   return new Response(null, {
@@ -13,10 +12,10 @@ export function GET() {
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0;url=${target}`} />
-    <title>Redirecting to /em</title>
+    <meta http-equiv="refresh" content="0;url=/me/" />
+    <title>Redirecting to /</title>
   </head>
   <body>
-    <p>Redirecting to <a href={target}>/em</a>…</p>
+    <p>Redirecting to <a href="/me/">/</a>…</p>
   </body>
 </html>
