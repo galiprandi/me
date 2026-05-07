@@ -10,9 +10,9 @@ This repository hosts my professional resume and portfolio, built with a modern 
 
 Software Engineer with over **20 years of technical expertise**, specializing in transforming the Software Development Lifecycle (SDLC) through innovative architectures and large-scale AI adoption. Currently focused on industrializing engineering processes and designing **"Agent-First" workflows** for high-scale organizations.
 
-## 🛠 Strategic Flagship: Axioma
+## 🛠 WORKFLOW AI
 
-The architectural engine for my current work, **Axioma** is a clean-architecture framework designed to decouple business logic for seamless agentic orchestration. It eliminates friction between LLMs and complex systems via a contract-based structure, allowing AI agents to understand and execute business logic autonomously.
+Conceptualized the AI-augmented SDLC adopted by Cencosud (+120k employees) as its core engineering strategy. This engine orchestrates the full lifecycle, from drafting User Stories to deployment, using Context Engineering to provide agents with deep knowledge. Selected over Google and AWS for its ability to govern agent behavior for +800 developers via strategic prompts. It projects a 3x acceleration in TTM while ensuring corporate-scale consistency.
 
 ## 💻 Tech Stack
 
