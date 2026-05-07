@@ -1,9 +1,9 @@
 {
-  "name": "",
+  "name": "galiprandi",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
+    "dev": "astro dev --host --open",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
