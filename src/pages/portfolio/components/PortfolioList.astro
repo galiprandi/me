@@ -6,12 +6,61 @@ import PortfolioItem from "./PortfolioItem.astro";
   <h3 class="upper">Portfolio</h3>
   <div class="portfolio-grid">
     <PortfolioItem
+      title="AI Workflow MCP"
+      description="MCP server that enables AI-powered development workflows, including Jira task bootstrapping and agent orchestration. Built with the official Model Context Protocol SDK on Express."
+      techs={[
+        "TypeScript",
+        "Express",
+        "MCP",
+        "AI",
+        "Jira",
+        "Docker",
+        "Open Source",
+      ]}
+      linkName="View Repository"
+      repo="https://github.com/galiprandi/ai-workflow-mcp"
+    />
+
+    <PortfolioItem
       title="fastify-lm"
-      description="fastify-lm is a Fastify plugin that simplifies integration with multiple language model (LM) providers, such as OpenAI, Google Gemini, DeepSeek, Claude, and more."
+      description="Fastify plugin that simplifies integration with multiple language model (LM) providers including OpenAI, Google Gemini, DeepSeek, and Claude. Standardizes LLM adoption in the Fastify ecosystem."
       techs={["JavaScript", "Fastify", "OpenAI", "NPM", "Open Source", "AI"]}
       linkName="View on NPM"
       link="https://www.npmjs.com/package/fastify-lm"
       repo="https://github.com/galiprandi/fastify-lm#readme"
+    />
+
+    <PortfolioItem
+      title="Smart Doc"
+      description="GitHub Action that automatically updates documentation using AI with context from Jira & Clickup tickets. Change-driven, stack-aware, and PR-first for seamless CI/CD integration."
+      techs={[
+        "Shell",
+        "GitHub Actions",
+        "AI",
+        "OpenAI",
+        "Documentation",
+        "CI/CD",
+      ]}
+      linkName="View Repository"
+      repo="https://github.com/galiprandi/smart-doc"
+    />
+
+    <PortfolioItem
+      title="MCP vs Function Calling"
+      description="Comparative research on AI communication patterns. Interactive presentation exploring MCP Server vs Function Calling as complementary patterns in AI agent systems."
+      techs={["Vue", "AI", "MCP", "Research", "Presentation"]}
+      linkName="View Presentation"
+      link="https://galiprandi.github.io/mcp-vs-fnc"
+      repo="https://github.com/galiprandi/mcp-vs-fnc"
+    />
+
+    <PortfolioItem
+      title="Prompt Engineering Guide"
+      description="Interactive presentation on prompt engineering techniques and frameworks for technical teams. Covers Zero-shot, Few-shot, Chain-of-Thought, RAG, and the CRTR framework for scalable prompts."
+      techs={["AI", "Prompt Engineering", "LLM", "Presentation", "Education"]}
+      linkName="View Presentation"
+      link="https://galiprandi.github.io/prompt-engineering"
+      repo="https://github.com/galiprandi/mcp-vs-fnc"
     />
 
     <PortfolioItem
@@ -31,7 +80,7 @@ import PortfolioItem from "./PortfolioItem.astro";
 
     <PortfolioItem
       title="array-tools"
-      description="An open-source powerful and lightweight utility library that enables SQL-like operations on JavaScript arrays. "
+      description="An open-source powerful and lightweight utility library that enables SQL-like operations on JavaScript arrays."
       techs={[
         "JavaScript",
         "Functional Programming",
