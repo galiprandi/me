@@ -90,7 +90,7 @@ p,
 @media only print {
   @page {
     size: A4;
-    margin: 0.5cm 1.5cm;
+    margin: 10mm;
   }
 
   .break-page {
@@ -99,30 +99,36 @@ p,
 
   body {
     padding: 0;
-    line-height: 1.5;
+    line-height: 1.1;
   }
 
   .small-in-print {
-    font-size: 9.5pt;
+    font-size: 8.5pt;
   }
 
   .columns {
-    gap: 1em;
+    gap: 0.7em;
   }
+
+  h1 { font-size: 16pt; margin: 0; }
+  h3 { font-size: 12pt; margin: 0.4em 0 0.1em 0; }
 
   html,
   body {
-    height: 100%;
     background: #fff;
-    font-size: 10.5pt;
+    font-size: 10pt;
     padding-bottom: 0;
 
     &.one-page {
-      overflow: hidden;
+      overflow: visible;
     }
   }
 
   .no-print {
     display: none !important;
+  }
+
+  ul li:not(:last-child) {
+    margin-bottom: 0.1em;
   }
 }
