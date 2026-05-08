@@ -100,10 +100,15 @@ p,
   body {
     padding: 0;
     line-height: 1.1;
+    font-family: "Montserrat Variable", sans-serif;
   }
 
+  h1 { font-size: 16pt; margin-bottom: 0.2em; }
+  h3 { font-size: 12pt; margin: 0.25em 0 0.1em; }
+  .section { margin-bottom: 0.15em; }
+
   .small-in-print {
-    font-size: 8.5pt;
+    font-size: 9pt;
   }
 
   .columns {
@@ -112,13 +117,12 @@ p,
 
   html,
   body {
-    height: 100%;
     background: #fff;
-    font-size: 9.5pt;
+    font-size: 10pt;
     padding-bottom: 0;
 
     &.one-page {
-      overflow: hidden;
+      overflow: visible;
     }
   }
 
