@@ -114,11 +114,11 @@ p,
   body {
     height: 100%;
     background: #fff;
-    font-size: 9.5pt;
+    font-size: 10pt;
     padding-bottom: 0;
 
     &.one-page {
-      overflow: hidden;
+      overflow: visible;
     }
   }
 
@@ -128,5 +128,13 @@ p,
 
   ul li:not(:last-child) {
     margin-bottom: 0.1em;
+  }
+
+  h1 {
+    font-size: 16pt;
+  }
+
+  h3 {
+    font-size: 12pt;
   }
 }
