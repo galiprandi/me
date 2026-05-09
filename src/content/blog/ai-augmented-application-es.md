@@ -1,5 +1,5 @@
 ---
-title: "AI Augmented Application: Hacia el Software Vivo"
+title: "AI Augmented Application"
 description: "Una propuesta de ingeniería donde el software deja de ser un artefacto estático para convertirse en un sistema orgánico que evoluciona mediante agentes autónomos."
 pubDate: 2026-05-09T00:00:00-03:00
 tags: ["AI", "AAA", "Agent-First", "Engineering", "SDLC"]

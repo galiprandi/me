@@ -1,5 +1,5 @@
 ---
-title: "AI Augmented Application: Towards Living Software"
+title: "AI Augmented Application"
 description: "An engineering proposal where software ceases to be a static artifact and becomes an organic system that evolves through autonomous agents."
 pubDate: 2026-05-09T00:00:00-03:00
 tags: ["AI", "AAA", "Agent-First", "Engineering", "SDLC"]
