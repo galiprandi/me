@@ -1,13 +1,13 @@
 ---
-title: "AI Augmented Evolution: Hacia el Software Vivo"
+title: "AI Augmented Application: Hacia el Software Vivo"
 description: "Una propuesta de ingeniería donde el software deja de ser un artefacto estático para convertirse en un sistema orgánico que evoluciona mediante agentes autónomos."
 pubDate: 2026-05-09T00:00:00-03:00
-tags: ["AI", "AAE", "Agent-First", "Engineering", "SDLC"]
+tags: ["AI", "AAA", "Agent-First", "Engineering", "SDLC"]
 lang: es
-postSlug: ai-augmented-evolution
+postSlug: ai-augmented-application
 ---
 
-La industria del software está a las puertas de un cambio de paradigma. No hablo de herramientas que nos ayudan a escribir código más rápido, sino de una arquitectura donde el software deja de ser un artefacto estático para convertirse en un sistema orgánico. Esta es la esencia de **AI Augmented Evolution (AAE)**: una propuesta de ingeniería donde el producto no solo se mantiene, sino que evoluciona mediante un enjambre de agentes autónomos, bajo la dirección estratégica de un orquestador humano.
+La industria del software está a las puertas de un cambio de paradigma. No hablo de herramientas que nos ayudan a escribir código más rápido, sino de una arquitectura donde el software deja de ser un artefacto estático para convertirse en un sistema orgánico. Esta es la esencia de **AI Augmented Application (AAA)**: una propuesta de ingeniería donde el producto no solo se mantiene, sino que evoluciona mediante un enjambre de agentes autónomos, bajo la dirección estratégica de un orquestador humano.
 
 ### El Enjambre Efímero: Micro-responsabilidades en Acción
 
@@ -22,7 +22,7 @@ Esta naturaleza efímera garantiza que el sistema sea escalable y resiliente. No
 
 ### Del Papel a la Producción: ¿Cómo lo implementamos hoy?
 
-Lejos de ser una visión futurista inalcanzable, la tecnología para ejecutar AAE está disponible ahora mismo. No necesitamos computación cuántica, sino una orquestación inteligente de herramientas que ya dominamos:
+Lejos de ser una visión futurista inalcanzable, la tecnología para ejecutar AAA está disponible ahora mismo. No necesitamos computación cuántica, sino una orquestación inteligente de herramientas que ya dominamos:
  1. **Google Cloud Run / Kubernetes:** Contenedores que se levantan bajo demanda para ejecutar la lógica de cada bot.
  2. **Webhooks & GitHub Actions:** El sistema escucha eventos en tiempo real. Un nuevo *Pull Request* (PR) dispara bots de análisis de seguridad, otros de validación de lineamientos y otros de estimación de impacto.
  3. **Feature Flags:** Es el componente crítico. El enjambre puede inyectar mejoras directamente en el código, pero estas permanecen "dormidas". El sistema las activa de forma gradual para medir resultados sin poner en riesgo la estabilidad del core.
@@ -37,7 +37,7 @@ Podemos tener bots dedicados exclusivamente a calificar las propuestas de otros 
 
 ### The Human in the Loop: El Orquestador de la Evolución
 
-Aquí es donde reside la verdadera potencia de AI Augmented Evolution. A pesar de la autonomía del enjambre, el sistema no puede —ni debe— carecer de supervisión. **El humano es el orquestador estratégico.**
+Aquí es donde reside la verdadera potencia de AI Augmented Application. A pesar de la autonomía del enjambre, el sistema no puede —ni debe— carecer de supervisión. **El humano es el orquestador estratégico.**
 
 La intervención humana se vuelve fundamental en dos puntos críticos:
  1. **Dirección Estratégica:** El humano define el "norte". Es quien instruye al sistema: *"Este quarter, el foco es la retención de usuarios en el módulo de pagos"*. Esta directiva se filtra hacia abajo, haciendo que todos los bots prioricen investigaciones y desarrollos en esa dirección.

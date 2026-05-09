@@ -1,13 +1,13 @@
 ---
-title: "AI Augmented Evolution: Towards Living Software"
+title: "AI Augmented Application: Towards Living Software"
 description: "An engineering proposal where software ceases to be a static artifact and becomes an organic system that evolves through autonomous agents."
 pubDate: 2026-05-09T00:00:00-03:00
-tags: ["AI", "AAE", "Agent-First", "Engineering", "SDLC"]
+tags: ["AI", "AAA", "Agent-First", "Engineering", "SDLC"]
 lang: en
-postSlug: ai-augmented-evolution
+postSlug: ai-augmented-application
 ---
 
-The software industry is on the verge of a paradigm shift. I'm not talking about tools that help us write code faster, but an architecture where software stops being a static artifact and becomes an organic system. This is the essence of **AI Augmented Evolution (AAE)**: an engineering proposal where the product is not just maintained, but evolves through a swarm of autonomous agents, under the strategic direction of a human orchestrator.
+The software industry is on the verge of a paradigm shift. I'm not talking about tools that help us write code faster, but an architecture where software stops being a static artifact and becomes an organic system. This is the essence of **AI Augmented Application (AAA)**: an engineering proposal where the product is not just maintained, but evolves through a swarm of autonomous agents, under the strategic direction of a human orchestrator.
 
 ### The Ephemeral Swarm: Micro-responsibilities in Action
 
@@ -22,7 +22,7 @@ This ephemeral nature ensures that the system is scalable and resilient. There i
 
 ### From Paper to Production: How do we implement it today?
 
-Far from being an unreachable futuristic vision, the technology to execute AAE is available right now. We don't need quantum computing, but an intelligent orchestration of tools we already master:
+Far from being an unreachable futuristic vision, the technology to execute AAA is available right now. We don't need quantum computing, but an intelligent orchestration of tools we already master:
  1. **Google Cloud Run / Kubernetes:** Containers that spin up on demand to execute each bot's logic.
  2. **Webhooks & GitHub Actions:** The system listens to events in real time. A new *Pull Request* (PR) triggers security analysis bots, others for guideline validation, and others for impact estimation.
  3. **Feature Flags:** This is the critical component. The swarm can inject improvements directly into the code, but these remain "dormant." The system activates them gradually to measure results without risking the core's stability.
@@ -37,7 +37,7 @@ We can have bots dedicated exclusively to rating the proposals of other bots. If
 
 ### The Human in the Loop: The Orchestrator of Evolution
 
-This is where the true power of AI Augmented Evolution resides. Despite the swarm's autonomy, the system cannot —and should not— lack supervision. **The human is the strategic orchestrator.**
+This is where the true power of AI Augmented Application resides. Despite the swarm's autonomy, the system cannot —and should not— lack supervision. **The human is the strategic orchestrator.**
 
 Human intervention becomes fundamental at two critical points:
  1. **Strategic Direction:** The human defines the "north star." They are the ones who instruct the system: *"This quarter, the focus is user retention in the payment module"*. This directive filters down, causing all bots to prioritize research and development in that direction.
