@@ -1,0 +1,29 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter((p: CollectionEntry<"blog">) => p.data.lang === "en" && !p.data.draft)
+  .sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  )
+  .slice(0, 5);
+
+const base = "/me";
+---
+
+<section class="skill">
+  <h3 class="upper">Personal Blog</h3>
+  <ul class="light">
+    {
+      posts.map((post) => (
+        <li>
+          <a href={`${base}/blog/${post.data.postSlug}/en`} target="_blank">
+            {post.data.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
