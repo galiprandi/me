@@ -1,0 +1,24 @@
+
+> galiprandi@0.0.1 dev /app
+> astro dev --host --open
+
+▶ Astro collects anonymous usage data.
+  This information helps us improve Astro.
+  Run "astro telemetry disable" to opt-out.
+  https://astro.build/telemetry
+
+[vite] connected.
+09:35:52 [types] Generated 1ms
+[vite] connected.
+09:35:52 [content] Syncing content
+09:35:52 [content] Synced content
+ astro  v6.3.0 ready in 2663 ms
+┃ Local    http://localhost:4321/me
+┃ Network  http://192.168.0.2:4321/me
+09:35:52 watching for file changes...
+09:35:53 [200] / 62ms
+09:36:53 [200] / 30ms
+09:36:57 [200] / 12ms
+09:36:59 [200] / 12ms
+09:37:02 [200] /blog 7ms
+09:37:02 [200] /blog/en 18ms
