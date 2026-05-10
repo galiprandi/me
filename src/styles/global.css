@@ -118,7 +118,7 @@ p,
     padding-bottom: 0;
 
     &.one-page {
-      overflow: hidden;
+      overflow: visible;
     }
   }
 
