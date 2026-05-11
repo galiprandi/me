@@ -3,7 +3,7 @@ import IconPause from './Icons/IconPause.astro'
 import IconPodcast from './Icons/IconPodcast.astro'
 ---
 
-<span class="container no-print" title="Hear about me">
+<button class="container no-print" aria-label="Play podcast summary" title="Hear about me">
   <IconPodcast class="play-icon" />
   <IconPause class="pause-icon" />
   <audio controls style="display: none" id="podcast-audio">
@@ -12,15 +12,17 @@ import IconPodcast from './Icons/IconPodcast.astro'
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const container = document.querySelector('.container') as HTMLDivElement
+      const container = document.querySelector('.container') as HTMLButtonElement
       const audio = document.getElementById('podcast-audio') as HTMLAudioElement
       if (container && audio) {
         container.addEventListener('click', () => {
           if (audio.paused) {
             container.classList.add('playing')
+            container.setAttribute('aria-label', 'Pause podcast summary')
             audio.play()
           } else {
             container.classList.remove('playing')
+            container.setAttribute('aria-label', 'Play podcast summary')
             audio.pause()
           }
         })
@@ -43,9 +45,16 @@ import IconPodcast from './Icons/IconPodcast.astro'
       cursor: pointer;
       opacity: 1;
       transition: all 0.3s;
+      border: none;
+      padding: 0;
 
       &:hover {
         opacity: 0.8;
+      }
+
+      &:focus-visible {
+        outline: 2px solid light-dark(#000, #fff);
+        outline-offset: 4px;
       }
 
       &.playing {
@@ -73,4 +82,4 @@ import IconPodcast from './Icons/IconPodcast.astro'
       }
     }
   </style>
-</span>
+</button>
