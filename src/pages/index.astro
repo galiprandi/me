@@ -205,7 +205,7 @@ import Layout from "../layouts/Layout.astro";
       </ul>
     </section>
 
-    <section class="section profile">
+    <section class="section profile no-print">
       <h3 class="upper">Footer</h3>
       <p class="light small-in-print manifesto">
         "Built for the next decade of AI-driven engineering."
@@ -218,25 +218,6 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  @media print {
-    body {
-      font-size: 10pt;
-    }
-
-    .section {
-      margin-bottom: 0.4em;
-    }
-
-    ul {
-      margin-top: 0.1em;
-      gap: 0.2em;
-    }
-
-    h3 {
-      margin-top: 0.5em;
-    }
-  }
-
   .manifesto {
     text-align: center;
     letter-spacing: 0.02em;
