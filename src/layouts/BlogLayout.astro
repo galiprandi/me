@@ -3,6 +3,7 @@ import "@fontsource-variable/montserrat";
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
+import TlDrModal from "../components/TlDrModal";
 
 interface Props {
   title: string;
@@ -100,6 +101,8 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
         {lang === "es" ? "Blog" : "Blog"}
       </a>
       <span class="spacer"></span>
+      <TlDrModal client:load content={description} lang={lang} />
+      <span class="separator">·</span>
       {
         lang === "es" ? (
           <a href={`${base}/blog/en`}>Read in English</a>
