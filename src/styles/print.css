@@ -7,6 +7,10 @@
     margin: 10mm;
   }
 
+  @page :first {
+    margin-top: 5mm;
+  }
+
   html,
   body {
     font-family: "Montserrat Variable", sans-serif !important;
@@ -20,12 +24,19 @@
     overflow: hidden;
   }
 
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   main {
     display: block;
+    max-height: calc(297mm - 20mm);
+    overflow: hidden;
   }
 
   .section {
-    margin-bottom: 7.5pt !important;
+    margin-bottom: 9pt !important;
     page-break-inside: avoid;
   }
 
@@ -34,6 +45,7 @@
     margin-top: 4pt !important;
     margin-bottom: 2pt !important;
     page-break-after: avoid;
+    page-break-inside: avoid;
   }
 
   ul {
@@ -42,6 +54,15 @@
     padding-left: 12pt !important;
     gap: 1.5pt !important;
     list-style: circle !important;
+    page-break-inside: avoid;
+  }
+
+  li {
+    page-break-inside: avoid;
+  }
+
+  p {
+    page-break-inside: avoid;
   }
 
   .small-in-print {
@@ -51,6 +72,17 @@
 
   ul li:not(:last-child) {
     margin-bottom: 1pt !important;
+  }
+
+  a {
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  p, li {
+    orphans: 3;
+    widows: 3;
   }
 
   .no-print {
@@ -72,7 +104,15 @@
   }
 
   aside {
-    gap: 20pt !important;
+    gap: 30pt !important;
+    flex-basis: 25% !important;
+    max-width: 25% !important;
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-basis: 75% !important;
+    flex-shrink: 1;
   }
 
   .manifesto {
