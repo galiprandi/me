@@ -95,6 +95,10 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
       <a href={`${base}/`}>
         {lang === "es" ? "Acerca de mí" : "About me"}
       </a>
+      <span class="separator">·</span>
+      <a href={`${base}/blog/${lang}`}>
+        {lang === "es" ? "Blog" : "Blog"}
+      </a>
       <span class="spacer"></span>
       {
         lang === "es" ? (
@@ -143,6 +147,11 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
 
   .blog-nav .spacer {
     flex: 1;
+  }
+
+  .blog-nav .separator {
+    color: var(--color-texts-light);
+    opacity: 0.5;
   }
 
   .blog-nav a {
