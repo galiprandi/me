@@ -3,25 +3,18 @@ import IconEmail from "../Icons/IconEmail.astro";
 import IconLinkedin from "../Icons/IconLinkedin.astro";
 import IconGithub from "../Icons/IconGithub.astro";
 import IconNPM from "../Icons/IconNPM.astro";
-import IconCopy from "../Icons/IconCopy.astro";
+import ContextMenu from "../ContextMenu";
 ---
 
 <section class="contact">
+  <ContextMenu client:load selector=".contact a" />
   <h3 class="upper">Contact</h3>
 
-  <div class="contact-item">
+  <div>
     <IconEmail />
     <a href="mailto:galiprandi@gmail.com" title="Email" class="light"
       >galiprandi@gmail.com</a
     >
-    <button
-      class="copy-button no-print"
-      aria-label="Copy email"
-      data-copy="galiprandi@gmail.com"
-    >
-      <IconCopy width="1.1em" />
-      <span class="copy-feedback">Copied!</span>
-    </button>
   </div>
 
   <div>
@@ -70,42 +63,14 @@ import IconCopy from "../Icons/IconCopy.astro";
     }
   }
 
-  .contact-item { position: relative; }
-  .copy-button {
-    background: none; border: none; cursor: pointer; color: var(--color-texts-light);
-    display: flex; align-items: center; border-radius: 4px; opacity: 0;
-  }
-  .contact-item:hover .copy-button, .copy-button:focus-visible {
-    opacity: 1; background: var(--color-bg-pill);
-  }
-  .copy-feedback {
-    position: absolute; top: -1.6em; right: 0; background: var(--color-bg-pill);
-    padding: 2px 6px; border-radius: 4px; font-size: 0.7em; opacity: 0;
-    pointer-events: none; transition: opacity 0.2s;
-  }
-  .copy-feedback.show { opacity: 1; }
-
-  @media only screen and (max-width: 900px) {
-    .contact > div { justify-content: center; }
-    .copy-button { opacity: 1; }
-  }
-
+  /* Print styles */
   @media only print {
-    .contact > div { margin: 0.7em 0; }
-    h3 { margin-top: 0.5em; }
+    .contact > div {
+      margin: 0.7em 0;
+    }
+
+    h3 {
+      margin-top: 0.5em;
+    }
   }
 </style>
-
-<script>
-  document.querySelectorAll(".copy-button").forEach((btn) => {
-    btn.addEventListener("click", async () => {
-      const text = (btn as HTMLElement).dataset.copy;
-      const feedback = btn.querySelector(".copy-feedback");
-      if (text && feedback) {
-        await navigator.clipboard.writeText(text);
-        feedback.classList.add("show");
-        setTimeout(() => feedback.classList.remove("show"), 2000);
-      }
-    });
-  });
-</script>

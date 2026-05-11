@@ -1,0 +1,8 @@
+
+> galiprandi@0.0.1 preview /app
+> astro preview --port 4321 --host
+
+ astro  v6.3.0 ready in 29 ms
+┃ Local    http://localhost:4321/me
+┃ Network  http://192.168.0.2:4321/me
+ ELIFECYCLE  Command failed.
