@@ -100,10 +100,16 @@ p,
   body {
     padding: 0;
     line-height: 1.1;
+    font-family: "Montserrat Variable", sans-serif;
   }
 
-  .small-in-print {
-    font-size: 8.5pt;
+  h1 { font-size: 16pt; margin-bottom: 0.1em; }
+  h2 { font-size: 13pt; margin-top: 0.3em; margin-bottom: 0.1em; }
+  h3 { font-size: 11pt; margin-top: 0.2em; margin-bottom: 0.05em; }
+  p, .light, .small-in-print { font-size: 10pt; }
+
+  section {
+    margin-bottom: 0.2em;
   }
 
   .columns {
@@ -114,11 +120,10 @@ p,
   body {
     height: 100%;
     background: #fff;
-    font-size: 9.5pt;
     padding-bottom: 0;
 
     &.one-page {
-      overflow: visible;
+      overflow: hidden;
     }
   }
 
@@ -127,6 +132,6 @@ p,
   }
 
   ul li:not(:last-child) {
-    margin-bottom: 0.1em;
+    margin-bottom: 0.05em;
   }
 }

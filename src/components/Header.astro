@@ -15,7 +15,7 @@ const isRootPage = currentPath === "/me" || currentPath === "/me/";
 <header>
   <div class="title">
     <h1 class="upper">{author}</h1>
-    {!isRootPage && <h2 class="upper light">{role}</h2>}
+    <h2 class={`upper light ${isRootPage ? 'print-only' : ''}`}>{role}</h2>
   </div>
   <div class="image">
     <Image src={profile} alt={author} width={123} height={123} />
@@ -47,6 +47,16 @@ const isRootPage = currentPath === "/me" || currentPath === "/me/";
     font-size: larger;
     font-weight: 400;
     margin: 0;
+  }
+
+  .print-only {
+    display: none;
+  }
+
+  @media only print {
+    .print-only {
+      display: block !important;
+    }
   }
 
   .header-nav {
