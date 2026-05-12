@@ -14,7 +14,7 @@
   html,
   body {
     font-family: "Montserrat Variable", sans-serif !important;
-    font-size: 9.5pt !important;
+    font-size: 10pt !important;
     line-height: 1.15 !important;
     height: 100%;
     background: #fff;
@@ -38,6 +38,14 @@
   .section {
     margin-bottom: 9pt !important;
     page-break-inside: avoid;
+  }
+
+  h1 {
+    font-size: 16pt !important;
+  }
+
+  h2 {
+    font-size: 13pt !important;
   }
 
   h3 {
