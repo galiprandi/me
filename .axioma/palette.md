@@ -1,0 +1,3 @@
+## 2025-05-15 - [TlDrModal Accessibility & Feedback]
+**Learning:** React components in Astro using experimental APIs (like Chrome's AI Summarizer) often default to being hidden or null when the API is missing. This makes verification difficult in headless environments. Additionally, standardizing accessibility attributes (`aria-label`, `aria-labelledby`) and visual feedback (`:focus-visible`, hover transitions) even in "experimental" features ensures they are inclusive from the start.
+**Action:** Always include localized `aria-label` for trigger buttons and ensure `:focus-visible` is implemented for all interactive elements to support keyboard-only users.
