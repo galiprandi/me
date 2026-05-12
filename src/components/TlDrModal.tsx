@@ -64,8 +64,20 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
 
   return (
     <>
+      <style>{`
+        .tldr-trigger:hover {
+          color: light-dark(#000, #fff) !important;
+        }
+        .tldr-trigger:focus-visible {
+          outline: 2px solid var(--color-texts-light);
+          outline-offset: 4px;
+          border-radius: 2px;
+        }
+      `}</style>
       <button
         onClick={handleSummarize}
+        className="tldr-trigger"
+        aria-label={lang === 'es' ? 'Generar resumen del artículo con IA' : 'Generate article summary with AI'}
         style={{
           background: 'transparent',
           color: 'var(--color-texts-light)',
@@ -74,6 +86,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
           cursor: 'pointer',
           fontSize: '0.9em',
           textDecoration: 'none',
+          transition: 'color 0.2s ease',
         }}
       >
         {buttonLabel || defaultButtonLabel}
@@ -82,6 +95,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
       <dialog
         ref={dialogRef}
         onClose={handleClose}
+        aria-labelledby="tldr-title"
         style={{
           padding: '2em',
           maxWidth: '600px',
@@ -93,7 +107,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
           position: 'relative',
         }}
       >
-        <h2 style={{ marginTop: 0 }}>
+        <h2 id="tldr-title" style={{ marginTop: 0 }}>
           {lang === 'es' ? 'Resumen TL;DR' : 'TL;DR Summary'}
         </h2>
         {summarize.status === 'summarizing' && (
@@ -119,6 +133,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
         )}
         <button
           onClick={handleClose}
+          aria-label={lang === 'es' ? 'Cerrar resumen' : 'Close summary'}
           style={{
             position: 'absolute',
             top: '1em',
