@@ -3,72 +3,51 @@ import IconEmail from "../Icons/IconEmail.astro";
 import IconLinkedin from "../Icons/IconLinkedin.astro";
 import IconGithub from "../Icons/IconGithub.astro";
 import IconNPM from "../Icons/IconNPM.astro";
+import IconCopy from "../Icons/IconCopy.astro";
 ---
 
 <section class="contact">
   <h3 class="upper">Contact</h3>
-
-  <div>
+  <div class="contact-item">
     <IconEmail />
-    <a href="mailto:galiprandi@gmail.com" title="Email" class="light"
-      >galiprandi@gmail.com</a
-    >
+    <a href="mailto:galiprandi@gmail.com" title="Email" class="light">galiprandi@gmail.com</a>
+    <button class="copy-btn no-print" aria-label="Copy email" data-email="galiprandi@gmail.com">
+      <IconCopy width="1.1em" height="1.1em" />
+    </button>
   </div>
-
-  <div>
-    <IconLinkedin />
-    <a
-      href="https://www.linkedin.com/in/galiprandi"
-      title="LinkedIn profile"
-      target="_blank"
-      class="light">linkedin.com/in/galiprandi</a
-    >
-  </div>
-
-  <div>
-    <IconGithub />
-    <a
-      href="https://github.com/galiprandi"
-      title="GitHub profile"
-      target="_blank"
-      class="light">github.com/galiprandi</a
-    >
-  </div>
-
-  <div>
-    <IconNPM />
-    <a
-      href="https://galiprandi.github.io"
-      title="Website"
-      target="_blank"
-      class="light">galiprandi.github.io</a
-    >
-  </div>
+  <div><IconLinkedin /><a href="https://www.linkedin.com/in/galiprandi" target="_blank" class="light">linkedin.com/in/galiprandi</a></div>
+  <div><IconGithub /><a href="https://github.com/galiprandi" target="_blank" class="light">github.com/galiprandi</a></div>
+  <div><IconNPM /><a href="https://galiprandi.github.io" target="_blank" class="light">galiprandi.github.io</a></div>
 </section>
 
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(btn.dataset.email || '');
+      btn.classList.add('copied');
+      setTimeout(() => btn.classList.remove('copied'), 2000);
+    });
+  });
+</script>
+
 <style>
-  .contact > div {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    margin: 1em 0;
+  .contact > div { display: flex; align-items: center; gap: 0.5em; margin: 1em 0; }
+  .copy-btn {
+    background: var(--color-bg-pill); border: none; color: var(--color-texts-light);
+    cursor: pointer; padding: 4px; border-radius: 4px; display: flex;
+    position: relative; transition: transform 0.1s; margin-left: 0.2em;
   }
-
-  /* Screens less than 900px */
-  @media only screen and (max-width: 900px) {
-    .contact > div {
-      justify-content: center;
-    }
+  .copy-btn:hover { transform: scale(1.1); color: light-dark(black, white); }
+  .copy-btn::after {
+    content: 'Copied!'; position: absolute; bottom: 125%; left: 50%; transform: translateX(-50%) scale(0.8);
+    background: #333; color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.7em;
+    opacity: 0; pointer-events: none; transition: 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
   }
-
-  /* Print styles */
-  @media only print {
-    .contact > div {
-      margin: 0.7em 0;
-    }
-
-    h3 {
-      margin-top: 0.5em;
-    }
+  .copy-btn.copied::after { opacity: 1; transform: translateX(-50%) scale(1); }
+  @media (max-width: 900px) { .contact > div { justify-content: center; } }
+  @media print {
+    .contact > div { margin: 0.7em 0; }
+    h3 { margin-top: 0.5em; }
+    .no-print { display: none !important; }
   }
 </style>
