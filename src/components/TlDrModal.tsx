@@ -68,11 +68,6 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
         .tldr-trigger:hover {
           color: light-dark(#000, #fff) !important;
         }
-        .tldr-trigger:focus-visible {
-          outline: 2px solid var(--color-texts-light);
-          outline-offset: 4px;
-          border-radius: 2px;
-        }
       `}</style>
       <button
         onClick={handleSummarize}
@@ -105,13 +100,15 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
           border: 'none',
           boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
           position: 'relative',
+          backgroundColor: 'var(--color-bg)',
+          color: 'inherit',
         }}
       >
         <h2 id="tldr-title" style={{ marginTop: 0 }}>
           {lang === 'es' ? 'Resumen TL;DR' : 'TL;DR Summary'}
         </h2>
         {summarize.status === 'summarizing' && (
-          <p style={{ fontStyle: 'italic', color: '#666' }}>
+          <p style={{ fontStyle: 'italic', color: 'var(--color-texts-light)' }}>
             {lang === 'es' ? 'Generando TL;DR versión con IA...' : 'Generating TL;DR version with AI...'}
           </p>
         )}
@@ -139,7 +136,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
             top: '1em',
             right: '1em',
             background: 'transparent',
-            color: '#666',
+            color: 'var(--color-texts-light)',
             border: 'none',
             fontSize: '1.5em',
             cursor: 'pointer',
