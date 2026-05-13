@@ -10,3 +10,4 @@
 ## 2026-05-11 - Interactive Accessibility Standards | Learning: Using non-semantic elements (like `<span>`) for interactive components prevents keyboard navigation and fails screen readers. | Acción: Established the use of semantic `<button>` with dynamic `aria-label` and visible `:focus-visible` states for all floating interactive components.
 
 ## 2025-05-14 - Print Typography Standardization | Aprendizaje: Los estándares de tipografía de impresión Lumen (h1:16pt, h2:13pt, h3:11pt, body:10pt) garantizan un equilibrio óptimo entre legibilidad y densidad de información para una sola hoja A4. | Acción: Estandarizar tamaños de fuente en print.css para cumplir con el estándar Lumen.
+## 2026-05-13 - Focus Standard & Theme Consistency | Aprendizaje: Centralizing accessibility states prevents UI fragmentation and hardcoded color drift. | Acción: Defined global :focus-visible and refactored TlDrModal to use theme variables.
