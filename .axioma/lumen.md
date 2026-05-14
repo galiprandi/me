@@ -11,3 +11,5 @@
 
 ## 2025-05-14 - Print Typography Standardization | Aprendizaje: Los estándares de tipografía de impresión Lumen (h1:16pt, h2:13pt, h3:11pt, body:10pt) garantizan un equilibrio óptimo entre legibilidad y densidad de información para una sola hoja A4. | Acción: Estandarizar tamaños de fuente en print.css para cumplir con el estándar Lumen.
 ## 2026-05-13 - Focus Standard & Theme Consistency | Aprendizaje: Centralizing accessibility states prevents UI fragmentation and hardcoded color drift. | Acción: Defined global :focus-visible and refactored TlDrModal to use theme variables.
+
+## 2026-05-14 - Semantic Icon Accuracy & Typo Cleanup | Aprendizaje: Misaligned or semantically incorrect icons (like using NPM icon for a portfolio link) degrade the professional polish of the CV. Filename typos (IconPorfolio) can lead to broken imports during refactors. | Acción: Corrected the filename typo and standardized the contact section to use the `IconPortfolio` component, improving semantic accuracy.
