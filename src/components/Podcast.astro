@@ -4,30 +4,43 @@ import IconPodcast from './Icons/IconPodcast.astro'
 ---
 
 <button class="container no-print" aria-label="Play podcast summary" title="Hear about me">
-  <IconPodcast class="play-icon" />
-  <IconPause class="pause-icon" />
+  <IconPodcast class="play-icon" aria-hidden="true" />
+  <IconPause class="pause-icon" aria-hidden="true" />
   <audio controls style="display: none" id="podcast-audio">
     <source src="/me/podcast.mp3" type="audio/mpeg" />
   </audio>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const container = document.querySelector('.container') as HTMLButtonElement
-      const audio = document.getElementById('podcast-audio') as HTMLAudioElement
-      if (container && audio) {
-        container.addEventListener('click', () => {
-          if (audio.paused) {
-            container.classList.add('playing')
-            container.setAttribute('aria-label', 'Pause podcast summary')
-            audio.play()
-          } else {
-            container.classList.remove('playing')
-            container.setAttribute('aria-label', 'Play podcast summary')
-            audio.pause()
-          }
-        })
-      }
-    })
+    const container = document.querySelector('.container') as HTMLButtonElement
+    const audio = document.getElementById('podcast-audio') as HTMLAudioElement
+
+    if (container && audio) {
+      const playLabel = 'Play podcast summary'
+      const pauseLabel = 'Pause podcast summary'
+
+      container.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play()
+        } else {
+          audio.pause()
+        }
+      })
+
+      audio.addEventListener('play', () => {
+        container.classList.add('playing')
+        container.setAttribute('aria-label', pauseLabel)
+      })
+
+      audio.addEventListener('pause', () => {
+        container.classList.remove('playing')
+        container.setAttribute('aria-label', playLabel)
+      })
+
+      audio.addEventListener('ended', () => {
+        container.classList.remove('playing')
+        container.setAttribute('aria-label', playLabel)
+      })
+    }
   </script>
 
   <style>
