@@ -8,7 +8,7 @@ const posts = allPosts
     (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
       b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   )
-  .slice(0, 5);
+  .slice(0, 4);
 
 const base = "/me";
 ---
@@ -25,5 +25,8 @@ const base = "/me";
         </li>
       ))
     }
+    <li>
+      <a href={`${base}/blog`}><strong>More articles...</strong></a>
+    </li>
   </ul>
 </section>
