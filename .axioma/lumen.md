@@ -13,3 +13,5 @@
 ## 2026-05-13 - Focus Standard & Theme Consistency | Aprendizaje: Centralizing accessibility states prevents UI fragmentation and hardcoded color drift. | Acción: Defined global :focus-visible and refactored TlDrModal to use theme variables.
 
 ## 2026-05-14 - Semantic Icon Accuracy & Typo Cleanup | Aprendizaje: Misaligned or semantically incorrect icons (like using NPM icon for a portfolio link) degrade the professional polish of the CV. Filename typos (IconPorfolio) can lead to broken imports during refactors. | Acción: Corrected the filename typo and standardized the contact section to use the `IconPortfolio` component, improving semantic accuracy.
+
+## 2026-05-15 - Personal Blog Entry Limit & Navigation | Aprendizaje: Displaying too many recent blog entries in the CV sidebar can compromise the single-page A4 layout. Providing a "More articles..." link improves UX by guiding users to the full blog index without cluttering the resume. | Acción: Limited recent entries to 4 and added a 'no-print' navigation link to the blog index in PersonalBlog.astro.
