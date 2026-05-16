@@ -18,18 +18,35 @@ const dateOptions: Intl.DateTimeFormatOptions = {
 const locale = lang === "en" ? "en-US" : "es-ES";
 const formattedDate = pubDate.toLocaleDateString(locale, dateOptions);
 const base = "/me";
+
+const labels = {
+  en: {
+    readMore: `Read article: ${title}`,
+    taggedWith: (tag: string) => `View posts tagged with ${tag}`,
+  },
+  es: {
+    readMore: `Leer artículo: ${title}`,
+    taggedWith: (tag: string) => `Ver publicaciones etiquetadas con ${tag}`,
+  },
+}[lang === "es" ? "es" : "en"];
 ---
 
 <article class="post-card">
   <time class="post-date">{formattedDate}</time>
   <h2 class="post-title">
-    <a href={`${base}/blog/${post.data.postSlug}/${lang}`}>{title}</a>
+    <a href={`${base}/blog/${post.data.postSlug}/${lang}`} aria-label={labels.readMore}>
+      {title}
+    </a>
   </h2>
   <p class="post-description">{description}</p>
   <div class="post-tags">
     {
       tags.map((tag: string) => (
-        <a class="tag" href={`${base}/blog/tag/${tag}`}>
+        <a
+          class="tag"
+          href={`${base}/blog/tag/${tag}`}
+          aria-label={labels.taggedWith(tag)}
+        >
           {tag}
         </a>
       ))
