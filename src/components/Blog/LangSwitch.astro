@@ -5,9 +5,19 @@ interface Props {
   otherLang: string | null;
 }
 
-const { slug, currentLang, otherLang } = Astro.props;
+const { slug, otherLang } = Astro.props;
 const base = "/me";
 ---
+
+{
+  otherLang && (
+    <div class="lang-switch">
+      <a href={`${base}/blog/${slug}/${otherLang}`}>
+        {otherLang === "en" ? "Read in English" : "Leer en Español"}
+      </a>
+    </div>
+  )
+}
 
 <style>
   .lang-switch {
