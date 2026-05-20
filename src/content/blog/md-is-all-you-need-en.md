@@ -190,23 +190,39 @@ Migrate the routing and middleware layer to Fastify due to its optimized native 
 
 ## The Automation Engine: context-organizer
 
-The operational viability of this methodology does not rest on human developer goodwill; it is sustained by the technical capacity of the **context-organizer** skill. This piece of engineering is responsible for closing the living feedback loop within the repository, acting under the following sequential and deterministic flow:
+The operational viability of this methodology does not rest on human developer goodwill; it is sustained by the technical capacity of the **`context-organizer`** skill. This piece of engineering is responsible for closing the living feedback loop within the repository, acting under the following sequential and deterministic flow:
 
 ```
-[Code Change] ➔ [Test Execution] ➔ [JSON Output Extraction] ➔ [Semantic AI] ➔ [BEHAVIOR.md Update]
+[Code Change] ➔ [Semantic Rewrite of Ambiguous Tests (AI)] ➔ [Test Execution] ➔ [JSON Output Extraction] ➔ [Deterministic BEHAVIOR.md Compilation]
 ```
 
- 1. **Empirical Truth Extraction (Brute Force):** The context-organizer invokes an automated script in the local environment or CI/CD pipeline that executes the entire test suite using a structured reporter (e.g., in JSON format). This step ensures that only behavior that has successfully passed technical assertions is considered.
- 2. **Proactive Semantic Optimization:** If the script detects that human developers or previous iterations wrote ambiguous or deficient test descriptions (like it("should work") or it("test case 4")), the model's skill kicks in asynchronously. It analyzes the source code of the specific test file, deduces the exact intent of the *assert*, and autonomously injects a correct semantic description into the test file via an automatic Pull Request.
- 3. **Clean Documentary Compilation:** With corrected descriptions and a green execution, the context-organizer deterministically compiles the hierarchical output and updates the BEHAVIOR.md file at the module's root.
+ 1. **Empirical Truth Extraction (Brute Force):** `context-organizer` invokes an automated script in the local environment or CI/CD pipeline that executes the entire test suite using a structured reporter (e.g., JSON at `.context/test-results.json`). Only behavior that has successfully passed technical assertions is considered.
+ 2. **Proactive Semantic Optimization:** If the script detects ambiguous descriptions (`it("should work")`, `it("test case 4")`), the skill kicks in: it analyzes the assert, deduces the real intent, and rewrites the test description with precise semantics (`should <verb> <object> when <condition>`).
+ 3. **Clean Documentary Compilation:** With corrected descriptions and a green suite, `context-organizer` deterministically compiles the hierarchical output and rewrites `BEHAVIOR.md` at the repository root.
 
 This mechanism ensures that the model turns to source code strictly when it needs to implement a functional change or repair a failure, but **never to infer the system's general behavior**. The truth is indexed and synthesized beforehand in Layer 1, ready for optimal AI context consumption.
 
+### Installation in your repository
+
+The skill is distributed as a portable package, installable in any project with a single command:
+
+```bash
+npx skills add https://github.com/galiprandi/skills
+```
+
+The installer detects the agents present in your environment (Cursor, Codex, Cline, GitHub Copilot, Gemini CLI, Warp, OpenCode, among others) and copies the skill to the corresponding location so it is immediately available with no additional configuration.
+
+From that moment on, `context-organizer` governs the Fantastic 5 of your repository: it creates missing files from their templates, keeps `BEHAVIOR.md` synchronized with the test suite via a pre-commit hook, and ensures that any agent touching the code respects the Boy Scout Principle before advancing with its task.
+
+## Closing: Context as an Engineering Product
+
+Documentation has stopped being a byproduct of engineering and has become **the first-class citizen of the repository**. In an ecosystem where code is written at agent speed, what is scarce is no longer the lines written, but the verifiable context that enables those agents to operate without hallucinating. The Documentation Pyramid, the Fantastic 5, and the Boy Scout Principle are the architecture; `context-organizer` is the engine that sustains it in production. Install it, let it work, and watch how the repository starts telling its own truth.
+
 ## Links of Interest and Related Resources
 
- * **context-organizer Skill Framework:** Technical specifications of the integrated skill for management, autonomous curation of structured .md files, and the continuous documentary refactor engine.
- * **Google Labs Code - design.md Standard:** github.com/google-labs-code/design.md – Official industry specification for storing and structuring aesthetic and UI decisions in source code.
- * **Architecture Decision Records (ADR) Spec:** github.com/joelparkerhenderson/architecture-decision-record – Templates and best practices for implementing the immutable architecture decisions format.
- * **Model Context Protocol (MCP):** Documentation of the open protocol for optimized structured context transfer between repositories and large language models.
+ * **context-organizer Skill Framework:** [github.com/galiprandi/skills](https://github.com/galiprandi/skills) — Portable skill for management, autonomous curation of structured `.md` files, and the continuous documentary refactor engine. Installable via `npx skills add`.
+ * **Google Labs Code - design.md Standard:** [github.com/google-labs-code/design.md](https://github.com/google-labs-code/design.md) – Official industry specification for storing and structuring aesthetic and UI decisions in source code.
+ * **Architecture Decision Records (ADR) Spec:** [github.com/joelparkerhenderson/architecture-decision-record](https://github.com/joelparkerhenderson/architecture-decision-record) – Templates and best practices for implementing the immutable architecture decisions format.
+ * **Model Context Protocol (MCP):** [Open protocol documentation](https://modelcontextprotocol.io/) for optimized structured context transfer between repositories and large language models.
 
 > *Author's Note:* The operational concept, compilation flow, and contextual injection logic of **BEHAVIOR.md** described in this article constitute an original technical and intellectual development created specifically for software architectures governed by Artificial Intelligence agents.

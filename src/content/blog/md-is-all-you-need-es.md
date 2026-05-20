@@ -190,23 +190,39 @@ Migrar la capa de enrutamiento y middleware a Fastify debido a su rendimiento na
 
 ## El Motor de Automatización: context-organizer
 
-La viabilidad operativa de esta metodología no descansa sobre la buena voluntad del desarrollador humano; se sostiene sobre la capacidad técnica de la skill **context-organizer**. Esta pieza de ingeniería es la encargada de cerrar el ciclo de retroalimentación viva dentro del repositorio, actuando bajo el siguiente flujo secuencial y determinista:
+La viabilidad operativa de esta metodología no descansa sobre la buena voluntad del desarrollador humano; se sostiene sobre la capacidad técnica de la skill **`context-organizer`**. Esta pieza de ingeniería es la encargada de cerrar el ciclo de retroalimentación viva dentro del repositorio, actuando bajo el siguiente flujo secuencial y determinista:
 
 ```
-[Cambio de Código] ➔ [Ejecución de Tests] ➔ [Extracción de Salida JSON] ➔ [AI Semántica] ➔ [Actualización de BEHAVIOR.md]
+[Cambio de Código] ➔ [Reescritura Semántica de Tests Ambiguos (AI)] ➔ [Ejecución de Tests] ➔ [Extracción de Salida JSON] ➔ [Compilación Determinista de BEHAVIOR.md]
 ```
 
- 1. **Extracción de la Verdad Empírica (Fuerza Bruta):** El context-organizer invoca un script automatizado en el entorno local o en el pipeline de CI/CD que ejecuta la totalidad de la suite de pruebas utilizando un reporter estructurado (por ejemplo, en formato JSON). Este paso garantiza que solo el comportamiento que ha pasado exitosamente las aserciones técnicas sea tomado en cuenta.
- 2. **Optimización Semántica Proactiva:** Si el script detecta que los desarrolladores humanos o las iteraciones previas escribieron descripciones de pruebas ambiguas o deficientes (como it("should work") o it("test case 4")), la skill del modelo entra en acción de forma asíncrona. Analiza el código fuente del archivo de prueba específico, deduce la intención exacta del *assert* e inyecta de forma autónoma una descripción semántica correcta en el archivo de test mediante un Pull Request automático.
- 3. **Compilación Documental Limpia:** Con las descripciones corregidas y la ejecución en verde, el context-organizer compila de forma determinista la salida jerárquica y actualiza el archivo BEHAVIOR.md en la raíz del módulo.
+ 1. **Extracción de la Verdad Empírica (Fuerza Bruta):** `context-organizer` invoca un script automatizado en el entorno local o en el pipeline de CI/CD que ejecuta la totalidad de la suite de pruebas utilizando un reporter estructurado (por ejemplo, JSON en `.context/test-results.json`). Solo el comportamiento que ha pasado exitosamente las aserciones técnicas es tomado en cuenta.
+ 2. **Optimización Semántica Proactiva:** Si el script detecta descripciones ambiguas (`it("should work")`, `it("test case 4")`), la skill entra en acción: analiza el assert, deduce la intención real y reescribe la descripción del test con semántica precisa (`should <verbo> <objeto> when <condición>`).
+ 3. **Compilación Documental Limpia:** Con las descripciones corregidas y la suite en verde, `context-organizer` compila de forma determinista la salida jerárquica y reescribe `BEHAVIOR.md` en la raíz del repositorio.
 
 Este mecanismo asegura que el modelo recurra al código fuente estrictamente cuando requiere implementar un cambio funcional o reparar un fallo, pero **jamás para inferir el comportamiento general del sistema**. La verdad se encuentra indexada y sintetizada de antemano en la Capa 1, lista para el consumo óptimo del contexto de la IA.
 
+### Instalación en tu repositorio
+
+La skill se distribuye como un paquete portable, instalable en cualquier proyecto con un único comando:
+
+```bash
+npx skills add https://github.com/galiprandi/skills
+```
+
+El instalador detecta los agentes presentes en tu entorno (Cursor, Codex, Cline, GitHub Copilot, Gemini CLI, Warp, OpenCode, entre otros) y copia la skill a la ubicación correspondiente para que esté disponible de inmediato sin configuración adicional.
+
+A partir de ese momento, `context-organizer` queda gobernando los 5 Fantásticos de tu repositorio: crea los archivos faltantes desde sus plantillas, mantiene `BEHAVIOR.md` sincronizado con la suite de tests vía hook de pre-commit, y se asegura de que cualquier agente que toque el código respete el Principio del Boy Scout antes de avanzar con su tarea.
+
+## Cierre: el contexto como producto de ingeniería
+
+La documentación dejó de ser un subproducto de la ingeniería para convertirse en **el primer ciudadano del repositorio**. En un ecosistema donde el código se escribe a velocidad de agente, lo escaso ya no son las líneas escritas, sino el contexto verificable que permite a esos agentes operar sin alucinar. La Pirámide Documental, los 5 Fantásticos y el Principio del Boy Scout son la arquitectura; `context-organizer` es el motor que la sostiene en producción. Instalalo, dejalo trabajar, y comprobá cómo el repositorio empieza a contar su propia verdad.
+
 ## Enlaces de Interés y Recursos Relacionados
 
- * **context-organizer Skill Framework:** Especificaciones técnicas de la skill integrada para la gestión, curación autónoma de archivos estructurados .md y el motor de refactor documental continuado.
- * **Google Labs Code - design.md Standard:** github.com/google-labs-code/design.md – Especificación oficial de la industria para el almacenamiento y la estructura de decisiones estéticas y de interfaces de usuario en el código fuente.
- * **Architecture Decision Records (ADR) Spec:** github.com/joelparkerhenderson/architecture-decision-record – Plantillas y mejores prácticas para la implementación del formato de decisiones de arquitectura inmutables.
- * **Model Context Protocol (MCP):** Documentación del protocolo abierto para la optimización de transferencia de contexto estructurado entre repositorios y modelos de lenguaje de gran tamaño.
+ * **context-organizer Skill Framework:** [github.com/galiprandi/skills](https://github.com/galiprandi/skills?tab=readme-ov-file#readme) — Skill portable para gestión, curación autónoma de archivos estructurados `.md` y motor de refactor documental continuo. Instalable con `npx skills add`.
+ * **Google Labs Code - design.md Standard:** [github.com/google-labs-code/design.md](https://github.com/google-labs-code/design.md) – Especificación oficial de la industria para el almacenamiento y la estructura de decisiones estéticas y de interfaces de usuario en el código fuente.
+ * **Architecture Decision Records (ADR) Spec:** [github.com/joelparkerhenderson/architecture-decision-record](https://github.com/joelparkerhenderson/architecture-decision-record) – Plantillas y mejores prácticas para la implementación del formato de decisiones de arquitectura inmutables.
+ * **Model Context Protocol (MCP):** [Documentación del protocolo abierto](https://modelcontextprotocol.io/) para la optimización de transferencia de contexto estructurado entre repositorios y modelos de lenguaje de gran tamaño.
 
 > *Nota de Autoría:* El concepto operativo, el flujo de compilación y la lógica de inyección contextual de **BEHAVIOR.md** descritos en este artículo constituyen un desarrollo técnico e intelectual inédito creado específicamente para arquitecturas de software gobernadas por agentes de Inteligencia Artificial.
