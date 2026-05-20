@@ -6,6 +6,12 @@
       "sourceType": "github",
       "skillPath": "skills/astro/SKILL.md",
       "computedHash": "ebefe26b231d32379c14e41a46c2de7b4b0184543bedab7febdabe4fb21fba4e"
+    },
+    "context-organizer": {
+      "source": "galiprandi/skills",
+      "sourceType": "github",
+      "skillPath": "context-organizer/SKILL.md",
+      "computedHash": "b5ff3abb6732c2dc0767f8727b2163d1ad8ae5f3d2103bada959d803bec4abef"
     }
   }
 }
