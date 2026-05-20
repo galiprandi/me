@@ -73,6 +73,10 @@ p,
   color: var(--color-texts-light);
 }
 
+dialog::backdrop {
+  background-color: rgb(189 189 189 / .6);
+}
+
 /* Screens less than 900px */
 @media only screen and (max-width: 900px) {
   body {

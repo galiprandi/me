@@ -4,6 +4,7 @@ import "../styles/global.css";
 
 import Header from "../components/Header.astro";
 import TlDrModal from "../components/TlDrModal";
+import LangSwitch from "../components/Blog/LangSwitch.astro";
 
 interface Props {
   title: string;
@@ -13,6 +14,7 @@ interface Props {
   updatedDate?: Date;
   tags?: string[];
   ogImage?: string;
+  showTlDrModal?: boolean;
 }
 
 const {
@@ -23,6 +25,7 @@ const {
   updatedDate,
   tags = [],
   ogImage,
+  showTlDrModal = true,
 } = Astro.props;
 
 const site = "https://galiprandi.github.io";
@@ -101,15 +104,13 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
         {lang === "es" ? "Blog" : "Blog"}
       </a>
       <span class="spacer"></span>
-      <TlDrModal client:load content={description} lang={lang} />
-      <span class="separator">·</span>
       {
-        lang === "es" ? (
-          <a href={`${base}/blog/en`}>Read in English</a>
-        ) : (
-          <a href={`${base}/blog/es`}>Leer en Español</a>
+        showTlDrModal && (
+          <TlDrModal client:load content={description} lang={lang} />
         )
       }
+      <span class="separator">·</span>
+      <LangSwitch currentLang={lang} />
     </nav>
     <main>
       {

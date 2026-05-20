@@ -33,7 +33,12 @@ const description =
     : `Artículos etiquetados con "${tag}"`;
 ---
 
-<BlogLayout title={title} description={description} lang={lang}>
+<BlogLayout
+  title={title}
+  description={description}
+  lang={lang}
+  showTlDrModal={false}
+>
   <h1>{title}</h1>
   <p class="count">
     {posts.length}

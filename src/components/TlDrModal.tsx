@@ -26,10 +26,21 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
     // Extract the full article content from the DOM
     const mainElement = document.querySelector('main');
     if (mainElement) {
-      // Get the text content, excluding the modal and button
+      // Get the text content, excluding navigation, metadata, and modal button
       const clone = mainElement.cloneNode(true) as HTMLElement;
+      
+      // Remove navigation elements
+      const navElement = clone.querySelector('nav');
+      if (navElement) navElement.remove();
+      
+      // Remove metadata elements (dates, tags, etc.)
+      const smallElements = clone.querySelectorAll('small');
+      smallElements.forEach(el => el.remove());
+      
+      // Remove modal button
       const modalButton = clone.querySelector('button');
       if (modalButton) modalButton.remove();
+      
       const fullText = clone.textContent || clone.innerText || '';
       if (fullText.length > content.length) {
         setArticleContent(fullText);
@@ -100,7 +111,7 @@ export default function TlDrModal({ content, lang, buttonLabel }: TlDrModalProps
           border: 'none',
           boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
           position: 'relative',
-          backgroundColor: 'var(--color-bg)',
+          backgroundColor: 'var(--color-bg-pill)',
           color: 'inherit',
         }}
       >

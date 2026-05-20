@@ -1,40 +1,26 @@
 ---
 interface Props {
-  slug: string;
   currentLang: string;
-  otherLang: string | null;
 }
 
-const { slug, otherLang } = Astro.props;
+const { currentLang } = Astro.props;
 const base = "/me";
 ---
 
 {
-  otherLang && (
-    <div class="lang-switch">
-      <a href={`${base}/blog/${slug}/${otherLang}`}>
-        {otherLang === "en" ? "Read in English" : "Leer en Español"}
-      </a>
-    </div>
+  currentLang === "es" ? (
+    <a href={`${base}/blog/en`}>Read in English</a>
+  ) : (
+    <a href={`${base}/blog/es`}>Leer en Español</a>
   )
 }
 
 <style>
-  .lang-switch {
-    text-align: right;
-    font-size: 0.85em;
-    margin-bottom: 1em;
-  }
-
-  .lang-switch a {
+  a {
     text-decoration: none;
     border-bottom: 1px solid transparent;
   }
-  .lang-switch a:hover {
+  a:hover {
     border-bottom-color: currentColor;
-  }
-
-  .disabled {
-    color: var(--color-texts-light);
   }
 </style>
