@@ -91,6 +91,9 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
     <script is:inline src={`${base}/googleTag.js`}></script>
   </head>
   <body class="blog">
+    <a href="#main-content" class="skip-link no-print">
+      {lang === "es" ? "Saltar al contenido" : "Skip to content"}
+    </a>
     <Header author="Germán A. Aliprandi" role="Personal Blog" />
     <nav class="blog-nav">
       <a href={`${base}/`}>
@@ -111,7 +114,7 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
         )
       }
     </nav>
-    <main>
+    <main id="main-content" tabindex="-1">
       {
         updatedDate && (
           <small class="light">

@@ -9,3 +9,7 @@
 ## 2025-05-24 - [Contextual Navigation Labels]
 **Learning:** Generic navigation links like "More articles..." lack sufficient context for screen reader users when encountered in isolation (e.g., via a links list).
 **Action:** Always provide descriptive `aria-label` attributes for generic links to ensure they are understandable in isolation, aligning with the pattern used in `PostCard.astro`.
+
+## 2026-05-20 - [Accessible Skip to Content Link]
+**Learning:** For "Skip to content" links to work reliably across all browsers and screen readers, the target element (typically the `<main>` tag) must have `tabindex="-1"`. This ensures programmatic focus is correctly shifted, allowing the next keyboard navigation action to start from the correct location.
+**Action:** Always include `tabindex="-1"` on the destination ID when implementing skip-to-content functionality.

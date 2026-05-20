@@ -73,6 +73,21 @@ p,
   color: var(--color-texts-light);
 }
 
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-bg-pill);
+  color: var(--color-texts-light);
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* Screens less than 900px */
 @media only screen and (max-width: 900px) {
   body {
