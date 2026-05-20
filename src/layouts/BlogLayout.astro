@@ -15,6 +15,8 @@ interface Props {
   tags?: string[];
   ogImage?: string;
   showTlDrModal?: boolean;
+  slug?: string;
+  otherLang?: string | null;
 }
 
 const {
@@ -26,6 +28,8 @@ const {
   tags = [],
   ogImage,
   showTlDrModal = true,
+  slug,
+  otherLang,
 } = Astro.props;
 
 const site = "https://galiprandi.github.io";
@@ -110,7 +114,7 @@ const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
         )
       }
       <span class="separator">·</span>
-      <LangSwitch currentLang={lang} />
+      <LangSwitch slug={slug} currentLang={lang} otherLang={otherLang} />
     </nav>
     <main>
       {

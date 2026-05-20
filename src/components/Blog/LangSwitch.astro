@@ -1,19 +1,22 @@
 ---
 interface Props {
   currentLang: string;
+  slug?: string;
+  otherLang?: string | null;
 }
 
-const { currentLang } = Astro.props;
+const { currentLang, slug, otherLang } = Astro.props;
 const base = "/me";
+const href =
+  slug && otherLang
+    ? `${base}/blog/${slug}/${otherLang}`
+    : currentLang === "es"
+      ? `${base}/blog/en`
+      : `${base}/blog/es`;
+const text = currentLang === "es" ? "Read in English" : "Leer en Español";
 ---
 
-{
-  currentLang === "es" ? (
-    <a href={`${base}/blog/en`}>Read in English</a>
-  ) : (
-    <a href={`${base}/blog/es`}>Leer en Español</a>
-  )
-}
+<a href={href}>{text}</a>
 
 <style>
   a {

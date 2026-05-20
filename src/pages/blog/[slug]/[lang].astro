@@ -87,6 +87,8 @@ const formattedUpdated = post.data.updatedDate
   updatedDate={post.data.updatedDate}
   tags={post.data.tags}
   ogImage={post.data.heroImage}
+  slug={slug}
+  otherLang={otherLang}
 >
   {
     isFallback && (
@@ -95,12 +97,6 @@ const formattedUpdated = post.data.updatedDate
         availableLang={post.data.lang}
         slug={slug}
       />
-    )
-  }
-
-  {
-    !isFallback && (
-      <LangSwitch slug={slug} currentLang={lang} otherLang={otherLang} />
     )
   }
 
