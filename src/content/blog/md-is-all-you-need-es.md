@@ -32,7 +32,7 @@ La base de la pirámide está compuesta por las aserciones de los tests unitario
 
 ### Capa 1: El Repositorio (El Contexto Indexable)
 
-Ubicada en la raíz de cada proyecto, esta capa está compuesta por **Los 5 Fantásticos**. Actúa como el manifiesto local del repositorio y opera de forma homóloga a un *Model Context Protocol* (MCP) local. Su función es sintetizar el código de la Capa 0 en archivos .md estructurados jerárquicamente. Es el contexto optimizado que el agente consume antes de examinar la lógica interna del sistema.
+Ubicada en la raíz de cada proyecto, esta capa está compuesta por **Los 5 Fantásticos**. Actúa como el manifiesto local del repositorio y opera de forma homóloga a un *Model Context Protocol* (MCP) local: expone información estructurada y jerárquica que el agente consume antes de ejecutar. A diferencia de las *skills*, que son unidades de capacidad y ejecución (como el `context-organizer` que procesa estos archivos), la Capa 1 es el propio contexto indexable. Su función es sintetizar el código de la Capa 0 en archivos `.md` estructurados jerárquicamente. Es el mapa de navegación optimizado que el agente consulta antes de examinar la lógica interna del sistema.
 
 ### Capa 2: Corporativa (Procesos Transversales)
 

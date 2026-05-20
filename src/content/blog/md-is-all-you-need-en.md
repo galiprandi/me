@@ -32,7 +32,7 @@ The base of the pyramid consists of assertions from unit, integration, and end-t
 
 ### Layer 1: The Repository (The Indexable Context)
 
-Located at the root of each project, this layer is composed of **The Fantastic 5**. It acts as the repository's local manifesto and operates analogously to a local *Model Context Protocol* (MCP). Its function is to synthesize Layer 0 code into hierarchically structured .md files. It is the optimized context that the agent consumes before examining the system's internal logic.
+Located at the root of each project, this layer is composed of **The Fantastic 5**. It acts as the repository's local manifesto and operates analogously to a local *Model Context Protocol* (MCP): it exposes structured and hierarchical information that the agent consumes before executing. Unlike *skills*, which are units of capability and execution (such as the `context-organizer` that processes these files), Layer 1 is the indexable context itself. Its function is to synthesize Layer 0 code into hierarchically structured `.md` files. It is the optimized navigation map that the agent consults before examining the system's internal logic.
 
 ### Layer 2: Corporate (Transversal Processes)
 
