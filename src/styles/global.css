@@ -73,6 +73,20 @@ p,
   color: var(--color-texts-light);
 }
 
+blockquote {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid var(--color-texts-light);
+  background-color: light-dark(#f5f5f5, #1f2229);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--color-texts-light);
+
+  p {
+    margin: 0;
+  }
+}
+
 dialog::backdrop {
   background-color: rgb(189 189 189 / .6);
 }
