@@ -9,7 +9,7 @@ postSlug: github-account-isolation-macos
 
 Cuando usás la misma máquina para tus proyectos personales y para el trabajo, es cuestión de tiempo terminar mezclando identidades: un commit firmado con el correo equivocado, un push a la organización corporativa desde tu cuenta personal o, en el peor de los casos, una credencial expuesta donde no debía estar.
 
-Tras sufrir un incidente de seguridad de **supply chain** en mi entorno laboral, decidí reconstruir mi configuración desde cero. Esta es la guía paso a paso para lograr un **aislamiento total y automatizado** de Git y GitHub CLI (`gh`) apoyándome en una premisa simple: separar físicamente los entornos por carpetas y dejar que las herramientas resuelvan la identidad correcta de forma invisible.
+Decidí reconstruir mi configuración desde cero. Esta es la guía paso a paso para lograr un **aislamiento total y automatizado** de Git y GitHub CLI (`gh`) apoyándome en una premisa simple: separar físicamente los entornos por carpetas y dejar que las herramientas resuelvan la identidad correcta de forma invisible.
 
 > "La comodidad de una configuración global es exactamente la misma puerta que usa un atacante para moverse lateralmente entre tus cuentas."
 
