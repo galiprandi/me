@@ -110,12 +110,16 @@ Wellfound uses Apollo GraphQL at `https://wellfound.com/graphql` with these oper
 - `ProfileSaveRoles` mutation — update primary role, open-to roles, years of experience
 - `ProfileSaveSocialProfiles` mutation — update website, GitHub, LinkedIn, Twitter URLs
 - `ProfileSaveSkills` mutation — update skill tags (requires skill tag IDs from `SkillTagAutocompleteField`)
+- `ProfileSaveExperience` mutation — create or update work experiences (include `id` field to update existing)
 - `ProfileSaveEducation` mutation — update education entries
-- `SkillTagAutocompleteField` query — search for skill tag IDs by name
+- `SkillTagAutocompleteField` query — search for skill tag IDs by name (response: `data.autocomplete.skillTags[].id`)
 - Headers required: `content-type: application/json`, `x-requested-with: XMLHttpRequest`, session cookie
 - User ID: `16064021`, Profile slug: `german-aliprandi`
 - Role IDs: `14726` = Software Engineer, `151118` = Engineering Manager, `151580` = CTO
-- See `api-captures/wellfound.sh` for ready-to-use curl functions
+- Company (startup) IDs: `8737181` = Cencosud, `8800087` = Egg Cooperation, `8004430` = Rooftop, `7979596` = Gadget
+- Experience IDs: `23920112` = Egg Cooperation
+- All operationIds documented in `api-captures/wellfound.sh` header comments
+- See `api-captures/wellfound.sh` for ready-to-use curl functions including `wf_save_experience`
 
 #### Get on Board Rails Form API (captured)
 
