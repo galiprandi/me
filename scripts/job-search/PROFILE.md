@@ -147,14 +147,14 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 ### Plataformas de búsqueda general
 
-| Plataforma | URL | Perfil alineado | Notas |
-|---|---|---|---|
-| LinkedIn | linkedin.com/jobs | ✅ | Easy Apply habilitado |
-| Computrabajo | computrabajo.com.ar | ❌ | Alinear perfil en primera sesión |
-| Bumeran | bumeran.com.ar | ❌ | Alinear perfil en primera sesión |
-| Glassdoor | glassdoor.com | ❌ | Alinear perfil en primera sesión |
-| Indeed | indeed.com | ❌ | Alinear perfil en primera sesión |
-| Remote.co | remote.co | ❌ | Filtro remote-first |
-| RemoteOK | remoteok.com | ❌ | Filtro remote-first |
-| Workana | workana.com | ❌ | Freelance/contract LATAM |
-| Rooftop | https://rooftop.na.teamtailor.com/#jobs | ❌ | Freelance/contract LATAM
+| Plataforma | URL | Perfil alineado | Última actualización | Notas |
+|---|---|---|---|---|
+| LinkedIn | linkedin.com/jobs | ✅ | 2026-07-27 | Easy Apply habilitado |
+| Computrabajo | computrabajo.com.ar | ❌ | — | Alinear perfil en primera sesión |
+| Bumeran | bumeran.com.ar | ❌ | — | Alinear perfil en primera sesión |
+| Glassdoor | glassdoor.com | ✅ | 2026-07-27 | Resumen, experiencia, skills, preferencias actualizadas |
+| Indeed | indeed.com | ❌ | — | Alinear perfil en primera sesión |
+| Remote.co | remote.co | ❌ | — | Filtro remote-first |
+| RemoteOK | remoteok.com | ❌ | — | Filtro remote-first |
+| Workana | workana.com | ❌ | — | Freelance/contract LATAM |
+| Rooftop | https://rooftop.na.teamtailor.com/#jobs | ❌ | — | Freelance/contract LATAM
