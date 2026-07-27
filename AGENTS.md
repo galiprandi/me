@@ -38,29 +38,34 @@ Estas reglas deben considerarse al implementar el CV imprimible:
 
 ### Skill: `job-search`
 
-Instalada en `~/.codeium/windsurf/skills/job-search/SKILL.md`. Se invoca con `skill("job-search")` cuando el usuario pide buscar/aplicar a ofertas, revisar novedades, o hacer follow-ups.
+Auto-contenida en `.agents/skills/job-search/`. Se invoca con `skill("job-search")` cuando el usuario pide buscar/aplicar a ofertas, revisar novedades, o hacer follow-ups.
 
-**Artefactos en el repo**:
-- `scripts/job-search/PROFILE.md` — Perfil estructurado auto-generado desde el CV + lista de empresas objetivo (Tier 1-3)
-- `scripts/job-search/APPLICATIONS.md` — Registro de aplicaciones, conexiones, entrevistas y follow-ups (memoria persistente)
-- `scripts/job-search/templates/` — Templates de mensajes a recruiters y cover letters
-- `job-search-log.md` — Log detallado por sesión (no versionado)
+**Artefactos (todos en `.agents/skills/job-search/`)**:
+- `SKILL.md` — Definición del skill y flujo de ejecución
+- `PROFILE.md` — Perfil estructurado auto-generado desde el CV + lista de empresas objetivo (Tier 1-3) + estado de alineación por plataforma
+- `APPLICATIONS.md` — Registro de aplicaciones, conexiones, entrevistas y follow-ups (memoria persistente)
+- `templates/` — Templates de mensajes a recruiters y cover letters
+- `api-captures/` — Capturas de endpoints HTTP como curl reutilizables (Indeed GraphQL, etc.)
+- `tools/` — Scripts Node.js (.mjs) para parsing de CV, generación de perfil, y alineación bulk
+- `job-search-log.md` — Log detallado por sesión (no versionado, en raíz del repo)
 
 **MCPs**:
-- `mcp1_*` (Chrome perfil German) — Browser automation para todo: LinkedIn, Gmail, job sites
+- `mcp1_*` (Chrome perfil German) — Browser automation para todo: LinkedIn, Gmail, job sites, profile editing, API capture
 - `mcp6_*` (LinkedIn MCP) — Scraping rápido de jobs, inbox, conversaciones (opcional)
+- `api-captures/*.sh` — Curl commands reutilizables extraídos del tráfico de red (ej: `indeed.sh` con funciones `get_experiences`, `update_experience`, `create_experience`)
 
 **Flujo (100% autónomo)**:
 1. **Sync CV → PROFILE.md** — Detecta cambios en `.astro` y regenera
-2. **Trazabilidad** — Revisa LinkedIn messages + Gmail por actualizaciones de aplicaciones existentes
-3. **Responder recruiters** — Si hay mensajes que requieren respuesta, redacta y pide confirmación
-4. **Follow-ups** — Si hay aplicaciones sin respuesta >14 días, envía follow-up
-5. **Búsqueda** — LinkedIn (MCP o browser) + empresas objetivo (Tier 1-3) + otros sitios
-6. **Fit scoring** — ALTO/MEDIO/BAJO, auto-descarta research/junior
-7. **Aplicar** — Mínimo 5 por sesión, Easy Apply o sitio externo, sin duplicar
-8. **Conectar con recruiters** — Con confirmación del usuario
-9. **Registrar** — Cada acción en APPLICATIONS.md inmediatamente
-10. **Resumen** — Aplicaciones, conexiones, novedades, entrevistas, pendientes
+2. **Profile Alignment** — Alinea perfiles en todas las plataformas (LinkedIn, Computrabajo, Bumeran, Glassdoor, Indeed, etc.) al CV. Captura APIs durante la edición para futura automatización via curl/scripts
+3. **Trazabilidad** — Revisa LinkedIn messages + Gmail por actualizaciones de aplicaciones existentes
+4. **Responder recruiters** — Si hay mensajes que requieren respuesta, redacta y pide confirmación
+5. **Follow-ups** — Si hay aplicaciones sin respuesta >14 días, envía follow-up
+6. **Búsqueda** — LinkedIn (MCP o browser) + empresas objetivo (Tier 1-3) + otros sitios
+7. **Fit scoring** — ALTO/MEDIO/BAJO, auto-descarta research/junior
+8. **Aplicar** — Mínimo 5 por sesión, Easy Apply o sitio externo, sin duplicar
+9. **Conectar con recruiters** — Con confirmación del usuario
+10. **Registrar** — Cada acción en APPLICATIONS.md inmediatamente
+11. **Resumen** — Aplicaciones, conexiones, novedades, entrevistas, pendientes
 
 ### Aprendizajes clave de LinkedIn
 
@@ -75,7 +80,7 @@ Instalada en `~/.codeium/windsurf/skills/job-search/SKILL.md`. Se invoca con `sk
 - **Tier 1 (latinas grandes)**: Mercado Libre, Globant, dLocal, Rappi, Nubank
 - **Tier 2 (globales con LATAM)**: Caylent, iFood, VTEX, Stone, EBANX
 - **Tier 3 (scale-ups AI)**: Kiwi, Blanc Labs, Sezzle
-- Ver lista completa con URLs de careers en `scripts/job-search/PROFILE.md`
+- Ver lista completa con URLs de careers en `.agents/skills/job-search/PROFILE.md`
 
 ### Nota sobre inglés
 

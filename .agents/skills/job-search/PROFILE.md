@@ -150,11 +150,15 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 | Plataforma | URL | Perfil alineado | Última actualización | Notas |
 |---|---|---|---|---|
 | LinkedIn | linkedin.com/jobs | ✅ | 2026-07-27 | Easy Apply habilitado |
-| Computrabajo | computrabajo.com.ar | ❌ | — | Alinear perfil en primera sesión |
-| Bumeran | bumeran.com.ar | ❌ | — | Alinear perfil en primera sesión |
-| Glassdoor | glassdoor.com | ✅ | 2026-07-27 | Resumen, experiencia, skills, preferencias actualizadas |
-| Indeed | indeed.com | ❌ | — | Alinear perfil en primera sesión |
-| Remote.co | remote.co | ❌ | — | Filtro remote-first |
-| RemoteOK | remoteok.com | ❌ | — | Filtro remote-first |
-| Workana | workana.com | ❌ | — | Freelance/contract LATAM |
-| Rooftop | https://rooftop.na.teamtailor.com/#jobs | ❌ | — | Freelance/contract LATAM
+| Computrabajo | computrabajo.com.ar | ✅ | 2026-07-27 | Título, descripción, experiencias (Cencosud, Egg, Gadget), skills, movilidad, salario, CV cargado |
+| Glassdoor | glassdoor.com | ✅ | 2026-07-27 | Cargo, empleador (Cencosud), CV cargado, preferencias actualizadas |
+| Indeed | indeed.com | ✅ | 2026-07-27 | Resumen, 5 experiencias alineadas al CV (Cencosud, Rooftop, Egg, Gadget, LBC Tech), habilidades, CV PDF cargado |
+| Wellfound | wellfound.com | ✅ | 2026-07-27 | Bio, primary role (Software Engineer), 10+ years exp, open roles (Eng Manager + CTO), GitHub, salario $60k USD/yr, remote. GraphQL captures en api-captures/wellfound.sh. Pendiente: skills, work experience, achievements |
+| Get on Board | getonbrd.com | ✅ | 2026-07-27 | Título, perfil profesional (ES/EN), formación académica (ES/EN), inglés B2, seniorities Senior+Expert. curl capturado en api-captures/getonbrd.sh |
+| Turing | turing.com | 🗑️ | — | Descartado — proceso de nivelación muy largo |
+| Arc.dev | arc.dev | 🗑️ | — | Descartado — screening técnico largo |
+| Hacker News | news.ycombinator.com | 📌 | — | Hilo mensual "Who is Hiring?", sin perfil, revisar mes a mes |
+| Remote.co | remote.co | 🗑️ | — | Descartado — genérico, poco tech-specific |
+| RemoteOK | remoteok.com | 🗑️ | — | Descartado — genérico, salarios opacos |
+| Workana | workana.com | 🗑️ | — | Descartado — freelance/contract, no full-time leadership |
+| Bumeran | bumeran.com.ar | 🗑️ | — | Descartado — mercado local AR, salarios bajos, UI compleja |

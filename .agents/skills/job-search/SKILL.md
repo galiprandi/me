@@ -13,23 +13,27 @@ Use this skill when the user:
 
 This skill automates the user's weekly job search lifecycle. The CV (website repo at `/Users/cenco/Github/Personal/me`) is the **source of truth**. The skill maintains a structured profile (`PROFILE.md`), searches for matching jobs, applies to them, tracks all applications (`APPLICATIONS.md`), checks for updates via LinkedIn messages and Gmail, follows up, and responds to recruiters — all autonomously.
 
-## Key Files (all in the repo)
+## Key Files (all self-contained in `.agents/skills/job-search/`)
 
 | File | Purpose | Versioned |
 |---|---|---|
-| `scripts/job-search/PROFILE.md` | Structured profile auto-generated from CV + target companies list | Yes |
-| `scripts/job-search/APPLICATIONS.md` | Registry of all applications, connections, interviews, follow-ups | Yes |
-| `scripts/job-search/templates/connection-templates.md` | Templates for recruiter messages (connection, follow-up, response) | Yes |
-| `scripts/job-search/templates/cover-letter-templates.md` | Templates for cover letters by role type | Yes |
+| `PROFILE.md` | Structured profile auto-generated from CV + target companies list + platform alignment status | Yes |
+| `APPLICATIONS.md` | Registry of all applications, connections, interviews, follow-ups | Yes |
+| `templates/connection-templates.md` | Templates for recruiter messages (connection, follow-up, response) | Yes |
+| `templates/cover-letter-templates.md` | Templates for cover letters by role type | Yes |
+| `api-captures/*.sh` | Reusable curl commands per platform (Indeed, Bumeran, etc.) | Yes |
+| `tools/*.mjs` | Node.js scripts for CV parsing, profile generation, bulk alignment | Yes |
 | `job-search-log.md` | Detailed session log (append-only) | No (gitignored) |
 
 ## MCPs and Tools
 
 | Tool | Usage | Required |
 |---|---|---|
-| `mcp1_*` (Chrome perfil German) | Browser automation: LinkedIn, Gmail, job sites, applications | **Yes** — primary tool |
+| `mcp1_*` (Chrome perfil German) | Browser automation: LinkedIn, Gmail, job sites, profile editing, API capture | **Yes** — primary tool |
 | `mcp6_*` (LinkedIn MCP) | Fast scraping: search jobs, get details, read inbox, search conversations | Optional — accelerates but `mcp1_*` covers everything |
 | `read_file` / `edit` / `write_to_file` | Read CV, update PROFILE.md and APPLICATIONS.md | Yes |
+| `api-captures/*.sh` | Reusable curl commands extracted from browser network traffic | Optional — speeds up profile alignment |
+| `tools/*.mjs` | Node.js scripts for CV-to-PROFILE parsing and bulk operations | Optional — automation helpers |
 
 ## Execution Flow — 100% Autónomo
 
@@ -37,7 +41,7 @@ El usuario lanza el flujo y el agente ejecuta todas las fases secuencialmente. S
 
 ---
 
-### Phase 0: Sync CV → PROFILE.md
+### Phase 0a: Sync CV → PROFILE.md
 
 1. Read CV files:
    - `src/pages/index.astro` → summary, experience, achievements
@@ -45,11 +49,88 @@ El usuario lanza el flujo y el agente ejecuta todas las fases secuencialmente. S
    - `src/components/Aside/TechStack.astro` → tech stack
    - `src/components/Aside/Certificates.astro` → certifications
 
-2. Read current `scripts/job-search/PROFILE.md`.
+2. Read current `.agents/skills/job-search/PROFILE.md`.
 
 3. If CV has changes not in PROFILE.md → regenerate PROFILE.md. Inform user: "Detecté cambios en tu CV y actualicé PROFILE.md: [changes]".
 
 4. If no changes → proceed silently.
+
+---
+
+### Phase 0b: Profile Alignment (multi-platforma)
+
+**Objetivo**: Alinear el perfil de cada plataforma al CV antes de buscar/aplicar.
+
+#### Platforms to align
+
+Check `PROFILE.md` → "Plataformas de búsqueda general" table. For each platform with `❌` or `⚠️`:
+
+1. **LinkedIn** — Already aligned (manual). Skip if `✅`.
+2. **Computrabajo** — Browser automation via `mcp1_*`. Custom dropdowns need JS evaluation.
+3. **Bumeran** — Browser automation. React-select dropdowns require manual interaction or JS event dispatch.
+4. **Glassdoor** — Browser automation. Simple form fields.
+5. **Indeed** — GraphQL API via `api-captures/indeed.sh` or browser automation.
+6. **Remote.co / RemoteOK / Workana** — Browser automation. Login required.
+
+#### Alignment procedure per platform
+
+1. Navigate to profile/CV edit page
+2. For each experience in CV:
+   - If missing → add (title, company, dates, description)
+   - If present but different → update fields
+   - If duplicate → delete the extra entry
+3. Update summary/headline to match CV
+4. Update salary preferences if needed
+5. Upload CV PDF if supported
+6. Mark platform as `✅` in PROFILE.md with date and notes
+
+#### API Capture (for future automation)
+
+During browser-based alignment, capture network requests to build reusable curl scripts:
+
+1. Use `mcp1_browser_network_requests` to list all API calls
+2. Use `mcp1_browser_network_request(index, part)` to get headers + body
+3. Use `mcp1_browser_evaluate(() => document.cookie)` to extract session cookies
+4. Save as `.sh` file in `api-captures/` with functions: `get_profile`, `update_experience`, `create_experience`, `delete_experience`
+5. Future: Build an MCP server from these captures for direct API access
+
+#### Indeed GraphQL API (captured)
+
+Indeed uses a GraphQL API at `https://apis.indeed.com/graphql` with these operations:
+- `ResumeSection` query — fetch full profile + experiences
+- `WorkExperiences` query — fetch all work experiences
+- `UpdateWorkExperience` mutation — create or update experiences (same mutation, `id` field optional)
+- Headers required: `indeed-api-key`, `indeed-ctk` (session token from cookies), `indeed-co: AR`
+- See `api-captures/indeed.sh` for ready-to-use curl functions
+
+#### Wellfound GraphQL API (captured)
+
+Wellfound uses Apollo GraphQL at `https://wellfound.com/graphql` with these operations:
+- `ProfileSaveBio` mutation — update bio text
+- `ProfileSaveRoles` mutation — update primary role, open-to roles, years of experience
+- `ProfileSaveSocialProfiles` mutation — update website, GitHub, LinkedIn, Twitter URLs
+- `ProfileSaveSkills` mutation — update skill tags (requires skill tag IDs from `SkillTagAutocompleteField`)
+- `ProfileSaveEducation` mutation — update education entries
+- `SkillTagAutocompleteField` query — search for skill tag IDs by name
+- Headers required: `content-type: application/json`, `x-requested-with: XMLHttpRequest`, session cookie
+- User ID: `16064021`, Profile slug: `german-aliprandi`
+- Role IDs: `14726` = Software Engineer, `151118` = Engineering Manager, `151580` = CTO
+- See `api-captures/wellfound.sh` for ready-to-use curl functions
+
+#### Get on Board Rails Form API (captured)
+
+Get on Board uses traditional Rails form POST (multipart/form-data) with CSRF token:
+- Form POSTs to `/webpros/<slug>` with `_method=patch` (Rails method override)
+- Form ID: `edit_webpro_202021`
+- Fields: `webpro[description_es/en]`, `webpro[professional_background_es/en]`, `webpro[academic_background_es/en]`, `webpro[english_level]`, `webpro[seniority_ids][]`
+- Seniority IDs: 4 = Senior, 5 = Expert
+- See `api-captures/getonbrd.sh` for ready-to-use curl functions
+
+#### Platform-specific learnings
+
+- **Wellfound**: React SPA. Role tags use `<span role="button">` for remove buttons (not `<button>`). Skills combobox requires typing + Enter to select from dropdown. Salary input has a Save button in the same section. The MCP browser can crash when doing rapid UI interactions — prefer GraphQL API calls via `page.evaluate(fetch(...))` over UI manipulation when possible.
+- **Get on Board**: Rails app with Trix editors. Direct DOM manipulation of hidden inputs + event dispatch (`input`, `change`, `blur`) needed for persistence. `seniority_ids` must be submitted as multiple `-F webpro[seniority_ids][]=<id>` flags in curl.
+- **General**: When a platform has a GraphQL API, always prefer calling it directly via `page.evaluate(async () => fetch(...))` instead of UI manipulation. It's faster, more reliable, and doesn't crash the browser. Capture the operation name, variables structure, and operationId from network requests first.
 
 ---
 
@@ -97,7 +178,7 @@ mcp6_get_conversation(linkedin_username: [username])
 #### 1d. Respond to recruiters
 
 For each recruiter message that requires a response:
-1. Use template from `scripts/job-search/templates/connection-templates.md` ("Respuesta a recruiter")
+1. Use template from `.agents/skills/job-search/templates/connection-templates.md` ("Respuesta a recruiter")
 2. Adapt to the specific message content
 3. **Show the user the draft response and ask for confirmation before sending**
 4. Send via `mcp6_send_message` (with `confirm_send: true`) or browser automation
@@ -192,7 +273,7 @@ For each approved job, in priority order (ALTO first, Tier 1 companies first):
 1. `mcp1_browser_navigate` to job URL
 2. Snapshot, find "Easy Apply" button, click it
 3. Complete each step (snapshot before each interaction — refs change!)
-4. On cover letter / additional questions: adapt template from `scripts/job-search/templates/cover-letter-templates.md`
+4. On cover letter / additional questions: adapt template from `.agents/skills/job-search/templates/cover-letter-templates.md`
 5. Submit, confirm success message
 6. **Record in APPLICATIONS.md immediately**
 
@@ -248,6 +329,8 @@ For each approved job, in priority order (ALTO first, Tier 1 companies first):
 
 - If `mcp6_*` unavailable → use `mcp1_*` for everything
 - If `mcp1_*` unavailable → inform user that Chrome perfil German MCP is required
+- If `mcp1_*` browser crashes repeatedly → prefer GraphQL API calls via `page.evaluate(fetch(...))` over UI manipulation. If MCP disconnects, user may need to reload Windsurf window (`Cmd+Shift+P` → "Developer: Reload Window") to reconnect
+- If Wellfound profile has incomplete sections (skills, work experience) → use GraphQL API directly instead of UI to avoid browser crashes
 - If job posting removed → skip, log as "descartado — oferta no disponible"
 - If Easy Apply fails → try external link, or inform user
 - If Gmail not logged in → inform user, skip email check, continue with LinkedIn only
