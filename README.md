@@ -22,14 +22,13 @@ Conceptualized the AI-augmented SDLC adopted by Cencosud (+120k employees) as it
 
 ## 📂 Project Structure
 
-This project is built using **Astro** and features a multi-route architecture to serve different versions of my profile:
+This project is built using **Astro** with three surfaces:
 
-- `src/pages/em/`: **Engineering Manager version** — Focused on AI workflow design, SDLC modernization, and leadership.
-- `src/pages/portfolio/`: **Projects & Open Source** — A curated list of my contributions and personal projects.
-- `src/pages/ext/`: **Extended version** — Detailed professional background and full experience history.
-- `src/pages/tl/`: **Tech Lead version** — Specialized focus on technical leadership and architecture.
+- `src/pages/index.astro`: **CV** — Single complete resume at `/`.
+- `src/pages/blog/`: **Blog** — Technical content (es/en) at `/blog`.
+- `src/pages/portfolio/`: **Portfolio** — Projects & open source at `/portfolio`.
 - `src/components/`: Reusable Astro components.
-- `src/layouts/`: Base layouts for different page versions.
+- `src/layouts/`: Base layouts.
 
 ## 🚀 Commands
 

@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-27T02:40:00Z",
+  "title": "Design System: galiprandi.me",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Ink", "canonical": "light-dark(#000, #fff)", "tonalRamp": ["#000", "#333", "#616161", "#abb0c2", "#fff"] },
+      "muted-ink": { "role": "neutral", "displayName": "Muted Ink", "canonical": "light-dark(#616161, #abb0c2)", "tonalRamp": ["#616161", "#abb0c2"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "light-dark(#fff, #16181c)", "tonalRamp": ["#fff", "#f5f5f5", "#e7e7e7", "#353535", "#1f2229", "#16181c"] },
+      "paper-pill": { "role": "neutral", "displayName": "Paper Pill", "canonical": "light-dark(#e7e7e7, #353535)", "tonalRamp": ["#e7e7e7", "#353535"] },
+      "paper-tint": { "role": "neutral", "displayName": "Paper Tint", "canonical": "light-dark(#f5f5f5, #1f2229)", "tonalRamp": ["#f5f5f5", "#1f2229"] },
+      "accent-blue": { "role": "primary", "displayName": "Accent Blue", "canonical": "#0055FF", "tonalRamp": ["#0055FF"] },
+      "warn-amber": { "role": "warning", "displayName": "Warn Amber", "canonical": "#ffa000", "tonalRamp": ["#ffa000"] },
+      "warn-amber-bg": { "role": "warning", "displayName": "Warn Amber BG", "canonical": "#fff8e1", "tonalRamp": ["#fff8e1"] },
+      "dialog-veil": { "role": "neutral", "displayName": "Dialog Veil", "canonical": "rgb(189 189 189 / 0.6)", "tonalRamp": ["rgb(189 189 189 / 0.6)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Author name in header. The only display-sized text." },
+      "headline": { "displayName": "Headline", "purpose": "Role subtitle, blog post titles." },
+      "title": { "displayName": "Title", "purpose": "Position titles, section headings. Weight 600 is the hierarchy signal." },
+      "body": { "displayName": "Body", "purpose": "All body copy, list items, aside content." },
+      "label": { "displayName": "Label", "purpose": "Nav links, metadata, timeline company lines." },
+      "mono": { "displayName": "Mono", "purpose": "Code blocks only. Never UI labels." }
+    },
+    "shadows": [
+      { "name": "dialog-lift", "value": "0 4px 20px rgba(0,0,0,0.3)", "purpose": "TL;DR modal only — the single elevated surface in the system." }
+    ],
+    "motion": [
+      { "name": "color-shift", "value": "color 0.2s ease", "purpose": "TL;DR trigger hover color transition." }
+    ],
+    "breakpoints": [
+      { "name": "mobile", "value": "900px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "link-inline",
+      "description": "Default link style: transparent bottom border that appears on hover in current text color.",
+      "html": "<a class=\"ds-link-inline\" href=\"#\">Contact</a>",
+      "css": ".ds-link-inline { color: light-dark(#000, #fff); text-decoration: none; border-bottom: 1px solid transparent; font-family: \"Montserrat Variable\", sans-serif; font-size: 1rem; } .ds-link-inline:hover { border-bottom-color: currentColor; } .ds-link-inline:focus-visible { outline: 2px solid light-dark(#616161, #abb0c2); outline-offset: 4px; }"
+    },
+    {
+      "name": "Muted Link",
+      "kind": "custom",
+      "refersTo": "link-muted",
+      "description": "Aside and metadata link variant using muted ink color.",
+      "html": "<a class=\"ds-link-muted\" href=\"#\">linkedin.com/in/galiprandi</a>",
+      "css": ".ds-link-muted { color: light-dark(#616161, #abb0c2); text-decoration: none; border-bottom: 1px solid transparent; font-family: \"Montserrat Variable\", sans-serif; font-size: 0.9em; word-break: break-word; hyphens: auto; } .ds-link-muted:hover { border-bottom-color: currentColor; } .ds-link-muted:focus-visible { outline: 2px solid light-dark(#616161, #abb0c2); outline-offset: 4px; }"
+    },
+    {
+      "name": "Pill",
+      "kind": "chip",
+      "refersTo": "pill",
+      "description": "Muted background chip for tech stack tags and skill markers.",
+      "html": "<span class=\"ds-pill\">Astro</span>",
+      "css": ".ds-pill { background: light-dark(#e7e7e7, #353535); color: light-dark(#000, #fff); border-radius: 999px; padding: 0.2em 0.6em; font-family: \"Montserrat Variable\", sans-serif; font-size: 0.85em; display: inline-block; }"
+    },
+    {
+      "name": "Blockquote",
+      "kind": "card",
+      "refersTo": "blockquote",
+      "description": "Editorial pull quote with left border, tinted background, and rounded right corner.",
+      "html": "<blockquote class=\"ds-blockquote\"><p>This is the AI-augmented SDLC adopted by Cencosud.</p></blockquote>",
+      "css": ".ds-blockquote { margin: 1.5em 0; padding: 1em 1.5em; border-left: 4px solid light-dark(#616161, #abb0c2); background: light-dark(#f5f5f5, #1f2229); border-radius: 0 8px 8px 0; font-style: italic; color: light-dark(#616161, #abb0c2); font-family: \"Montserrat Variable\", sans-serif; font-size: 1rem; line-height: 1.5; } .ds-blockquote p { margin: 0; }"
+    },
+    {
+      "name": "Timeline Item",
+      "kind": "custom",
+      "refersTo": "timeline-item",
+      "description": "Experience entry with left border and typographic 'o' node. The signature component of the system.",
+      "html": "<div class=\"ds-timeline-item\"><h3 class=\"ds-timeline-position\">Engineering Manager</h3><p class=\"ds-timeline-company\"><a href=\"#\">Cencosud</a> - 2023-Present</p><div class=\"ds-timeline-desc\">Led AI-augmented SDLC strategy for +800 developers.</div></div>",
+      "css": ".ds-timeline-item { position: relative; padding-left: 1.5em; border-left: 0.13em solid light-dark(#616161, #abb0c2); color: light-dark(#616161, #abb0c2); margin-left: 0.4em; font-family: \"Montserrat Variable\", sans-serif; } .ds-timeline-item::before { content: \"o\"; height: 1.5em; background: light-dark(#fff, #16181c); position: absolute; left: -0.34em; top: -0.15em; font-size: 1.5em; } .ds-timeline-position { font-weight: 600; margin-bottom: 0.2em; font-size: 1.15rem; color: light-dark(#616161, #abb0c2); } .ds-timeline-company { font-weight: 500; font-size: 0.95em; margin: 0.5em 0; } .ds-timeline-company a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; } .ds-timeline-company a:hover { border-bottom-color: currentColor; } .ds-timeline-desc { font-size: 0.95em; line-height: 1.5; }"
+    },
+    {
+      "name": "TL;DR Trigger",
+      "kind": "button",
+      "refersTo": "tldr-trigger",
+      "description": "Inline text-style button that opens the AI summary modal. Reads as a link, not a button.",
+      "html": "<button class=\"ds-tldr-trigger\">TL;DR Version</button>",
+      "css": ".ds-tldr-trigger { background: transparent; color: light-dark(#616161, #abb0c2); border: none; padding: 0; cursor: pointer; font-family: \"Montserrat Variable\", sans-serif; font-size: 0.9em; text-decoration: none; transition: color 0.2s ease; } .ds-tldr-trigger:hover { color: light-dark(#000, #fff); } .ds-tldr-trigger:focus-visible { outline: 2px solid light-dark(#616161, #abb0c2); outline-offset: 4px; }"
+    },
+    {
+      "name": "Section Header",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Uppercase h3 section header — the only text transformation in the system.",
+      "html": "<h3 class=\"ds-section-header\">EXPERIENCE</h3>",
+      "css": ".ds-section-header { text-transform: uppercase; font-family: \"Montserrat Variable\", sans-serif; font-weight: 600; font-size: 1.15rem; margin: 1em 0 0.3em 0; color: light-dark(#000, #fff); line-height: 1.3; }"
+    },
+    {
+      "name": "TL;DR Dialog",
+      "kind": "custom",
+      "refersTo": "tldr-dialog",
+      "description": "The only elevated surface in the system. Modal with pill background and the single shadow token.",
+      "html": "<dialog class=\"ds-tldr-dialog\" open><button class=\"ds-tldr-close\">×</button><h2 class=\"ds-tldr-title\">TL;DR Summary</h2><p class=\"ds-tldr-body\">Generated summary content appears here.</p></dialog>",
+      "css": ".ds-tldr-dialog { padding: 2em; max-width: 600px; max-height: 80vh; overflow-y: auto; border-radius: 8px; border: none; box-shadow: 0 4px 20px rgba(0,0,0,0.3); position: relative; background: light-dark(#e7e7e7, #353535); color: light-dark(#000, #fff); font-family: \"Montserrat Variable\", sans-serif; } .ds-tldr-dialog::backdrop { background: rgb(189 189 189 / 0.6); } .ds-tldr-title { margin-top: 0; font-size: 1.6rem; font-weight: 400; } .ds-tldr-body { line-height: 1.6; font-size: 1rem; } .ds-tldr-close { position: absolute; top: 1em; right: 1em; background: transparent; color: light-dark(#616161, #abb0c2); border: none; font-size: 1.5em; cursor: pointer; line-height: 1; padding: 0; } .ds-tldr-close:hover { color: light-dark(#000, #fff); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Editorial Resume",
+    "overview": "This is a resume that grew up. It treats the page as a printed document first and a web page second — wide margins, generous whitespace, a single typographic family carrying every role, and an austere monochrome palette where the absence of color is the design statement. The sidebar is the marginalia of an editorial spread; the main column is the article itself. The system supports light and dark modes natively via light-dark(), but neither mode introduces color for branding. Dark mode is a tonal inversion, not a chromatic event. Print is a first-class surface with its own token overrides. Components are deliberately quiet — everything recedes so the content can lead.",
+    "keyCharacteristics": [
+      "Monochrome with light-dark() tonal inversion; color is functional, never decorative",
+      "Single font family (Montserrat Variable) across all roles; weight + size carry hierarchy",
+      "Print-first: pt units, A4 page geometry, suppressed ornamentation in @media print",
+      "Flat by default: no shadows except the TL;DR dialog; depth via tonal layering",
+      "Two-column editorial layout (aside 25% / main 75% in print), collapses under 900px",
+      "Components recede; content leads"
+    ],
+    "rules": [
+      { "name": "The No Decoration Rule", "body": "Color is never used decoratively. The accent appears only where it carries functional meaning. If a surface needs emphasis, use tonal layering or typographic weight — not hue.", "section": "colors" },
+      { "name": "The One Family Rule", "body": "Montserrat Variable is the only typeface. Weight and size carry all hierarchy. Introducing a second display family would break the editorial resume contract.", "section": "typography" },
+      { "name": "The Uppercase Section Rule", "body": "Section headers (h3.upper) are uppercased. This is the only text transformation in the system and it marks structural divisions.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat. Shadows appear only on the TL;DR dialog. If a new component needs elevation, use tonal layering or a border — not a shadow.", "section": "elevation" },
+      { "name": "The Squared Default Rule", "body": "The default radius is 0. Radius is added only to soften functional elements. Large rounded containers would break the editorial document feel.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do use light-dark() for all color tokens — it is the canonical source of truth for both modes.",
+      "Do express hierarchy through font-weight (400 → 600) and size, never through family contrast.",
+      "Do use tonal layering (Paper → Paper Pill → Paper Tint) to convey depth without shadows.",
+      "Do keep the aside link overflow safe: word-break: break-word; hyphens: auto.",
+      "Do test print output in both Chrome and Edge — paginated consistency is a tracked risk.",
+      "Do preserve the 1000px max-width container — the editorial measure is intentional."
+    ],
+    "donts": [
+      "Don't introduce a second font family for display or body — Montserrat Variable is the only voice.",
+      "Don't add shadows to any component except the TL;DR dialog. Flat is the default.",
+      "Don't use the accent blue (#0055FF) decoratively — it is functional only.",
+      "Don't add large border-radius to containers — the default is squared; radius softens functional elements only.",
+      "Don't replace the timeline's typographic 'o' node with an icon or decorative dot — the glyph is the design.",
+      "Don't add external libraries beyond package.json without an ADR."
+    ]
+  }
+}
