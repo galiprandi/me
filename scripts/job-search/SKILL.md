@@ -168,13 +168,19 @@ Before presenting jobs, cross-reference with APPLICATIONS.md. **Never apply to t
 
 For each job found, score against PROFILE.md:
 
-- **ALTO**: 3+ target keywords match, correct seniority, remote/hybrid, no exclude keywords, company in Tier 1-2
-- **MEDIO**: 1-2 target keywords match, or correct seniority but onsite, or 1 exclude keyword, or Tier 3 company
-- **BAJO**: No keyword match, or multiple exclude keywords, or junior/internship
+- **ALTO**: 3+ target keywords match, correct seniority (mid-senior/director), remote, no exclude keywords, company in Tier 1-2, incluye leadership (10+ team), AI adoption/architecture/strategy focus, industria de interés, salary range compatible (USD 4.5k-6k+)
+- **MEDIO**: 1-2 target keywords match, or correct seniority but onsite/hybrid, or IC role with some leadership, or Tier 3 company, or crypto/fintech (OK if AI role), or salary below range but good company
+- **BAJO**: No keyword match, or multiple exclude keywords, or junior/internship, or pure IC without leadership, or freelance/contract
 
-**Auto-discard without asking**: AI Research, ML Research, NLP Research, Computer Vision Research, Internship, Junior, Trainee, PhD required.
+**Auto-discard without asking**: AI Research, ML Research, NLP Research, Computer Vision Research, Data Scientist, Data Analyst, Internship, Junior, Trainee, PhD required, Freelance, Contract, IC-only roles without leadership.
 
-Present filtered list (ALTO + MEDIO) to user for approval. Show: title, company, location, fit score, 1-line reason, URL.
+**Bonus criteria** (upgrade MEDIO → ALTO):
+- Role involves AI adoption strategy + people management + architecture decisions (mix de todo)
+- Team size 10+ with multiple squads
+- Environment: producto propio, plataforma interna, o transformación organizacional
+- Travel up to 25% accepted
+
+Present filtered list (ALTO + MEDIO) to user for approval. Show: title, company, location, fit score, 1-line reason, salary if visible, URL.
 
 ---
 

@@ -37,15 +37,42 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 ## Keywords de exclusión (descartar automáticamente)
 
-`AI Research`, `Data Scientist`, `ML Researcher`, `Computer Vision Research`, `NLP Research`, `PhD required`, `Postdoc`, `Internship`, `Junior`, `Trainee`
+`AI Research`, `Data Scientist`, `Data Analyst`, `ML Researcher`, `Computer Vision Research`, `NLP Research`, `PhD required`, `Postdoc`, `Internship`, `Junior`, `Trainee`, `Freelance`, `Contract`, `IC only`
 
 ## Preferencias
 
-- **Modalidad**: Remote, Hybrid
+- **Modalidad**: Remote con ocasional presencial (1-2 veces por mes o eventos puntuales)
 - **Ubicación**: Remote, Argentina, Latam, Global
 - **Seniority**: Mid-Senior, Director
-- **Inglés**: B2+ — puedo trabajar en inglés escrito y técnico, no excluir posiciones que requieran inglés (lo manejo), pero priorizar empresas latinas o con cultura latina donde la barrera idiomática no sea crítica
+- **Inglés**: B2+ — indiferente entre empresas latinas o globales, manejo inglés escrito y técnico
+- **Rango salarial**: USD 4,500-6,000 mensual (negociable según beneficios, equity, país)
+- **Disponibilidad**: Inmediata (2-4 semanas tras aceptar oferta)
+- **Viajes**: Acepto hasta 25% de travel para eventos, clientes u offsites
 - **Mínimo de aplicaciones por sesión**: 5
+
+### Tipo de rol ideal
+
+- **Mix de todo**: liderazgo de equipos + diseño técnico + estrategia AI según lo que necesite el momento
+- **Tamaño de equipo**: 10+ personas, múltiples squads, gestión de managers
+- **Entornos atractivos**: Producto propio, Plataforma interna, Transformación organizacional (no consultoría/services)
+- **Lo que me da energía**: AI adoption strategy + People management + Architecture decisions
+- **Tamaño de empresa**: Indiferente — lo importante es el rol y la cultura
+- **Formalización del rol**: busco posiciones donde las responsabilidades de AI strategy/leadership estén formalmente reflejadas en el título, las tareas asignadas y la compensación — no roles donde la responsabilidad de AI sea informal o haya derivado del rol original sin reasignación formal
+
+### Industrias de interés
+
+- E-commerce / Retail tech (Mercado Libre, Rappi, VTEX, iFood)
+- Consultoría / Cloud services (Globant, Caylent, PwC, Accenture)
+- SaaS / Plataforma propia
+- Crypto/fintech: OK si el rol es AI/engineering (no me importa el dominio del negocio)
+
+### Descartar automáticamente
+
+- AI Research, ML Research, NLP Research, Computer Vision Research
+- Data Scientist / Data Analyst
+- Roles puramente IC sin gente a cargo (Senior SWE sin leadership)
+- Internship, Junior, Trainee, PhD required, Postdoc
+- Freelance/Contract (busco full-time estable)
 
 ## Skills
 
@@ -130,3 +157,4 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 | Remote.co | remote.co | ❌ | Filtro remote-first |
 | RemoteOK | remoteok.com | ❌ | Filtro remote-first |
 | Workana | workana.com | ❌ | Freelance/contract LATAM |
+| Rooftop | https://rooftop.na.teamtailor.com/#jobs | ❌ | Freelance/contract LATAM
