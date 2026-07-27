@@ -153,7 +153,7 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 | Computrabajo | computrabajo.com.ar | ✅ | 2026-07-27 | Título, descripción, experiencias (Cencosud, Egg, Gadget), skills, movilidad, salario, CV cargado |
 | Glassdoor | glassdoor.com | ✅ | 2026-07-27 | Cargo, empleador (Cencosud), CV cargado, preferencias actualizadas |
 | Indeed | indeed.com | ✅ | 2026-07-27 | Resumen, 5 experiencias alineadas al CV (Cencosud, Rooftop, Egg, Gadget, LBC Tech), habilidades, CV PDF cargado |
-| Wellfound | wellfound.com | ✅ | 2026-07-27 | Bio, primary role (Software Engineer), 10+ years exp, open roles (Eng Manager + CTO), GitHub, salario $60k USD/yr, remote. GraphQL captures en api-captures/wellfound.sh. Pendiente: skills, work experience, achievements |
+| Wellfound | wellfound.com | ✅ | 2026-07-27 | All tabs aligned. Profile: bio, social (GitHub/LinkedIn/website), 5 work experiences (Cencosud, Egg, Rooftop, Gadget, LBC Tech), 17 skills, achievements. Preferences: $60k USD/yr, full-time, remote, Ready to interview. Culture: "Describe" actualizado, Manager track, building products, challenging problems. Resume/CV subido. GraphQL captures en api-captures/wellfound.sh (dynamic operationIds). Pendiente: Education (vacío) |
 | Get on Board | getonbrd.com | ✅ | 2026-07-27 | Título, perfil profesional (ES/EN), formación académica (ES/EN), inglés B2, seniorities Senior+Expert. curl capturado en api-captures/getonbrd.sh |
 | Turing | turing.com | 🗑️ | — | Descartado — proceso de nivelación muy largo |
 | Arc.dev | arc.dev | 🗑️ | — | Descartado — screening técnico largo |
