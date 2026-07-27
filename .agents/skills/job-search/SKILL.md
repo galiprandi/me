@@ -1,3 +1,7 @@
+---
+name: job-search
+description: Automatiza la búsqueda, postulación y seguimiento de trabajos basándose en el CV del usuario con el objetivo de lograr entrevistas con la mínima intervención del usuario.
+---
 # Job Search Skill
 
 ## When to Use This Skill
