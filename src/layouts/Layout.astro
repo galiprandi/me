@@ -4,6 +4,7 @@ import "../styles/global.css";
 import "../styles/print.css";
 
 import { base } from "../utils/url";
+import profile from "../assets/profile_circle.png";
 import Aside from "../components/Aside/Aside.astro";
 import Header from "../components/Header.astro";
 import Podcast from "../components/Podcast.astro";
@@ -27,6 +28,8 @@ const {
   multiPage = false,
   title,
 } = Astro.props;
+
+const ogImage = `https://galiprandi.github.io${profile.src}`;
 ---
 
 <!doctype html>
@@ -46,7 +49,7 @@ const {
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
-      content={`${base}/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp`}
+      content={ogImage}
     />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="website" />
@@ -57,7 +60,7 @@ const {
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:image"
-      content={`${base}/_astro/profile_circle.Cgs8IIl7_Z2qfGXH.webp`}
+      content={ogImage}
     />
 
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />

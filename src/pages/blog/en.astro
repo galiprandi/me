@@ -1,15 +1,9 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import PostList from "../../components/Blog/PostList.astro";
+import { getPostsByLang } from "../../utils/blog";
 
-const allPosts = await getCollection("blog");
-const posts = allPosts
-  .filter((p: CollectionEntry<"blog">) => p.data.lang === "en" && !p.data.draft)
-  .sort(
-    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-      b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+const posts = await getPostsByLang("en");
 ---
 
 <BlogLayout
