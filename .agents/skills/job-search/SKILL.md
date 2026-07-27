@@ -105,21 +105,17 @@ Indeed uses a GraphQL API at `https://apis.indeed.com/graphql` with these operat
 
 #### Wellfound GraphQL API (captured)
 
-Wellfound uses Apollo GraphQL at `https://wellfound.com/graphql` with these operations:
-- `ProfileSaveBio` mutation — update bio text
-- `ProfileSaveRoles` mutation — update primary role, open-to roles, years of experience
-- `ProfileSaveSocialProfiles` mutation — update website, GitHub, LinkedIn, Twitter URLs
-- `ProfileSaveSkills` mutation — update skill tags (requires skill tag IDs from `SkillTagAutocompleteField`)
-- `ProfileSaveExperience` mutation — create or update work experiences (include `id` field to update existing)
-- `ProfileSaveEducation` mutation — update education entries
-- `SkillTagAutocompleteField` query — search for skill tag IDs by name (response: `data.autocomplete.skillTags[].id`)
-- Headers required: `content-type: application/json`, `x-requested-with: XMLHttpRequest`, session cookie
-- User ID: `16064021`, Profile slug: `german-aliprandi`
-- Role IDs: `14726` = Software Engineer, `151118` = Engineering Manager, `151580` = CTO
-- Company (startup) IDs: `8737181` = Cencosud, `8800087` = Egg Cooperation, `8004430` = Rooftop, `7979596` = Gadget
-- Experience IDs: `23920112` = Egg Cooperation
-- All operationIds documented in `api-captures/wellfound.sh` header comments
-- See `api-captures/wellfound.sh` for ready-to-use curl functions including `wf_save_experience`
+Wellfound uses Apollo GraphQL at `https://wellfound.com/graphql` with persisted queries (APQ).
+- **operationIds are NOT hardcoded** — they're hashes baked into the JS bundle and change on deploy.
+- **Two-step pattern**: (1) intercept operationIds from the running page, (2) pass them to curl functions.
+- Operations: `ProfileSaveBio`, `ProfileSaveRoles`, `ProfileSaveSocialProfiles`, `ProfileSaveSkills`, `ProfileSaveExperience`, `ProfileSaveEducation`, `SkillTagAutocompleteField`
+- To get operationIds: monkey-patch `window.fetch` (see `WF_INTERCEPT_JS` in wellfound.sh), trigger UI saves, then collect with `WF_COLLECT_JS`.
+- Or use `mcp1_browser_run_code_unsafe` with `page.on('request', ...)` to intercept GraphQL POSTs and extract `body.extensions.operationId`.
+- `SkillTagAutocompleteField` response path: `data.autocomplete.skillTags[].id`
+- `ProfileSaveExperience` accepts optional `id` field to update existing (omit to create new).
+- Headers: `content-type: application/json`, `x-requested-with: XMLHttpRequest`, session cookie
+- Static IDs (data, not code): User=`16064021`, Roles: `14726`=SWE, `151118`=Eng Manager, `151580`=CTO. Companies: `8737181`=Cencosud, `8800087`=Egg, `8004430`=Rooftop, `7979596`=Gadget.
+- See `api-captures/wellfound.sh` — all curl functions accept `operation_id` as 2nd arg
 
 #### Get on Board Rails Form API (captured)
 

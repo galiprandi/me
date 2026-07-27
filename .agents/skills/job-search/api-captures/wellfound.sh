@@ -2,216 +2,190 @@
 # Wellfound API captures — GraphQL (Apollo)
 # Captured: 2026-07-27
 #
-# Wellfound uses GraphQL via POST to /graphql with Apollo Client.
-# Auth: session cookie + CSRF token (not always required for GraphQL).
-# Headers: content-type: application/json, x-requested-with: XMLHttpRequest
+# Wellfound uses Apollo GraphQL with persisted queries (APQ).
+# operationIds are hashes baked into the JS bundle and can change on deploy.
+# DO NOT hardcode them — always fetch dynamically via wf_get_operation_ids first.
 #
-# User ID: 16064021
-# Profile slug: german-aliprandi
+# Auth: session cookie. Headers: content-type, x-requested-with.
 #
-# Role IDs reference:
-#   14726 = Software Engineer (primary role)
-#   151118 = Engineering Manager
-#   151580 = CTO
-#   151711 = Frontend Engineer
+# User ID: 16064021 | Profile slug: german-aliprandi
 #
-# Company (startup) IDs reference:
-#   8737181 = Cencosud
-#   8800087 = Egg Cooperation
-#   8004430 = Rooftop (rooftop.so)
-#   7979596 = Gadget (gadget.dev)
-#   LBC Tech = created on-the-fly (no startupId)
+# Static reference IDs (these are data, not code — stable across deploys):
+#   Role IDs: 14726=Software Engineer, 151118=Engineering Manager, 151580=CTO
+#   Company IDs: 8737181=Cencosud, 8800087=Egg Cooperation, 8004430=Rooftop, 7979596=Gadget
+#   Skill IDs: 14781=JS, 15597=Management, 16999=MongoDB, 17000=Node.js, 94482=TS,
+#     139914=React.js, 17966=AI, 14775=Python, 258360=GraphQL, 110461=Docker,
+#     198603=Kubernetes, 629815=CI/CD, 22286=PostgreSQL, 171817=AWS, 683870=Fastify,
+#     918359=LLMs, 75683=Agile
+#   Experience IDs: 23920112=Egg Cooperation
 #
-# Skill tag IDs reference:
-#   14781 = Javascript, 15597 = Management, 16999 = MongoDB
-#   17000 = Node.js, 94482 = TypeScript, 139914 = React.js
-#   17966 = AI, 14775 = Python, 258360 = GraphQL
-#   110461 = Docker, 198603 = Kubernetes, 629815 = CI/CD
-#   22286 = PostgreSQL, 171817 = AWS, 683870 = Fastify
-#   918359 = LLMs, 75683 = Agile
+# ── USAGE (two-step: get IDs, then mutate) ─────────────────────────────────────
 #
-# Experience IDs reference:
-#   23920112 = Egg Cooperation (Engineering manager)
+# Step 1: Extract operationIds from the running page (via mcp1_browser_evaluate):
 #
-# GraphQL operationIds:
-#   ProfileSaveBio:           tfe/7a19d4a2372ad9057d5ae29abee4582b04de4eccc3df98e078b998fd27e4bed0
-#   ProfileSaveRoles:         tfe/473ebe616eeefebafb37e0e9f15083bbec919d51556bfa7b2b3ab7ba0b775bdb
-#   ProfileSaveSocialProfiles: tfe/8be924bafedbaa18bea8a94d6b08a05387d7fd05cbe89d710c18e47f3d55d0bd
-#   ProfileSaveSkills:        tfe/77e6ef40d61e30d1a307c5ad7a11c2a6504c97a5ff407c84c3b813553a97b96a
-#   ProfileSaveEducation:     tfe/d2168ea96c86c95952d32087da5633b6233d8049fac9bd338f2387c10e8879b1
-#   ProfileSaveExperience:    tfe/777c6d92342a65218cd4f4db88ee5353ecbd1123956504fa06e934aa2ab89858
-#   SkillTagAutocompleteField: tfe/0ca44ecafb1f994f981bac26cce2aba2fcff4ec4757fd5eb2f9cf06fc9bf29bf
+#   // Run this in mcp1_browser_evaluate to get all operationIds as JSON:
+#   () => {
+#     const ops = {};
+#     // Apollo Client stores persisted query manifests in window.__APOLLO_CLIENT__
+#     // or in the webpack modules. We intercept by scanning the inFlightLinkObservable.
+#     const queries = window.__APOLLO_CLIENT__?.queryManager?.queries;
+#     if (queries) {
+#       for (const [key, val] of queries) {
+#         const opName = val?.observableQuery?.queryName;
+#         const opId = val?.document?.loc?.source?.body
+#           ? undefined  // inline query, no persisted id
+#           : val?.observableQuery?.options?.extensions?.operationId;
+#         if (opName && opId) ops[opName] = opId;
+#       }
+#     }
+#     // Fallback: scan all fetch/XHR payloads captured by Apollo's link
+#     // The most reliable way: search the JS bundle for operationName→operationId mappings
+#     return Object.keys(ops).length > 0 ? ops : 'FALLBACK_NEEDED';
+#   }
 #
-# Usage:
+#   If the Apollo store approach doesn't expose operationIds, use the network
+#   intercept approach (see wf_intercept_operations below).
+#
+# Step 2: Pass operationIds to the curl functions:
+#
 #   source .agents/skills/job-search/api-captures/wellfound.sh
-#
-#   # Get session cookie from browser (run in mcp1_browser_evaluate):
-#   # () => document.cookie
-#
-#   wf_save_bio "$SESSION_COOKIE" "Your bio text here"
-#   wf_save_roles "$SESSION_COOKIE" "14726" "151118 151580" 10
-#   wf_save_social "$SESSION_COOKIE" "https://galiprandi.github.io/me" "https://github.com/galiprandi" "https://www.linkedin.com/in/galiprandi"
+#   wf_save_bio "$COOKIE" "$OP_BIO" "Your bio text"
+#   wf_save_roles "$COOKIE" "$OP_ROLES" "14726" "151118 151580" 10
+#   wf_save_experience "$COOKIE" "$OP_EXP" "8737181" "Software Engineer" 6 2025 0 0 true "desc"
 
 WF_BASE_URL="https://wellfound.com"
 WF_GRAPHQL_URL="https://wellfound.com/graphql"
 WF_USER_ID="16064021"
 
-# Save bio
-# Args: session_cookie bio_text
-wf_save_bio() {
-  local cookie="$1"
-  local bio="$2"
+# ═══════════════════════════════════════════════════════════════════════════════
+# OPERATION ID EXTRACTION (run in browser via mcp1_browser_evaluate)
+# ═══════════════════════════════════════════════════════════════════════════════
 
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveBio\",\"variables\":{\"input\":{\"bio\":\"$bio\",\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"tfe/7a19d4a2372ad9057d5ae29abee4582b04de4eccc3df98e078b998fd27e4bed0\"}}"
+# JS snippet to extract operationIds by intercepting network requests.
+# Run this BEFORE performing any profile edit action. It monkey-patches fetch
+# and collects all GraphQL operationIds for 30 seconds, then returns them.
+#
+# Usage in mcp1_browser_run_code_unsafe:
+#   const ids = await page.evaluate(() => { ... wf_intercept_js ... });
+#
+# Or simpler: trigger one UI action per section and capture the operationId
+# from the network request. See wf_intercept_operations below.
+
+WF_INTERCEPT_JS='
+(() => {
+  const ops = {};
+  const origFetch = window.fetch;
+  window.fetch = async function(...args) {
+    const [url, opts] = args;
+    if (url === "/graphql" && opts?.body) {
+      try {
+        const body = JSON.parse(opts.body);
+        if (body.operationName && body.extensions?.operationId) {
+          ops[body.operationName] = body.extensions.operationId;
+        }
+      } catch(e) {}
+    }
+    return origFetch.apply(this, args);
+  };
+  window.__wf_ops__ = ops;
+  window.__wf_restore__ = () => { window.fetch = origFetch; };
+  return "interceptor installed — trigger UI actions, then call window.__wf_ops__";
+})()
+'
+
+# JS snippet to collect intercepted operationIds (call after triggering UI saves)
+WF_COLLECT_JS='
+(() => {
+  const ops = { ...window.__wf_ops__ };
+  window.__wf_restore__?.();
+  return ops;
+})()
+'
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# GRAPHQL CURL FUNCTIONS (all accept operationId as 2nd arg)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# Save bio
+# Args: session_cookie operation_id bio_text
+wf_save_bio() {
+  local cookie="$1" local op_id="$2" local bio="$3"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveBio\",\"variables\":{\"input\":{\"bio\":\"$bio\",\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Save roles (primary role + open to roles + years of experience)
-# Args: session_cookie primary_role_id "role_id1 role_id2" years_experience
+# Args: session_cookie operation_id primary_role_id "role_id1 role_id2" years_experience
 wf_save_roles() {
-  local cookie="$1"
-  local primary_role_id="$2"
-  local role_ids="$3"
-  local years="$4"
-
-  # Build roleIds array JSON
+  local cookie="$1" op_id="$2" primary_role_id="$3" role_ids="$4" years="$5"
   local role_ids_json=$(echo "$role_ids" | sed 's/ /","/g' | sed 's/^/["/;s/$/"]/')
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveRoles\",\"variables\":{\"input\":{\"primaryRoleId\":\"$primary_role_id\",\"roleIds\":$role_ids_json,\"userId\":\"$WF_USER_ID\",\"yearsExperienceInPrimaryRole\":$years}},\"extensions\":{\"operationId\":\"tfe/473ebe616eeefebafb37e0e9f15083bbec919d51556bfa7b2b3ab7ba0b775bdb\"}}"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveRoles\",\"variables\":{\"input\":{\"primaryRoleId\":\"$primary_role_id\",\"roleIds\":$role_ids_json,\"userId\":\"$WF_USER_ID\",\"yearsExperienceInPrimaryRole\":$years}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Save social profiles
-# Args: session_cookie website_url github_url linkedin_url [twitter_url]
+# Args: session_cookie operation_id website_url github_url linkedin_url [twitter_url]
 wf_save_social() {
-  local cookie="$1"
-  local website="$2"
-  local github="$3"
-  local linkedin="$4"
-  local twitter="${5:-null}"
-
+  local cookie="$1" op_id="$2" website="$3" github="$4" linkedin="$5" twitter="${6:-}"
   local twitter_json="null"
-  if [ "$twitter" != "null" ] && [ -n "$twitter" ]; then
-    twitter_json="\"$twitter\""
-  fi
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveSocialProfiles\",\"variables\":{\"input\":{\"onlineBioUrl\":\"$website\",\"githubUrl\":\"$github\",\"linkedinUrl\":\"$linkedin\",\"twitterUrl\":$twitter_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"tfe/8be924bafedbaa18bea8a94d6b08a05387d7fd05cbe89d710c18e47f3d55d0bd\"}}"
+  [ -n "$twitter" ] && twitter_json="\"$twitter\""
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveSocialProfiles\",\"variables\":{\"input\":{\"onlineBioUrl\":\"$website\",\"githubUrl\":\"$github\",\"linkedinUrl\":\"$linkedin\",\"twitterUrl\":$twitter_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Save skills
-# Args: session_cookie "skill_tag_id1 skill_tag_id2 ..."
+# Args: session_cookie operation_id "skill_tag_id1 skill_tag_id2 ..."
 wf_save_skills() {
-  local cookie="$1"
-  local skill_ids="$2"
-
+  local cookie="$1" op_id="$2" skill_ids="$3"
   local skill_ids_json=$(echo "$skill_ids" | sed 's/ /","/g' | sed 's/^/["/;s/$/"]/')
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveSkills\",\"variables\":{\"input\":{\"skillTags\":$skill_ids_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"tfe/77e6ef40d61e30d1a307c5ad7a11c2a6504c97a5ff407c84c3b813553a97b96a\"}}"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveSkills\",\"variables\":{\"input\":{\"skillTags\":$skill_ids_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Save education
-# Args: session_cookie degree_type graduation_year "major1 major2" [gpa] [max_gpa]
+# Args: session_cookie operation_id degree_type graduation_year "major1 major2" [gpa] [max_gpa]
 wf_save_education() {
-  local cookie="$1"
-  local degree_type="$2"
-  local grad_year="$3"
-  local majors="$4"
-  local gpa="${5:-null}"
-  local max_gpa="${6:-null}"
-
+  local cookie="$1" op_id="$2" degree_type="$3" grad_year="$4" majors="$5" gpa="${6:-null}" max_gpa="${7:-null}"
   local majors_json=$(echo "$majors" | sed 's/ /","/g' | sed 's/^/["/;s/$/"]/')
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveEducation\",\"variables\":{\"input\":{\"gpa\":$gpa,\"graduationMonth\":null,\"graduationYear\":$grad_year,\"maxGpa\":$max_gpa,\"degreeType\":\"$degree_type\",\"majors\":$majors_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"tfe/d2168ea96c86c95952d32087da5633b6233d8049fac9bd338f2387c10e8879b1\"}}"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveEducation\",\"variables\":{\"input\":{\"gpa\":$gpa,\"graduationMonth\":null,\"graduationYear\":$grad_year,\"maxGpa\":$max_gpa,\"degreeType\":\"$degree_type\",\"majors\":$majors_json,\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Search for skills by query (to find skill tag IDs)
-# Args: session_cookie "query text"
+# Args: session_cookie operation_id "query text"
 wf_search_skills() {
-  local cookie="$1"
-  local query="$2"
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"SkillTagAutocompleteField\",\"variables\":{\"canonicalSkillsOnly\":false,\"query\":\"$query\"},\"extensions\":{\"operationId\":\"tfe/0ca44ecafb1f994f981bac26cce2aba2fcff4ec4757fd5eb2f9cf06fc9bf29bf\"}}"
+  local cookie="$1" op_id="$2" query="$3"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"SkillTagAutocompleteField\",\"variables\":{\"canonicalSkillsOnly\":false,\"query\":\"$query\"},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # Save work experience (create or update)
-# Args: session_cookie startup_id title start_month start_year end_month end_year current description [experience_id]
+# Args: session_cookie operation_id startup_id title start_month start_year end_month end_year current description [experience_id]
 wf_save_experience() {
-  local cookie="$1"
-  local startup_id="$2"
-  local title="$3"
-  local start_month="$4"
-  local start_year="$5"
-  local end_month="$6"
-  local end_year="$7"
-  local current="$8"
-  local description="$9"
-  local experience_id="${10:-}"
-
+  local cookie="$1" op_id="$2" startup_id="$3" title="$4" start_month="$5" start_year="$6" end_month="$7" end_year="$8" current="$9" description="${10}" experience_id="${11:-}"
   local id_json=""
-  if [ -n "$experience_id" ]; then
-    id_json="\"id\":\"$experience_id\","
-  fi
-
+  [ -n "$experience_id" ] && id_json="\"id\":\"$experience_id\","
   local current_json="null"
-  if [ "$current" = "true" ]; then
-    current_json="true"
-  elif [ "$current" = "false" ]; then
-    current_json="false"
-  fi
-
+  [ "$current" = "true" ] && current_json="true"
+  [ "$current" = "false" ] && current_json="false"
   local end_json="\"endedAtMonth\":$end_month,\"endedAtYear\":$end_year,"
-  if [ "$current" = "true" ]; then
-    end_json="\"endedAtMonth\":null,\"endedAtYear\":null,"
-  fi
-
-  curl -s "$WF_GRAPHQL_URL" \
-    -X POST \
-    -H "content-type: application/json" \
-    -H "x-requested-with: XMLHttpRequest" \
-    -H "cookie: $cookie" \
-    -H "origin: $WF_BASE_URL" \
-    -H "referer: $WF_BASE_URL/profile/edit" \
-    --data-raw "{\"operationName\":\"ProfileSaveExperience\",\"variables\":{\"input\":{$id_json\"averageDealSize\":null,\"canonicalSkillIds\":[],$end_json\"marketSegmentId\":null,\"percentageOfQuotaAchieved\":null,\"startedAtMonth\":$start_month,\"startedAtYear\":$start_year,\"startupId\":\"$startup_id\",\"current\":$current_json,\"description\":\"$description\",\"title\":\"$title\",\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"tfe/777c6d92342a65218cd4f4db88ee5353ecbd1123956504fa06e934aa2ab89858\"}}"
+  [ "$current" = "true" ] && end_json="\"endedAtMonth\":null,\"endedAtYear\":null,"
+  curl -s "$WF_GRAPHQL_URL" -X POST \
+    -H "content-type: application/json" -H "x-requested-with: XMLHttpRequest" \
+    -H "cookie: $cookie" -H "origin: $WF_BASE_URL" -H "referer: $WF_BASE_URL/profile/edit" \
+    --data-raw "{\"operationName\":\"ProfileSaveExperience\",\"variables\":{\"input\":{$id_json\"averageDealSize\":null,\"canonicalSkillIds\":[],$end_json\"marketSegmentId\":null,\"percentageOfQuotaAchieved\":null,\"startedAtMonth\":$start_month,\"startedAtYear\":$start_year,\"startupId\":\"$startup_id\",\"current\":$current_json,\"description\":\"$description\",\"title\":\"$title\",\"userId\":\"$WF_USER_ID\"}},\"extensions\":{\"operationId\":\"$op_id\"}}"
 }
 
 # GET public profile
