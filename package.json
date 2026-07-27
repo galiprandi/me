@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/react": "^6.0.1",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource-variable/montserrat": "^5.3.0",
     "@galiprandi/react-tools": "^3.10.0",
     "@types/react": "^19.2.17",
