@@ -1,4 +1,6 @@
 ---
+import { base } from "../../utils/url";
+
 interface Props {
   requestedLang: string;
   availableLang: string;
@@ -7,7 +9,6 @@ interface Props {
 
 const { requestedLang, availableLang, slug } = Astro.props;
 
-const base = "/me";
 const messages = {
   es: `Este artículo solo está disponible en ${availableLang.toUpperCase()}.`,
   en: `This article is only available in ${availableLang.toUpperCase()}.`,

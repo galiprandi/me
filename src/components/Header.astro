@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import profile from "../assets/profile_circle.png";
+import { base } from "../utils/url";
 
 interface Props {
   author: string;
@@ -8,7 +9,7 @@ interface Props {
 }
 const { author, role } = Astro.props;
 const currentPath = Astro.url.pathname;
-const isRootPage = currentPath === "/me" || currentPath === "/me/";
+const isRootPage = currentPath === base || currentPath === `${base}/`;
 ---
 
 <header>

@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { base } from "../../utils/url";
 
 interface Props {
   current: CollectionEntry<"blog">;
@@ -27,8 +28,6 @@ const related = allPosts
   })
   .slice(0, 3)
   .map((x) => x.post);
-
-const base = "/me";
 ---
 
 {

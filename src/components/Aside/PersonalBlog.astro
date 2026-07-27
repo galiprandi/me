@@ -1,5 +1,6 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
+import { base } from "../../utils/url";
 
 const allPosts = await getCollection("blog");
 const posts = allPosts
@@ -9,8 +10,6 @@ const posts = allPosts
       b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   )
   .slice(0, 4);
-
-const base = "/me";
 ---
 
 <section class="skill">

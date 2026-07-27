@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { base } from "../../utils/url";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -17,7 +18,6 @@ const dateOptions: Intl.DateTimeFormatOptions = {
 
 const locale = lang === "en" ? "en-US" : "es-ES";
 const formattedDate = pubDate.toLocaleDateString(locale, dateOptions);
-const base = "/me";
 
 const labels = {
   en: {

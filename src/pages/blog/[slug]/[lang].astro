@@ -4,6 +4,7 @@ import BlogLayout from "../../../layouts/BlogLayout.astro";
 import LangSwitch from "../../../components/Blog/LangSwitch.astro";
 import RelatedPosts from "../../../components/Blog/RelatedPosts.astro";
 import MissingLangBanner from "../../../components/Blog/MissingLangBanner.astro";
+import { base } from "../../../utils/url";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<"blog">[] = await getCollection("blog");
@@ -112,7 +113,7 @@ const formattedUpdated = post.data.updatedDate
   <div class="post-tags-footer">
     {
       post.data.tags.map((tag: string) => (
-        <a class="tag" href={`/me/blog/tag/${tag}`}>
+        <a class="tag" href={`${base}/blog/tag/${tag}`}>
           {tag}
         </a>
       ))

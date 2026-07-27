@@ -3,6 +3,7 @@ import IconEmail from "../Icons/IconEmail.astro";
 import IconLinkedin from "../Icons/IconLinkedin.astro";
 import IconGithub from "../Icons/IconGithub.astro";
 import IconPortfolio from "../Icons/IconPortfolio.astro";
+import { base } from "../../utils/url";
 ---
 
 <section class="contact">
@@ -38,9 +39,8 @@ import IconPortfolio from "../Icons/IconPortfolio.astro";
   <div>
     <IconPortfolio />
     <a
-      href="https://galiprandi.github.io/me/portfolio/"
+      href={`${base}/portfolio/`}
       title="Website"
-      target="_blank"
       class="light">galiprandi.github.io</a
     >
   </div>

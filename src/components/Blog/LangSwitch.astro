@@ -1,4 +1,6 @@
 ---
+import { base } from "../../utils/url";
+
 interface Props {
   currentLang: string;
   slug?: string;
@@ -6,7 +8,6 @@ interface Props {
 }
 
 const { currentLang, slug, otherLang } = Astro.props;
-const base = "/me";
 const href =
   slug && otherLang
     ? `${base}/blog/${slug}/${otherLang}`

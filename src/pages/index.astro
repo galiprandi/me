@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { base } from "../utils/url";
 ---
 
 <Layout
@@ -211,7 +212,7 @@ import Layout from "../layouts/Layout.astro";
         "Built for the next decade of AI-driven engineering."
       </p>
       <p class="light small-in-print">
-        <a href="/me/blog">Blog</a> — Writings on engineering, AI, and architecture.
+        <a href={`${base}/blog`}>Blog</a> — Writings on engineering, AI, and architecture.
       </p>
     </section>
   </main>

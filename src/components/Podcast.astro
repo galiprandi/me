@@ -1,13 +1,14 @@
 ---
 import IconPause from './Icons/IconPause.astro'
 import IconPodcast from './Icons/IconPodcast.astro'
+import { base } from '../utils/url'
 ---
 
 <button class="container no-print" aria-label="Play podcast summary" title="Hear about me">
   <IconPodcast class="play-icon" aria-hidden="true" />
   <IconPause class="pause-icon" aria-hidden="true" />
   <audio controls style="display: none" id="podcast-audio">
-    <source src="/me/podcast.mp3" type="audio/mpeg" />
+    <source src={`${base}/podcast.mp3`} type="audio/mpeg" />
   </audio>
 
   <script>

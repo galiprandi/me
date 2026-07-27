@@ -2,6 +2,7 @@
 import "@fontsource-variable/montserrat";
 import "../styles/global.css";
 
+import { base } from "../utils/url";
 import Header from "../components/Header.astro";
 import TlDrModal from "../components/TlDrModal";
 import LangSwitch from "../components/Blog/LangSwitch.astro";
@@ -33,7 +34,6 @@ const {
 } = Astro.props;
 
 const site = "https://galiprandi.github.io";
-const base = "/me";
 const canonical = `${site}${Astro.url.pathname}`;
 const rssPath = lang === "en" ? "/blog/rss-en.xml" : "/blog/rss-es.xml";
 ---
