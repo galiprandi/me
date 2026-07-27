@@ -128,9 +128,9 @@ Get on Board uses traditional Rails form POST (multipart/form-data) with CSRF to
 
 #### Platform-specific learnings
 
-- **Wellfound**: React SPA. Role tags use `<span role="button">` for remove buttons (not `<button>`). Skills combobox requires typing + Enter to select from dropdown. Salary input has a Save button in the same section. The MCP browser can crash when doing rapid UI interactions — prefer GraphQL API calls via `page.evaluate(fetch(...))` over UI manipulation when possible.
+- **Wellfound**: React SPA. Role tags use `<span role="button">` for remove buttons (not `<button>`). Skills combobox requires typing + Enter to select from dropdown. Salary input has a Save button in the same section. The MCP browser can crash when doing rapid UI interactions — prefer GraphQL API calls via `page.evaluate(fetch(...))` over UI manipulation when possible. Culture tab "Describe" textarea has a Save button nearby. Job applications from Argentina are very limited (only 3 visible) — all are "Apply on company website" (no Easy Apply). CookUnity rejects AR applicants by timezone. Wellfound filters aggressively by location.
 - **Get on Board**: Rails app with Trix editors. Direct DOM manipulation of hidden inputs + event dispatch (`input`, `change`, `blur`) needed for persistence. `seniority_ids` must be submitted as multiple `-F webpro[seniority_ids][]=<id>` flags in curl.
-- **General**: When a platform has a GraphQL API, always prefer calling it directly via `page.evaluate(async () => fetch(...))` instead of UI manipulation. It's faster, more reliable, and doesn't crash the browser. Capture the operation name, variables structure, and operationId from network requests first.
+- **General**: When a platform has a GraphQL API, always prefer calling it directly via `page.evaluate(async () => fetch(...))` instead of UI manipulation. It's faster, more reliable, and doesn't crash the browser. Capture the operation name, variables structure, and operationId from network requests first. For Wellfound, operationIds must be fetched dynamically (they change on deploy) — use the `WF_INTERCEPT_JS` / `WF_COLLECT_JS` pattern or `page.on('request')` interception.
 
 ---
 
