@@ -7,7 +7,9 @@
 
 | Fecha | Job Title | Empresa | URL | Sitio | Fit | Método | Estado | Última actualización | Notas |
 |---|---|---|---|---|---|---|---|---|---|
-| — | — | — | — | — | — | — | — | — | — |
+| 2026-07-27 | Head of Software Engineering | Neon | wellfound.com/jobs/4515680 | Wellfound | ALTO | External (Apply on website) | aplicado | 2026-07-27 | Fintech BR, 501-1000, remote everywhere. Leadership + hands-on system design + DORA metrics. Stack .NET/Kotlin/Go/AWS |
+| 2026-07-27 | Director of Software Engineering | Neon | wellfound.com/jobs/4134697 | Wellfound | MEDIO | External (Apply on website) | aplicado | 2026-07-27 | Mismo Neon, Director level, posted 3 meses ago. Múltiples teams, arquitectura distribuida |
+| 2026-07-27 | Go to Market Engineer Lead | Yuno | wellfound.com/jobs/4468741 | Wellfound | ALTO | External (Apply on website) | aplicado | 2026-07-27 | Payment orchestration, 51-200, Remote Americas. AI strategy for pre-sales, agents/workflows roadmap |
 
 ## Estados posibles
 
