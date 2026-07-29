@@ -329,6 +329,7 @@ For each approved job, in priority order (ALTO first, Tier 1 companies first):
 10. **English B2+** — do not auto-discard English-language job postings; the user can work in English
 11. **Prioritize Tier 1 companies** — large Latin companies where the user's profile and language fit best
 12. **Writing style: natural, no AI markers** — when drafting emails, LinkedIn messages, cover letters, or any text sent on behalf of the user, write as the user would. No em-dashes (—), no "I hope this message finds you well", no "I wanted to reach out", no bullet lists in messages, no overly formal or robotic phrasing. Use simple, direct, conversational Spanish (or English if the context requires). Keep it short. Read it aloud: if it sounds like an AI wrote it, rewrite it. The goal is that the recipient cannot tell it was drafted by an AI
+13. **Always start the browser with Chrome perfil German MCP** — before any browser automation, ensure `mcp1_*` (Chrome perfil German) is connected and the browser is open. If the browser is closed or the session expired, navigate to any URL with `mcp1_browser_navigate` to re-open it. If `mcp6_*` (LinkedIn MCP) session is expired, fall back to `mcp1_*` for LinkedIn interactions. Never attempt browser automation without first verifying the browser is active
 
 ## Error handling
 
