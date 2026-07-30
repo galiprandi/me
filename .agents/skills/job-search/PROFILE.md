@@ -50,6 +50,25 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 > **Nota**: `IC only` ya no es descarte automático. Si el rol es AI-focused (optimización de flujos/procesos con AI) y la paga + proyecto justifican, se acepta un rol IC sin gente a cargo.
 
+## Alertas configuradas (Passive Sourcing)
+
+Plataformas con alertas activas. Las alertas llegan a carpeta `Job Alerts` en Gmail. La skill `review` las consume cuando se ejecuta `news`.
+
+| Plataforma | Keywords de alerta | Frecuencia | Estado | Última actualización |
+|---|---|---|---|---|
+| Otta | — | — | Sin configurar | — |
+| Torre | — | — | Sin configurar | — |
+| We Work Remotely | — | — | Sin configurar | — |
+| Built In | — | — | Sin configurar | — |
+| Y Combinator | — | — | Sin configurar | — |
+
+> **Keywords base para alertas** (de sección "Keywords de búsqueda" arriba):
+> `AI Architect`, `Engineering Manager`, `AI Strategy`, `AI Implementation`, `LLM`, `Agent-First`, `AI Workflow`, `SDLC AI`, `Technical Lead`, `Staff Engineer`, `Platform Engineer`
+>
+> **Filtros comunes**: remote only, full-time, senior/lead
+>
+> Ejecutar `alerts` (skill `sourcing`) para configurar.
+
 ## Preferencias
 
 - **Modalidad**: Remote con ocasional presencial (1-2 veces por mes o eventos puntuales)
