@@ -56,11 +56,11 @@ Plataformas con alertas activas. Las alertas llegan a carpeta `Job Alerts` en Gm
 
 | Plataforma | Keywords de alerta | Frecuencia | Estado | Última actualización |
 |---|---|---|---|---|
-| Otta | — | — | Sin configurar | — |
-| Torre | — | — | Sin configurar | — |
-| We Work Remotely | — | — | Sin configurar | — |
-| Built In | — | — | Sin configurar | — |
-| Y Combinator | — | — | Sin configurar | — |
+| HireIndex | N/A (newsletter curado) | Semanal | ✅ Confirmado | 2026-07-30 |
+| Torre | AI matching automático | Continuo | ✅ Login + matching activo | 2026-07-30 |
+| We Work Remotely | Pendiente | — | ❌ Cloudflare block | — |
+| Built In | Engineering Manager, remote | Continuo | ✅ Onboarding completo | 2026-07-30 |
+| Y Combinator | Matching por perfil | Continuo | ✅ Login + matching activo | 2026-07-30 |
 
 > **Keywords base para alertas** (de sección "Keywords de búsqueda" arriba):
 > `AI Architect`, `Engineering Manager`, `AI Strategy`, `AI Implementation`, `LLM`, `Agent-First`, `AI Workflow`, `SDLC AI`, `Technical Lead`, `Staff Engineer`, `Platform Engineer`
