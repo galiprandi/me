@@ -67,7 +67,7 @@ Plataformas con alertas activas. Las alertas llegan a carpeta `Job Alerts` en Gm
 >
 > **Filtros comunes**: remote only, full-time, senior/lead
 >
-> Ejecutar `alerts` (skill `sourcing`) para configurar.
+> Ejecutar `radar` (skill `sourcing`) para configurar.
 
 ## Preferencias
 
