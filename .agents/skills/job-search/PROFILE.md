@@ -19,6 +19,15 @@
 
 Software Engineer with over 25 years of technical expertise, specializing in transforming the SDLC through innovative architectures and large-scale AI adoption. Creator of Axioma, a clean-architecture framework for AI-assisted development. Currently focused on industrializing engineering processes and designing "Agent-First" workflows for high-scale organizations.
 
+## Objetivo profesional (prioridad #1)
+
+**Aplicar conocimiento en optimizar flujos y procesos con AI.**
+
+- **Prioridad #1**: AI para optimización de flujos, procesos y SDLC. Es el núcleo de lo que busca.
+- **Prioridad #2 (sacrificable)**: Rol de Manager / leadership de equipos. Altamente valorado pero **dispuesto a resignarlo** si la paga y el proyecto son lo suficientemente interesantes.
+- **Criterio de decisión**: Paga + interés del proyecto pueden justificar aceptar un rol IC puro sin gente a cargo.
+- Esta jerarquía debe aplicarse al evaluar oportunidades, filtrar jobs y redactar respuestas a recruiters.
+
 ## Roles objetivo
 
 1. Engineering Manager
@@ -37,7 +46,9 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 ## Keywords de exclusión (descartar automáticamente)
 
-`AI Research`, `Data Scientist`, `Data Analyst`, `ML Researcher`, `Computer Vision Research`, `NLP Research`, `PhD required`, `Postdoc`, `Internship`, `Junior`, `Trainee`, `Freelance`, `Contract`, `IC only`
+`AI Research`, `Data Scientist`, `Data Analyst`, `ML Researcher`, `Computer Vision Research`, `NLP Research`, `PhD required`, `Postdoc`, `Internship`, `Junior`, `Trainee`, `Freelance`, `Contract`
+
+> **Nota**: `IC only` ya no es descarte automático. Si el rol es AI-focused (optimización de flujos/procesos con AI) y la paga + proyecto justifican, se acepta un rol IC sin gente a cargo.
 
 ## Preferencias
 
@@ -52,10 +63,11 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 ### Tipo de rol ideal
 
-- **Mix de todo**: liderazgo de equipos + diseño técnico + estrategia AI según lo que necesite el momento
-- **Tamaño de equipo**: 10+ personas, múltiples squads, gestión de managers
+- **Núcleo**: AI para optimización de flujos, procesos y SDLC. Esto es innegociable.
+- **Manager (sacrificable)**: liderazgo de equipos + diseño técnico + estrategia AI. Altamente valorado pero dispuesto a resignarlo si la paga y el proyecto justifican un rol IC puro.
+- **Tamaño de equipo**: 10+ personas, múltiples squads, gestión de managers (cuando aplique)
 - **Entornos atractivos**: Producto propio, Plataforma interna, Transformación organizacional (no consultoría/services)
-- **Lo que me da energía**: AI adoption strategy + People management + Architecture decisions
+- **Lo que me da energía**: AI adoption strategy + People management (cuando aplique) + Architecture decisions
 - **Tamaño de empresa**: Indiferente — lo importante es el rol y la cultura
 - **Formalización del rol**: busco posiciones donde las responsabilidades de AI strategy/leadership estén formalmente reflejadas en el título, las tareas asignadas y la compensación — no roles donde la responsabilidad de AI sea informal o haya derivado del rol original sin reasignación formal
 
@@ -70,9 +82,11 @@ Software Engineer with over 25 years of technical expertise, specializing in tra
 
 - AI Research, ML Research, NLP Research, Computer Vision Research
 - Data Scientist / Data Analyst
-- Roles puramente IC sin gente a cargo (Senior SWE sin leadership)
+- Roles puramente IC **sin componente AI** (Senior SWE genérico sin leadership ni AI)
 - Internship, Junior, Trainee, PhD required, Postdoc
 - Freelance/Contract (busco full-time estable)
+
+> **Excepción**: Roles IC sin gente a cargo pero con foco en **AI para optimización de flujos/procesos** NO se descartan automáticamente. Se evalúan según paga + interés del proyecto.
 
 ## Skills
 

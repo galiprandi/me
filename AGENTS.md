@@ -1,5 +1,16 @@
 # AGENTS
 
+## Reglas de Oro
+
+### Regla de Oro 1 — Preferencias del usuario siempre actualizadas
+Cuando el usuario explicita una preferencia, objetivo, dato personal o criterio de decisión, el agente debe **actualizar inmediatamente** todos los artefactos relevantes (AGENTS.md, PROFILE.md, APPLICATIONS.md, etc.) sin necesidad de que el usuario lo pida explícitamente. Nunca dejar que una preferencia explicitada quede solo en el contexto de la conversación.
+
+### Regla de Oro 2 — Objetivos del usuario
+El objetivo principal del usuario es **aplicar conocimiento en optimizar flujos y procesos con AI**. El rol de Manager es altamente valorado pero **sacrificable** si la paga y el proyecto son lo suficientemente interesantes. Esta jerarquía debe respetarse al evaluar oportunidades y al redactar respuestas a recruiters.
+
+### Regla de Oro 3 — Re-login headed
+Cuando una sesión se cierre o se necesite re-loguear a cualquier plataforma (LinkedIn, Gmail, etc.), el agente debe **abrir el navegador en modo headed** (visible) para que el usuario haga login manualmente. Nunca intentar loguear programáticamente con credenciales del usuario. El flujo es: detectar sesión cerrada → abrir browser headed → avisar al usuario → esperar confirmación → continuar.
+
 ## Matriz de Consulta Documental
 - Para entender restricciones de arquitectura antes de codificar: Consultar obligatoriamente `ADR.md`
 - Para asegurar la consistencia estética y reusabilidad de componentes visuales: Consultar y actualizar `DESIGN.md`
