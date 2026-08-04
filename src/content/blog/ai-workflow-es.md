@@ -57,3 +57,5 @@ Para que esto funcione en equipos reales, con herramientas reales, el flujo se a
 No hace falta revolucionar todo el equipo de un día para otro. El flujo completo da el máximo impacto, pero cada etapa por separado ya aporta valor. Se puede empezar con un solo equipo, medir antes y después, y expandir lo que funciona. El proceso está diseñado para que, si un día no hay agente disponible, el equipo siga trabajando exactamente igual, solo un poco más lento.
 
 La verdadera transformación no es tecnológica. Es cambiar la forma de pensar el trabajo: diseñar historias considerando que un agente las va a leer, revisar código con la certeza de que un agente ejecutará los tests, estimar tareas con la confianza de que el contexto no se pierde entre etapas. El equipo mantiene el control. El agente garantiza que ese control se base en información completa.
+
+Si querés ver cómo se construye esto en la práctica, con arquitectura del MCP, instrumentación y resultados reales, leé [Cómo construir un SDLC con agentes de IA](/blog/how-to-build-ai-sdlc/es).

@@ -57,3 +57,5 @@ For this to work in real teams with real tools, the workflow relies on a protoco
 You don't need to revolutionize the entire team overnight. The complete flow delivers maximum impact, but each stage individually already adds value. You can start with a single team, measure before and after, and expand what works. The process is designed so that, if one day an agent isn't available, the team continues working exactly the same, just a bit slower.
 
 The real transformation isn't technological. It's changing how you think about work: designing stories considering that an agent will read them, reviewing code knowing an agent will execute the tests, estimating tasks with confidence that context won't be lost between stages. The team maintains control. The agent ensures that control is based on complete information.
+
+If you want to see how to build this in practice, with MCP architecture, instrumentation and real results, read [How to build an AI-powered SDLC](/blog/how-to-build-ai-sdlc/en).
