@@ -1,21 +1,18 @@
 ---
 import { Image } from "astro:assets";
 import profile from "../assets/profile_circle.png";
-import { base } from "../utils/url";
 
 interface Props {
   author: string;
   role: string;
 }
 const { author, role } = Astro.props;
-const currentPath = Astro.url.pathname;
-const isRootPage = currentPath === base || currentPath === `${base}/`;
 ---
 
 <header>
   <div class="title">
     <h1 class="upper">{author}</h1>
-    {!isRootPage && <h2 class="upper light">{role}</h2>}
+    <h2 class="upper light">{role}</h2>
   </div>
   <div class="image">
     <Image src={profile} alt={author} width={123} height={123} />
