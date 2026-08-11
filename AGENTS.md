@@ -11,6 +11,9 @@ El objetivo principal del usuario es **aplicar conocimiento en optimizar flujos 
 ### Regla de Oro 3 — Re-login headed
 Cuando una sesión se cierre o se necesite re-loguear a cualquier plataforma (LinkedIn, Gmail, etc.), el agente debe **abrir el navegador en modo headed** (visible) para que el usuario haga login manualmente. Nunca intentar loguear programáticamente con credenciales del usuario. El flujo es: detectar sesión cerrada → abrir browser headed → avisar al usuario → esperar confirmación → continuar.
 
+### Regla de Oro 4 — Sync con GitHub profile README
+Cada cambio o update en el CV (`/me`) que afecte contenido visible (título, experiencia, proyectos, certificaciones, métricas, links, idiomas) debe contemplar la **actualización o sync del README.md del repo `galiprandi/galiprandi`** (perfil de GitHub) por consistencia. Ambos artefactos deben reflejar la misma información. El agente debe detectar automáticamente qué cambió en `/me` y propagarlo al profile README sin necesidad de que el usuario lo pida explícitamente.
+
 ## Matriz de Consulta Documental
 - Para entender restricciones de arquitectura antes de codificar: Consultar obligatoriamente `ADR.md`
 - Para asegurar la consistencia estética y reusabilidad de componentes visuales: Consultar y actualizar `DESIGN.md`
