@@ -8,14 +8,22 @@ postSlug: sdd-90s-again
 ---
 
 Spec-Driven Development: ¿Nos estamos tropezando otra vez con los años 90?
+
 El proyecto C3 (Chrysler Comprehensive Compensation) de mediados de los años 90 tenía un objetivo ambicioso: unificar la liquidación de sueldos de 87.000 empleados en un único sistema construido en Smalltalk. Sin embargo, el equipo cayó en una trampa clásica de la época: intentar prever en papel cada variación, regla de negocio y caso borde antes de escribir la primera línea de código ejecutable. Tras casi tres años de desarrollo y millones de dólares invertidos, el resultado fue desastroso. El sistema ni siquiera podía emitir un solo cheque de pago y calculaba un tiempo de cómputo inviable de 1.000 horas por ciclo.
+
 El proyecto colapsó por sobreingeniería y parálisis por análisis. Su rescate provino de una decisión disruptiva liderada por Kent Beck: desechar el andamiaje rígido, implementar únicamente lo mínimo indispensable para la iteración actual y dejar que la arquitectura emergiera validada de forma continua por código y pruebas automatizadas. De esa crisis nació Extreme Programming (XP), popularizando la práctica de que la arquitectura no debe congelarse en un documento primigenio, sino emerger de la solución real.
+
 Hoy observo con preocupación cómo una tendencia creciente alrededor del Spec-Driven Development (SDD) amenaza con arrastrarnos a un bucle histórico similar. Vale hacer una aclaración fundamental: el problema no es la especificación en sí ni el SDD bien aplicado para definir contexto. El peligro real reside en el dogmatismo de la hiper-especificación y en cómo muchos de los frameworks actuales de SDD, bajo la promesa de rigor, empujan al desarrollador a llenar plantillas infinitas que indefectiblemente derivan en sobreespecificación.
+
 Buscando un control absoluto sobre la naturaleza estocástica de los modelos de lenguaje, se busca redactar especificaciones en lenguaje natural hiper-detalladas para cada Rincón del sistema antes de implementar. Esta práctica revive el concepto de Big Design Up Front bajo un empaque moderno: se micro-gestiona el algoritmo interno en prosa, se le quita libertad al modelo para proponer soluciones idiomáticas y se construye una estructura frágil que se rompe al primer contacto con el runtime.
+
 Existe además un mito recurrente de que mantener estas especificaciones densas ahorra tokens. La realidad es que se genera una tasa de interés sobre la deuda técnica. Redactar el documento inicial consume un volumen verborrágico de tokens, y mantenerlo sincronizado en paralelo al código a medida que el sistema evoluciona en producción resulta una utopía. Cuando la especificación inevitablemente se desactualiza, el modelo la toma como una verdad empírica absoluta. Esto desencadena alucinaciones y loops de corrección infinitos que terminan costando infinitamente más tokens que permitirle al LLM inspeccionar directamente la base de código ejecutable.
+
 El SDD aporta su verdadero valor cuando se limita a su nivel de abstracción correcto: delimitar contratos, interfaces, reglas de negocio y guardrails. La lógica interna y el determinismo no se fuerzan en un texto en prosa, sino en la suite de pruebas automatizadas y en enfoques como TDD.
+
 A medida que la construcción de software migra de lenguajes tradicionales hacia la coordinación en lenguaje natural, la habilidad más crítica para un desarrollador o arquitecto no es escribir manuales exhaustivos previa implementación. La verdadera clave radica en la Ingeniería de Contexto: saber administrar con precisión qué información incluir en el prompt para sesgar estratégicamente el comportamiento del modelo, conservando sus grados de libertad para resolver sin ahogarlo en detalles de implementación.
+
 > "Diseñar es fácil; lo difícil es no sobre-diseñar antes de entender el problema real."
 > -- Kent Beck
-> 
+
 A final de cuentas, la IA no vino a resucitar los fantasmas del Waterfall ni a validar la ilusión del Demonio de Laplace en la ingeniería de software: esa utopía de creer que el desarrollador puede conocer de antemano cada estado y matiz de un sistema complejo para volcarlo en una especificación omnisciente. La IA nos exige recuperar la madurez metodológica: aceptar la complejidad emergente, definir contratos claros y recordar que la validez definitiva no está en los documentos ni en el código, sino en producción, cuando el software finalmente se enfrenta a los usuarios y demuestra su capacidad de aportar valor real.
