@@ -78,6 +78,10 @@
     margin-bottom: 1pt !important;
   }
 
+  section.profile > ul > li:not(:last-child) {
+    margin-bottom: 6pt !important;
+  }
+
   a {
     word-break: break-word;
     hyphens: auto;
