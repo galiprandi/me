@@ -52,25 +52,24 @@ Estas reglas deben considerarse al implementar el CV imprimible:
 
 El CV debe imprimir en **exactamente 1 página** vía Ctrl+P. Un párrafo cortado al final arruina el resultado, por lo que **ningún cambio de contenido se da por terminado sin verificar el PDF**.
 
-### Iteración (trial-and-error controlado)
+### Verificación obligatoria antes de subir
 
 ```bash
-# 1. Build de producción (el PDF fiel es el de dist/, no el dev server)
+npm run verify:print
+```
+
+`scripts/verify-print.sh` hace todo el loop solo: `astro build` → sirve `dist/` → imprime PDF con Chrome headless → valida `Pages: 1` y `yMax ≤ 745` (A4). Exit 0 = OK, exit 1 = hay que compensar ~14pt por línea impresa nueva. **Correrlo siempre antes de commitear cambios de contenido.**
+
+Referencia manual (si el script falla o hay que inspeccionar):
+
+```bash
 npx astro build
-
-# 2. Servir dist/ en un puerto libre
 cd dist && python3 -m http.server 8899 &
-
-# 3. Generar PDF con el browser wrapper (nunca agent-browser directo)
-node /home/galiprandi/repos/job-seeker/.agents/skills/browser-automation/scripts/browser.js \
-  tab-new "http://localhost:8899/" --name cvpdf
-node .../browser.js exec pdf /tmp/cv_check.pdf --tab cvpdf
-
-# 4. Verificar integridad
-pdfinfo /tmp/cv_check.pdf | grep Pages        # debe decir Pages: 1
-pdftotext -bbox /tmp/cv_check.pdf - | grep -oE 'yMax="[0-9.]+"' \
+# PDF vía browser wrapper o: google-chrome --headless=new \
+#   --no-pdf-header-footer --print-to-pdf=/tmp/cv.pdf http://localhost:8899/
+pdfinfo /tmp/cv.pdf | grep Pages
+pdftotext -bbox /tmp/cv.pdf - | grep -oE 'yMax="[0-9.]+"' \
   | sed 's/yMax="//;s/"//' | sort -rn | head -1
-pdftotext /tmp/cv_check.pdf - | tail -5       # última línea debe estar completa
 ```
 
 ### Criterios de aceptación
