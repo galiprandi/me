@@ -48,6 +48,46 @@ Estas reglas deben considerarse al implementar el CV imprimible:
 6) **Evidencia gráfica tras cambios**
    - Tras cada ajuste relevante, capturar evidencia visual (screenshot o print preview) de la ruta afectada para validar render e impresión.
 
+## Workflow de verificación del CV imprimible (1 página A4)
+
+El CV debe imprimir en **exactamente 1 página** vía Ctrl+P. Un párrafo cortado al final arruina el resultado, por lo que **ningún cambio de contenido se da por terminado sin verificar el PDF**.
+
+### Iteración (trial-and-error controlado)
+
+```bash
+# 1. Build de producción (el PDF fiel es el de dist/, no el dev server)
+npx astro build
+
+# 2. Servir dist/ en un puerto libre
+cd dist && python3 -m http.server 8899 &
+
+# 3. Generar PDF con el browser wrapper (nunca agent-browser directo)
+node /home/galiprandi/repos/job-seeker/.agents/skills/browser-automation/scripts/browser.js \
+  tab-new "http://localhost:8899/" --name cvpdf
+node .../browser.js exec pdf /tmp/cv_check.pdf --tab cvpdf
+
+# 4. Verificar integridad
+pdfinfo /tmp/cv_check.pdf | grep Pages        # debe decir Pages: 1
+pdftotext -bbox /tmp/cv_check.pdf - | grep -oE 'yMax="[0-9.]+"' \
+  | sed 's/yMax="//;s/"//' | sort -rn | head -1
+pdftotext /tmp/cv_check.pdf - | tail -5       # última línea debe estar completa
+```
+
+### Criterios de aceptación
+
+- `Pages: 1` siempre.
+- `yMax` máximo ≤ ~767pt (alto de página 792pt; dejar margen para variaciones de fuentes entre máquinas).
+- La última línea visible debe terminar con puntuación completa, nunca cortada.
+- Si `yMax` supera el límite: comprimir texto (nunca reducir font-size ni margins sin aprobación).
+- El dev server (`astro dev`) renderiza ~40pt más alto que el build; usar `dist/` para la medida final.
+- Al aprobar una versión: copiar el PDF a `~/Downloads/` con nombre descriptivo (`cv_german_aliprandi_vN.pdf`).
+
+### Notas
+
+- Clases de impresión existentes: `small-in-print` (texto reducido al imprimir), `no-print` (oculto en PDF: items secundarios de experiencia, mcp-vs-fnc, footer).
+- Contenido nuevo en secciones `no-print` no consume espacio en el PDF.
+- Elementos nuevos en el flujo impreso requieren su equivalente en recorte o compresión: el documento está al límite de facto.
+
 ## Búsqueda Laboral Automatizada
 
 ### Skill: `job-search`
