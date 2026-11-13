@@ -60,6 +60,8 @@ npm run verify:print
 
 `scripts/verify-print.sh` hace todo el loop solo: `astro build` → sirve `dist/` → imprime PDF con Chrome headless → valida `Pages: 1` y `yMax ≤ 745` (A4). Exit 0 = OK, exit 1 = hay que compensar ~14pt por línea impresa nueva. **Correrlo siempre antes de commitear cambios de contenido.**
 
+El CSS de impresión ya limita el layout a 1 página, así que `Pages: 1` es solo sanity check: el riesgo real que cubre el script es que la última línea quede cortada abajo (por eso el criterio es `yMax`, no solo el conteo de páginas).
+
 Referencia manual (si el script falla o hay que inspeccionar):
 
 ```bash

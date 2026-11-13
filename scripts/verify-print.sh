@@ -10,6 +10,8 @@ PDF=/tmp/cv_verify.pdf
 # v10 user-validated baseline measured yMax=741 on A4 (~100pt bottom margin,
 # safe against Chrome header/footer overlay ~50pt). Limit 745 accepts the
 # validated state and fails on any added printed line (~14pt each).
+# Note: print CSS caps the layout to one page, so Pages==1 is a sanity check
+# only; the real risk this script guards is the bottom line being cut.
 YMAX_LIMIT=745
 
 echo "→ Building..."
