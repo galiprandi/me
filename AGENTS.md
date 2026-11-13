@@ -76,11 +76,22 @@ pdftotext /tmp/cv_check.pdf - | tail -5       # última línea debe estar comple
 ### Criterios de aceptación
 
 - `Pages: 1` siempre.
-- `yMax` máximo ≤ ~767pt (alto de página 792pt; dejar margen para variaciones de fuentes entre máquinas).
+- **`yMax` objetivo: ≤ ~700pt** (no 767). El Ctrl+P real del usuario imprime con headers/footers de Chrome (~50pt) que el `exec pdf` del wrapper no reproduce; con yMax=714 una línea quedaba cortada. La versión aceptada cerró en **yMax=697**.
 - La última línea visible debe terminar con puntuación completa, nunca cortada.
 - Si `yMax` supera el límite: comprimir texto (nunca reducir font-size ni margins sin aprobación).
 - El dev server (`astro dev`) renderiza ~40pt más alto que el build; usar `dist/` para la medida final.
 - Al aprobar una versión: copiar el PDF a `~/Downloads/` con nombre descriptivo (`cv_german_aliprandi_vN.pdf`).
+
+### Estado actual calibrado (v10, validado por el usuario)
+
+Última línea impresa: **Axioma** (yMax≈697). Margen restante ≈95pt (~3 líneas de buffer para el print real del usuario).
+
+Ya ocultos del print con `no-print` (siguen visibles en la web):
+- `mcp-vs-fnc`, `@galiprandi/react-tools`, `job-seeker` (items OSS secundarios)
+- Bullet "Culture & Talent Management" de Egg (redundante: el header ya dice "mentored 30+ developers")
+- Párrafo "Writes on..." (el signal de thought leadership queda en el título de la sección + Momentum)
+
+**Regla práctica para próximos cambios:** cada línea nueva en el flujo impreso exige ~14pt de compensación (un `no-print` o una compresión equivalente). Al agregar contenido, apuntar a yMax ≤ 700 verificando con el loop de arriba antes de avisar al usuario.
 
 ### Notas
 
